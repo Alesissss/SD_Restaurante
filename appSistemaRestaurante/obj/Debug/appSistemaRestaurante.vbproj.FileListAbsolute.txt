@@ -1,0 +1,63 @@
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.vbproj.AssemblyReference.cache
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.frmInicioSesion.resources
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.Resources.resources
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.vbproj.GenerateResource.cache
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.vbproj.CoreCompileInputs.cache
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.exe.config
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.exe
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.pdb
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.exe
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.pdb
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.exe.config
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.exe
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.pdb
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.xml
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libDatos.dll
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libDatos.pdb
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libDatos.xml
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.vbproj.AssemblyReference.cache
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.frmInicioSesion.resources
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.Resources.resources
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.vbproj.GenerateResource.cache
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.vbproj.CoreCompileInputs.cache
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSiste.51A926BE.Up2Date
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.exe
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.xml
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.pdb
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libNegocio.dll
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libNegocio.pdb
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libNegocio.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libDatos.dll
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libNegocio.dll
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libDatos.pdb
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libDatos.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libNegocio.pdb
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\bin\Debug\libNegocio.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSiste.51A926BE.Up2Date
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.frmMesero.resources
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.frmMDIPrincipal.resources
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.frmMDIPrueba.resources
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.vbproj.AssemblyReference.cache
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.exe
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.xml
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.pdb
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.exe.config
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.exe
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.pdb
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\appSistemaRestaurante.xml
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\libDatos.dll
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\libNegocio.dll
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\libDatos.pdb
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\libDatos.xml
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\libNegocio.pdb
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\bin\Debug\libNegocio.xml
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.frmInicioSesion.resources
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.frmMDIPrincipal.resources
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.frmMDIPrueba.resources
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.frmMesero.resources
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.Resources.resources
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.vbproj.GenerateResource.cache
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSistemaRestaurante.vbproj.CoreCompileInputs.cache
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\appSistemaRestaurante\obj\Debug\appSiste.51A926BE.Up2Date

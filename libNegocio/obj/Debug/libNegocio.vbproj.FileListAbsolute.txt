@@ -1,0 +1,42 @@
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libNegocio.dll
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libNegocio.pdb
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libNegocio.xml
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libDatos.dll
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libDatos.pdb
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libDatos.xml
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.vbproj.AssemblyReference.cache
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.Resources.resources
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.vbproj.GenerateResource.cache
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.vbproj.CoreCompileInputs.cache
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.vbproj.Up2Date
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.dll
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.xml
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.pdb
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libNegocio.dll
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libNegocio.pdb
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libNegocio.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libDatos.dll
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libDatos.pdb
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\bin\Debug\libDatos.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.vbproj.AssemblyReference.cache
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.Resources.resources
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.vbproj.GenerateResource.cache
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.vbproj.CoreCompileInputs.cache
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.vbproj.Up2Date
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.dll
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libNegocio\obj\Debug\libNegocio.pdb
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\bin\Debug\libNegocio.dll
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\bin\Debug\libNegocio.pdb
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\bin\Debug\libNegocio.xml
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\bin\Debug\libDatos.dll
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\bin\Debug\libDatos.pdb
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\bin\Debug\libDatos.xml
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\obj\Debug\libNegocio.vbproj.AssemblyReference.cache
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\obj\Debug\libNegocio.Resources.resources
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\obj\Debug\libNegocio.vbproj.GenerateResource.cache
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\obj\Debug\libNegocio.vbproj.CoreCompileInputs.cache
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\obj\Debug\libNegocio.vbproj.Up2Date
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\obj\Debug\libNegocio.dll
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\obj\Debug\libNegocio.xml
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libNegocio\obj\Debug\libNegocio.pdb

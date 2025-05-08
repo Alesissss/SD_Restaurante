@@ -1,0 +1,30 @@
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\bin\Debug\libDatos.dll
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\bin\Debug\libDatos.pdb
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\bin\Debug\libDatos.xml
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.vbproj.AssemblyReference.cache
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.Resources.resources
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.vbproj.GenerateResource.cache
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.vbproj.CoreCompileInputs.cache
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.dll
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.xml
+C:\Users\laboratorio_computo\Documents\SD\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.pdb
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\bin\Debug\libDatos.dll
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\bin\Debug\libDatos.pdb
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\bin\Debug\libDatos.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.vbproj.AssemblyReference.cache
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.Resources.resources
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.vbproj.GenerateResource.cache
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.vbproj.CoreCompileInputs.cache
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.dll
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.xml
+C:\Users\laboratorio_computo\Documents\SD A\Sistema\solSistemaRestaurante2025\libDatos\obj\Debug\libDatos.pdb
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\bin\Debug\libDatos.dll
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\bin\Debug\libDatos.pdb
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\bin\Debug\libDatos.xml
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\obj\Debug\libDatos.vbproj.AssemblyReference.cache
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\obj\Debug\libDatos.Resources.resources
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\obj\Debug\libDatos.vbproj.GenerateResource.cache
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\obj\Debug\libDatos.vbproj.CoreCompileInputs.cache
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\obj\Debug\libDatos.dll
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\obj\Debug\libDatos.xml
+C:\Users\gfake\OneDrive\Documents\Git - Restaurante\libDatos\obj\Debug\libDatos.pdb
