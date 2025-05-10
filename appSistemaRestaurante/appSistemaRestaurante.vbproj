@@ -73,6 +73,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCajero.Designer.vb">
+      <DependentUpon>frmCajero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCajero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCliente.Designer.vb">
+      <DependentUpon>frmCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmInicioSesion.Designer.vb">
       <DependentUpon>frmInicioSesion.vb</DependentUpon>
     </Compile>
@@ -91,10 +103,22 @@
     <Compile Include="frmMDIPrueba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMesa.Designer.vb">
+      <DependentUpon>frmMesa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMesa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMesero.Designer.vb">
       <DependentUpon>frmMesero.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMesero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoProducto.Designer.vb">
+      <DependentUpon>frmTipoProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoProducto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -115,6 +139,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCajero.resx">
+      <DependentUpon>frmCajero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCliente.resx">
+      <DependentUpon>frmCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicioSesion.resx">
       <DependentUpon>frmInicioSesion.vb</DependentUpon>
     </EmbeddedResource>
@@ -124,8 +154,14 @@
     <EmbeddedResource Include="frmMDIPrueba.resx">
       <DependentUpon>frmMDIPrueba.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMesa.resx">
+      <DependentUpon>frmMesa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMesero.resx">
       <DependentUpon>frmMesero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoProducto.resx">
+      <DependentUpon>frmTipoProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

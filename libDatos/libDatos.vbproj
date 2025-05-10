@@ -64,6 +64,14 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD_RESTAURANTEDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_RESTAURANTEDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD_RESTAURANTEDataSet.vb">
+      <DependentUpon>BD_RESTAURANTEDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="clsConectaBD.vb" />
     <Compile Include="clsMantenimiento.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -91,6 +99,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BD_RESTAURANTEDataSet.xsc">
+      <DependentUpon>BD_RESTAURANTEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD_RESTAURANTEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_RESTAURANTEDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_RESTAURANTEDataSet.xss">
+      <DependentUpon>BD_RESTAURANTEDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

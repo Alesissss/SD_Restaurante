@@ -64,7 +64,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCajero.vb" />
+    <Compile Include="clsCliente.vb" />
+    <Compile Include="clsMesa.vb" />
     <Compile Include="clsMesero.vb" />
+    <Compile Include="clsTipoProducto.vb" />
     <Compile Include="clsUsuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

@@ -8,10 +8,10 @@ Public Class clsConectaBD
     Sub New()
         cn = New SqlConnection
 
-        'BDLocal - Autenticaciòn windows
-        'cn.ConnectionString = "data source=(local);Initial catalog=BD_RESTAURANTE;integrated security=SSPI;language=spanish"
+        'BDLocal -Autenticaciòn windows
+        cn.ConnectionString = "Data Source=MCCFLURRYPC\SQLEXPRESS;Initial Catalog=BD_RESTAURANTE;Integrated Security=True" 'BD CONECTAR ROGER
         'BDLocal - Autenticaciòn SQL Server
-        cn.ConnectionString = "data source=(local);Initial catalog=BD_RESTAURANTE;user id=sa;password='USAT2024'"
+        'cn.ConnectionString = "data source=(local);Initial catalog=BD_RESTAURANTE;user id=sa;password=''"
 
         'BD en la nube somee.com
         'cn.ConnectionString = "workstation id=BDPersonal2024.mssql.somee.com;packet size=4096;user id=cdelcastillo_SQLLogin_1;pwd=wptf98uw6j;data source=BDPersonal2024.mssql.somee.com;persist security info=False;initial catalog=BDPersonal2024;language=spanish"
@@ -66,7 +66,7 @@ Public Class clsConectaBD
         Try
             'transaccion = False
             If cn.State <> Data.ConnectionState.Open Then ' SI EL ESTADO DE  LA CONEXION ES DIFERENTE DE ABIERTO ENTONCES ABRE LA CONEXION
-                cn.ConnectionString = "data source=(local);Initial catalog=BD_RESTAURANTE;user id=sa;password='USAT2024'"
+                cn.ConnectionString = "Data Source=MCCFLURRYPC\SQLEXPRESS;Initial Catalog=BD_RESTAURANTE;Integrated Security=True" 'BD CONECTAR ROGER
                 cn.Open()
             End If
         Catch Ex As Exception
