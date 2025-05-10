@@ -3,3 +3,88 @@
 ################################################################################
 
 /.vs/solSistemaRestaurante2025/FileContentIndex/f05d7d13-bcb9-4e58-9d76-d21d7689cbae.vsidx
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+*.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Rr]elease/
+[Dd]ebug/
+[Ll]og/
+
+# Nuget packages
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+
+# Environment specific files
+appsettings.Development.json
+secrets.json
+*.env
+
+# Resharper
+_ReSharper*/
+*.[Rr]esharper
+
+# Rider
+.idea/
+
+# Mac files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Compiled files
+*.exe
+*.dll
+*.pdb
+*.obj
+*.lib
+*.sbr
+*.ilk
+*.aps
+*.ncb
+*.bak
+*.cache
+*.msp
+*.msi
+*.msm
+*.pfx
+*.snk
+
+# Temporary files
+*.tmp
+*.log
+*.err
+
+# User-specific files
+*.sdf
+*.VC.db
+
+# Specific to your project structure if needed (example)
+# appSistemaRestaurante/bin/
+# appSistemaRestaurante/obj/
+# libDatos/bin/
+# libDatos/obj/
+# libNegocio/bin/
+# libNegocio/obj/
+
+# Copilot
+.vs/solSistemaRestaurante2025/CopilotIndices/
+.vs/solSistemaRestaurante2025/FileContentIndex/
+.vs/solSistemaRestaurante2025/copilot-chat/
+.vs/SD_Restaurante/
