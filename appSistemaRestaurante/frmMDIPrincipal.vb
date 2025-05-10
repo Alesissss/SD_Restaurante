@@ -36,8 +36,27 @@ Public Class frmMDIPrincipal
         lblHora.Text = TimeString
     End Sub
 
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        Dim objFrmCliente As New frmCliente
+        objFrmCliente.ShowDialog()
+    End Sub
     Private Sub MeseroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MeseroToolStripMenuItem.Click
         Dim objFrmMesero As New frmMesero
         objFrmMesero.ShowDialog()
+    End Sub
+
+    Private Sub MesasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MesasToolStripMenuItem.Click
+        Dim objFrmMesa As New frmMesa
+        objFrmMesa.ShowDialog()
+    End Sub
+
+    Private Sub CajeroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CaejeroToolStripMenuItem.Click
+        Dim objFrmCajero As New frmCajero
+        objFrmCajero.ShowDialog()
+    End Sub
+
+    Private Sub TipoProductoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoProductoToolStripMenuItem.Click
+        Dim objFrmTipoProducto As New frmTipoProducto
+        objFrmTipoProducto.ShowDialog()
     End Sub
 End Class
