@@ -278,6 +278,7 @@ Partial Class frmTipoProducto
         Me.Controls.Add(Me.pnlDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmTipoProducto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = ".: GESTIONAR TIPO DE PRODUCTO :."
         Me.pnlDatos.ResumeLayout(False)
         Me.pnlDatos.PerformLayout()

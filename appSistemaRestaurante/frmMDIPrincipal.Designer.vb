@@ -31,11 +31,14 @@ Partial Class frmMDIPrincipal
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.CambiarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MantenimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MesasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CaejeroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TipoProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MeseroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CartaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ParámetrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -75,7 +78,6 @@ Partial Class frmMDIPrincipal
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblHora = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tmrTiempo = New System.Windows.Forms.Timer(Me.components)
-        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -128,10 +130,16 @@ Partial Class frmMDIPrincipal
         '
         'MantenimientoToolStripMenuItem
         '
-        Me.MantenimientoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.MesasToolStripMenuItem, Me.CaejeroToolStripMenuItem, Me.TipoProductoToolStripMenuItem, Me.MeseroToolStripMenuItem, Me.ProductosToolStripMenuItem, Me.CartaToolStripMenuItem, Me.ToolStripMenuItem2, Me.ParámetrosToolStripMenuItem})
+        Me.MantenimientoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.MesasToolStripMenuItem, Me.CaejeroToolStripMenuItem, Me.TipoProductoToolStripMenuItem, Me.ProductosToolStripMenuItem, Me.MeseroToolStripMenuItem, Me.TipoUsuarioToolStripMenuItem, Me.UsuarioToolStripMenuItem, Me.CartaToolStripMenuItem, Me.ToolStripMenuItem2, Me.ParámetrosToolStripMenuItem})
         Me.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem"
         Me.MantenimientoToolStripMenuItem.Size = New System.Drawing.Size(101, 20)
         Me.MantenimientoToolStripMenuItem.Text = "Mantenimiento"
+        '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'MesasToolStripMenuItem
         '
@@ -163,6 +171,18 @@ Partial Class frmMDIPrincipal
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
         Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
+        '
+        'TipoUsuarioToolStripMenuItem
+        '
+        Me.TipoUsuarioToolStripMenuItem.Name = "TipoUsuarioToolStripMenuItem"
+        Me.TipoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TipoUsuarioToolStripMenuItem.Text = "Tipo Usuario"
+        '
+        'UsuarioToolStripMenuItem
+        '
+        Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
+        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UsuarioToolStripMenuItem.Text = "Usuario"
         '
         'CartaToolStripMenuItem
         '
@@ -443,12 +463,6 @@ Partial Class frmMDIPrincipal
         '
         Me.tmrTiempo.Enabled = True
         '
-        'ClientesToolStripMenuItem
-        '
-        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ClientesToolStripMenuItem.Text = "Clientes"
-        '
         'frmMDIPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -530,4 +544,6 @@ Partial Class frmMDIPrincipal
     Friend WithEvents MesasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CaejeroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TipoUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UsuarioToolStripMenuItem As ToolStripMenuItem
 End Class

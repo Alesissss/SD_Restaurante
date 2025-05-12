@@ -59,4 +59,19 @@ Public Class frmMDIPrincipal
         Dim objFrmTipoProducto As New frmTipoProducto
         objFrmTipoProducto.ShowDialog()
     End Sub
+
+    Private Sub TipoUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoUsuarioToolStripMenuItem.Click
+        Dim objFrmTipoUsuario As New frmTipoUsuario
+        objFrmTipoUsuario.ShowDialog()
+    End Sub
+
+    Private Sub UsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuarioToolStripMenuItem.Click
+        Dim objFrmUsuario As New frmUsuario
+        objFrmUsuario.ShowDialog()
+    End Sub
+
+    Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
+        Dim objFrmProducto As New frmProducto
+        objFrmProducto.ShowDialog()
+    End Sub
 End Class

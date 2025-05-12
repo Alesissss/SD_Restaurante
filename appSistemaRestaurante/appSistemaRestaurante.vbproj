@@ -115,10 +115,28 @@
     <Compile Include="frmMesero.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmProducto.Designer.vb">
+      <DependentUpon>frmProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTipoProducto.Designer.vb">
       <DependentUpon>frmTipoProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="frmTipoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoUsuario.Designer.vb">
+      <DependentUpon>frmTipoUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuario.Designer.vb">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -162,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTipoProducto.resx">
       <DependentUpon>frmTipoProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoUsuario.resx">
+      <DependentUpon>frmTipoUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuario.resx">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

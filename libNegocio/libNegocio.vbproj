@@ -69,6 +69,8 @@
     <Compile Include="clsMesa.vb" />
     <Compile Include="clsMesero.vb" />
     <Compile Include="clsTipoProducto.vb" />
+    <Compile Include="clsProducto.vb" />
+    <Compile Include="clsTipoUsuario.vb" />
     <Compile Include="clsUsuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
