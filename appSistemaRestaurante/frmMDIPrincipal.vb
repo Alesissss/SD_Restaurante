@@ -74,4 +74,9 @@ Public Class frmMDIPrincipal
         Dim objFrmProducto As New frmProducto
         objFrmProducto.ShowDialog()
     End Sub
+
+    Private Sub PedidoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PedidoToolStripMenuItem.Click
+        Dim objFrmPedido As New frmTransaPedido
+        objFrmPedido.ShowDialog()
+    End Sub
 End Class

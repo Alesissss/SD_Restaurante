@@ -73,6 +73,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConsultarProductos.Designer.vb">
+      <DependentUpon>frmConsultarProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransaPedido.Designer.vb">
+      <DependentUpon>frmTransaPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransaPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCajero.Designer.vb">
       <DependentUpon>frmCajero.vb</DependentUpon>
     </Compile>
@@ -157,6 +169,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmConsultarProductos.resx">
+      <DependentUpon>frmConsultarProductos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCajero.resx">
       <DependentUpon>frmCajero.vb</DependentUpon>
     </EmbeddedResource>
@@ -178,11 +193,17 @@
     <EmbeddedResource Include="frmMesero.resx">
       <DependentUpon>frmMesero.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProducto.resx">
+      <DependentUpon>frmProducto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTipoProducto.resx">
       <DependentUpon>frmTipoProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTipoUsuario.resx">
       <DependentUpon>frmTipoUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransaPedido.resx">
+      <DependentUpon>frmTransaPedido.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.vb</DependentUpon>

@@ -64,4 +64,45 @@ Public Class clsMantenimiento
         End Try
         Return Nothing
     End Function
+    Public Sub ejecutarComando(strConsulta As String, parametros As Dictionary(Of String, Object))
+        Try
+            objConecta.abrirconexion()
+            cm.Connection = objConecta.miConexion
+            cm.CommandText = strConsulta
+
+            ' Añadir parámetros al comando
+            For Each param In parametros
+                cm.Parameters.AddWithValue(param.Key, param.Value)
+            Next
+
+            cm.ExecuteNonQuery()
+            objConecta.cerrarconexion()
+        Catch ex As Exception
+            objConecta.cerrarconexion()
+            Throw New Exception("Error al ejecutar el comando: " & ex.Message)
+        End Try
+    End Sub
+
+    ' Método para listar datos (SELECT) con parámetros
+    Public Function listarComando(strConsulta As String, parametros As Dictionary(Of String, Object)) As DataTable
+        Dim dt As New DataTable()
+        Dim da As SqlDataAdapter
+        Try
+            objConecta.abrirconexion()
+            da = New SqlDataAdapter(strConsulta, objConecta.miConexion)
+
+            ' Añadir parámetros al comando
+            For Each param In parametros
+                da.SelectCommand.Parameters.AddWithValue(param.Key, param.Value)
+            Next
+
+            da.Fill(dt)
+            objConecta.cerrarconexion()
+            Return dt
+        Catch ex As Exception
+            objConecta.cerrarconexion()
+            Throw New Exception("Error al listar los datos: " & ex.Message)
+        End Try
+        Return Nothing
+    End Function
 End Class

@@ -35,8 +35,8 @@ Partial Class frmMDIPrincipal
         Me.MesasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CaejeroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TipoProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MeseroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MeseroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TipoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CartaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -159,18 +159,18 @@ Partial Class frmMDIPrincipal
         Me.TipoProductoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TipoProductoToolStripMenuItem.Text = "Tipo de Producto"
         '
+        'ProductosToolStripMenuItem
+        '
+        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProductosToolStripMenuItem.Text = "Productos"
+        '
         'MeseroToolStripMenuItem
         '
         Me.MeseroToolStripMenuItem.Image = CType(resources.GetObject("MeseroToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MeseroToolStripMenuItem.Name = "MeseroToolStripMenuItem"
         Me.MeseroToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MeseroToolStripMenuItem.Text = "Mesero"
-        '
-        'ProductosToolStripMenuItem
-        '
-        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'TipoUsuarioToolStripMenuItem
         '
@@ -211,58 +211,58 @@ Partial Class frmMDIPrincipal
         'ConsultarCartaToolStripMenuItem
         '
         Me.ConsultarCartaToolStripMenuItem.Name = "ConsultarCartaToolStripMenuItem"
-        Me.ConsultarCartaToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ConsultarCartaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ConsultarCartaToolStripMenuItem.Text = "Consultar Carta"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(161, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(177, 6)
         '
         'GestionarClienteToolStripMenuItem
         '
         Me.GestionarClienteToolStripMenuItem.Name = "GestionarClienteToolStripMenuItem"
-        Me.GestionarClienteToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.GestionarClienteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GestionarClienteToolStripMenuItem.Text = "Gestionar Cliente"
         '
         'PedidoToolStripMenuItem
         '
         Me.PedidoToolStripMenuItem.Name = "PedidoToolStripMenuItem"
-        Me.PedidoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.PedidoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PedidoToolStripMenuItem.Text = "Pedido"
         '
         'ReservasToolStripMenuItem
         '
         Me.ReservasToolStripMenuItem.Name = "ReservasToolStripMenuItem"
-        Me.ReservasToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ReservasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ReservasToolStripMenuItem.Text = "Reservas"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(161, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(177, 6)
         '
         'RegistrarPagoToolStripMenuItem
         '
         Me.RegistrarPagoToolStripMenuItem.Name = "RegistrarPagoToolStripMenuItem"
-        Me.RegistrarPagoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.RegistrarPagoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RegistrarPagoToolStripMenuItem.Text = "Registrar Pago"
         '
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(161, 6)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(177, 6)
         '
         'AperturaDeCajaToolStripMenuItem
         '
         Me.AperturaDeCajaToolStripMenuItem.Name = "AperturaDeCajaToolStripMenuItem"
-        Me.AperturaDeCajaToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.AperturaDeCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AperturaDeCajaToolStripMenuItem.Text = "Apertura de Caja"
         '
         'CierreDeCajaToolStripMenuItem
         '
         Me.CierreDeCajaToolStripMenuItem.Name = "CierreDeCajaToolStripMenuItem"
-        Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CierreDeCajaToolStripMenuItem.Text = "Cierre de Caja"
         '
         'ReportesToolStripMenuItem

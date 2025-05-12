@@ -139,4 +139,8 @@ Public Class frmMesero
         txtIDMes.Text = lsvEmpleados.SelectedItems(0).Text
         btnBuscar_Click(sender, e)
     End Sub
+
+    Private Sub dgvEmpleados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmpleados.CellContentClick
+
+    End Sub
 End Class
