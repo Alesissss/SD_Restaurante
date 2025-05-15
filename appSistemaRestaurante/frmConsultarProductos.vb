@@ -1,5 +1,6 @@
 ﻿Imports libNegocio
 Public Class frmConsultarProductos
+
     Dim objProd As New clsProducto()
     Public frmTransaccion As frmTransaPedido
     Private Sub listarProductos()
@@ -37,9 +38,11 @@ Public Class frmConsultarProductos
                 Dim idProducto As Integer = CInt(fila.Cells("idProducto").Value)
                 Dim descripcion As String = fila.Cells("descripcion").Value.ToString()
                 Dim precio As Single = CSng(fila.Cells("precio").Value)
+                frmTransaccion.montoTotal = frmTransaccion.montoTotal + Decimal.Parse(cantidad * precio)
 
                 ' Llamar al método del otro formulario
                 frmTransaccion.AgregarDetalle(idProducto, nombreProducto, descripcion, cantidad, precio)
+                frmTransaccion.txtMonto.Text = frmTransaccion.montoTotal
 
                 Me.Close() ' Opcional: cerrar luego de seleccionar el producto
             Else

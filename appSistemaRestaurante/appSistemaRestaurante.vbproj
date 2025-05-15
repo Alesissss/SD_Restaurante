@@ -106,9 +106,7 @@
     <Compile Include="frmMDIPrincipal.Designer.vb">
       <DependentUpon>frmMDIPrincipal.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMDIPrincipal.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmMDIPrincipal.vb" />
     <Compile Include="frmMDIPrueba.Designer.vb">
       <DependentUpon>frmMDIPrueba.vb</DependentUpon>
     </Compile>

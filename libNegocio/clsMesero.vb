@@ -73,7 +73,7 @@ Public Class clsMesero
     End Function
 
     Public Function VerificarMesero(idMesero As Integer) As Boolean
-        strSQL = "SELECT COUNT(*) FROM MESERO WHERE idMesero = @idMesero"
+        strSQL = "SELECT COUNT(*) FROM MESERO WHERE idMesero = @idMesero AND estado = 1"
         Try
             Dim parametros As New Dictionary(Of String, Object) From {
                 {"@idMesero", idMesero}
