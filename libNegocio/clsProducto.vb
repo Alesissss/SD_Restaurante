@@ -90,6 +90,23 @@ Public Class clsProducto
             Throw New Exception("Error al listar los productos: " & ex.Message)
         End Try
     End Function
+
+    Public Function ListarProductosPorIdCarta(ByVal idCartaBuscada As Integer) As DataTable
+        strSQL = "SELECT nombre, descripcion, precio FROM PRODUCTO WHERE idCarta = @IdDeLaCarta"
+        Try
+            Dim parametros As New Dictionary(Of String, Object) From {
+            {"@IdDeLaCarta", idCartaBuscada}
+        }
+
+            Return objMan.listarComando(strSQL, parametros)
+
+        Catch ex As Exception
+            Dim mensajeError As String = "SQL: " & strSQL & vbCrLf &
+                                   "Parámetros: idCarta=" & idCartaBuscada.ToString() & vbCrLf &
+                                   "Error al listar los productos de la carta: " & ex.Message
+            Throw New Exception(mensajeError)
+        End Try
+    End Function
 End Class
 
 

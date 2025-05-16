@@ -88,4 +88,9 @@ Public Class frmMDIPrincipal
         Dim objFrmCarta As New frmCarta
         frmCarta.ShowDialog()
     End Sub
+
+    Private Sub ConsultarCartaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultarCartaToolStripMenuItem.Click
+        Dim objFrmConsultarCarta As New frmConsultarCarta
+        frmConsultarCarta.ShowDialog()
+    End Sub
 End Class
