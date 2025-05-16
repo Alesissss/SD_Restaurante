@@ -3,13 +3,13 @@ Public Class frmConsultarProductos
 
     Dim objProd As New clsProducto()
     Public frmTransaccion As frmTransaPedido
+
     Private Sub listarProductos()
         Dim dtProducto As New DataTable
         Dim ind As Integer = 0
         Try
-            ' Llenar el DataGridView con los productos
-
             dgvProducto.DataSource = objProd.listarProductos()
+
             With dgvProducto
                 .Columns(0).HeaderText = "ID"
                 .Columns(1).HeaderText = "Nombre"
@@ -17,38 +17,55 @@ Public Class frmConsultarProductos
                 .Columns(3).HeaderText = "Precio"
                 .Columns(4).HeaderText = "Vigente"
                 .Columns(5).HeaderText = "Tipo"
+                .Columns(6).HeaderText = "ID Carta"
             End With
         Catch ex As Exception
             MessageBox.Show("Error al listar productos: " & ex.Message, "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarProductos()
     End Sub
 
     Private Sub dgvProducto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellClick
-        If e.RowIndex >= 0 Then
+        If e.RowIndex >= 0 Then ' Asegurarse de que no es la fila de cabecera
             Dim fila As DataGridViewRow = dgvProducto.Rows(e.RowIndex)
-            Dim nombreProducto As String = fila.Cells("nombre").Value.ToString()
+
+            Dim nombreProducto As String
+            Dim idProducto As Integer
+            Dim precio As Single
+            Dim idCartaProducto As Integer
+            Try
+                nombreProducto = Convert.ToString(fila.Cells("nombre").Value)
+                idProducto = Convert.ToInt32(fila.Cells("idProducto").Value)
+                precio = Convert.ToSingle(fila.Cells("precio").Value)
+                idCartaProducto = Convert.ToInt32(fila.Cells("idCarta").Value)
+            Catch exConvert As FormatException
+                MessageBox.Show("Error al convertir los datos del producto. Verifique que los valores sean correctos." & vbCrLf & exConvert.Message, "Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            Catch exNull As NullReferenceException
+                MessageBox.Show("Uno de los valores esperados del producto es nulo." & vbCrLf & exNull.Message, "Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            Catch ex As Exception
+                MessageBox.Show("Error al obtener datos del producto: " & ex.Message & vbCrLf & "Asegúrese de que los nombres de columna 'idProducto', 'nombre', 'precio', 'idCarta' coincidan con su origen de datos.", "Error de Acceso a Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End Try
 
             Dim cantidadStr As String = InputBox($"¿Cuántos '{nombreProducto}' desea pedir?", "Cantidad de Producto")
 
-            If IsNumeric(cantidadStr) AndAlso CInt(cantidadStr) > 0 Then
+            If Not String.IsNullOrEmpty(cantidadStr) AndAlso IsNumeric(cantidadStr) Then
                 Dim cantidad As Integer = CInt(cantidadStr)
-                Dim idProducto As Integer = CInt(fila.Cells("idProducto").Value)
-                Dim descripcion As String = fila.Cells("descripcion").Value.ToString()
-                Dim precio As Single = CSng(fila.Cells("precio").Value)
-                frmTransaccion.montoTotal = frmTransaccion.montoTotal + Decimal.Parse(cantidad * precio)
+                If cantidad > 0 Then
+                    frmTransaccion.AgregarDetalle(idProducto, nombreProducto, precio, cantidad, idCartaProducto)
 
-                ' Llamar al método del otro formulario
-                frmTransaccion.AgregarDetalle(idProducto, nombreProducto, descripcion, cantidad, precio)
-                frmTransaccion.txtMonto.Text = frmTransaccion.montoTotal
-
-                Me.Close() ' Opcional: cerrar luego de seleccionar el producto
-            Else
-                MessageBox.Show("Ingrese una cantidad válida.")
+                    Me.Close()
+                Else
+                    MessageBox.Show("La cantidad debe ser mayor a cero.", "Cantidad Inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+            ElseIf Not String.IsNullOrEmpty(cantidadStr) Then
+                MessageBox.Show("Ingrese una cantidad numérica válida.", "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
         End If
     End Sub
-
 End Class

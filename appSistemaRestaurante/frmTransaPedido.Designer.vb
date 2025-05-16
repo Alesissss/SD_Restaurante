@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmTransaPedido
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmTransaPedido
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTransaPedido))
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -29,8 +29,8 @@ Partial Class frmTransaPedido
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.chkEstadoMesa = New System.Windows.Forms.CheckBox()
-        Me.btnBuscarMesa = New System.Windows.Forms.Button()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtCapMesa = New System.Windows.Forms.TextBox()
         Me.txtNumMesa = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -57,7 +57,7 @@ Partial Class frmTransaPedido
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.dgvDetalles = New System.Windows.Forms.DataGridView()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnRegistrarPedido = New System.Windows.Forms.Button()
         Me.txtMonto = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -115,8 +115,8 @@ Partial Class frmTransaPedido
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.chkEstadoMesa)
-        Me.Panel2.Controls.Add(Me.btnBuscarMesa)
+        Me.Panel2.Controls.Add(Me.lblEstado)
+        Me.Panel2.Controls.Add(Me.btnBuscar)
         Me.Panel2.Controls.Add(Me.txtCapMesa)
         Me.Panel2.Controls.Add(Me.txtNumMesa)
         Me.Panel2.Controls.Add(Me.Label5)
@@ -128,24 +128,23 @@ Partial Class frmTransaPedido
         Me.Panel2.Size = New System.Drawing.Size(302, 210)
         Me.Panel2.TabIndex = 1
         '
-        'chkEstadoMesa
+        'lblEstado
         '
-        Me.chkEstadoMesa.AutoSize = True
-        Me.chkEstadoMesa.Location = New System.Drawing.Point(100, 133)
-        Me.chkEstadoMesa.Name = "chkEstadoMesa"
-        Me.chkEstadoMesa.Size = New System.Drawing.Size(62, 17)
-        Me.chkEstadoMesa.TabIndex = 8
-        Me.chkEstadoMesa.Text = "Vigente"
-        Me.chkEstadoMesa.UseVisualStyleBackColor = True
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Location = New System.Drawing.Point(97, 131)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(95, 13)
+        Me.lblEstado.TabIndex = 10
+        Me.lblEstado.Text = "Estado de la Mesa"
         '
-        'btnBuscarMesa
+        'btnBuscar
         '
-        Me.btnBuscarMesa.Location = New System.Drawing.Point(206, 62)
-        Me.btnBuscarMesa.Name = "btnBuscarMesa"
-        Me.btnBuscarMesa.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscarMesa.TabIndex = 7
-        Me.btnBuscarMesa.Text = "Buscar"
-        Me.btnBuscarMesa.UseVisualStyleBackColor = True
+        Me.btnBuscar.Location = New System.Drawing.Point(206, 64)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 9
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'txtCapMesa
         '
@@ -367,12 +366,12 @@ Partial Class frmTransaPedido
         Me.dgvDetalles.Location = New System.Drawing.Point(3, 3)
         Me.dgvDetalles.Name = "dgvDetalles"
         Me.dgvDetalles.RowHeadersWidth = 51
-        Me.dgvDetalles.Size = New System.Drawing.Size(686, 277)
+        Me.dgvDetalles.Size = New System.Drawing.Size(688, 277)
         Me.dgvDetalles.TabIndex = 0
         '
         'Panel6
         '
-        Me.Panel6.Controls.Add(Me.Button1)
+        Me.Panel6.Controls.Add(Me.btnRegistrarPedido)
         Me.Panel6.Controls.Add(Me.txtMonto)
         Me.Panel6.Controls.Add(Me.Label14)
         Me.Panel6.Location = New System.Drawing.Point(14, 703)
@@ -380,14 +379,14 @@ Partial Class frmTransaPedido
         Me.Panel6.Size = New System.Drawing.Size(693, 51)
         Me.Panel6.TabIndex = 5
         '
-        'Button1
+        'btnRegistrarPedido
         '
-        Me.Button1.Location = New System.Drawing.Point(25, 13)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(208, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "REGISTRAR PEDIDO"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnRegistrarPedido.Location = New System.Drawing.Point(25, 16)
+        Me.btnRegistrarPedido.Name = "btnRegistrarPedido"
+        Me.btnRegistrarPedido.Size = New System.Drawing.Size(135, 23)
+        Me.btnRegistrarPedido.TabIndex = 2
+        Me.btnRegistrarPedido.Text = "REGISTRAR PEDIDO"
+        Me.btnRegistrarPedido.UseVisualStyleBackColor = True
         '
         'txtMonto
         '
@@ -409,7 +408,7 @@ Partial Class frmTransaPedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(717, 759)
+        Me.ClientSize = New System.Drawing.Size(719, 759)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
@@ -443,7 +442,6 @@ Partial Class frmTransaPedido
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnBuscarMesa As Button
     Friend WithEvents txtCapMesa As TextBox
     Friend WithEvents txtNumMesa As TextBox
     Friend WithEvents Panel3 As Panel
@@ -467,9 +465,10 @@ Partial Class frmTransaPedido
     Friend WithEvents Panel6 As Panel
     Friend WithEvents btnBuscarMesero As Button
     Friend WithEvents dgvDetalles As DataGridView
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnRegistrarPedido As Button
     Friend WithEvents txtMonto As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents chkEstadoMesa As CheckBox
     Friend WithEvents btnConsultarProducto As Button
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents lblEstado As Label
 End Class

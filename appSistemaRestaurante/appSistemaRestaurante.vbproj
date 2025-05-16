@@ -91,6 +91,12 @@
     <Compile Include="frmConsultarProductos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmListadoMesas.Designer.vb">
+      <DependentUpon>frmListadoMesas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoMesas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTransaPedido.Designer.vb">
       <DependentUpon>frmTransaPedido.vb</DependentUpon>
     </Compile>
@@ -199,6 +205,9 @@
     <EmbeddedResource Include="frmInicioSesion.resx">
       <DependentUpon>frmInicioSesion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoMesas.resx">
+      <DependentUpon>frmListadoMesas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMDIPrincipal.resx">
       <DependentUpon>frmMDIPrincipal.vb</DependentUpon>
     </EmbeddedResource>
@@ -255,5 +264,6 @@
       <Name>libNegocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
