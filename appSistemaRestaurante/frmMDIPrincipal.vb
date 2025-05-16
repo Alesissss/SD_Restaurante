@@ -83,4 +83,9 @@ Public Class frmMDIPrincipal
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
 
     End Sub
+
+    Private Sub CartaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CartaToolStripMenuItem.Click
+        Dim objFrmCarta As New frmCarta
+        frmCarta.ShowDialog()
+    End Sub
 End Class
