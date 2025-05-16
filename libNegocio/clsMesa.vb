@@ -86,4 +86,21 @@ Public Class clsMesa
             Throw New Exception("Error al listar Mesas: " & ex.Message)
         End Try
     End Function
+
+    Public Function VerificarMesa(idMesa As Integer) As Boolean
+        strSQL = "SELECT COUNT(*) FROM MESA WHERE idMesa = @idMesa AND estado=1"
+        Try
+            Dim parametros As New Dictionary(Of String, Object) From {
+                {"@idMesa", idMesa}
+            }
+            Dim dt As DataTable = objMan.listarComando(strSQL, parametros)
+            If dt.Rows.Count > 0 Then
+                Return Convert.ToInt32(dt.Rows(0).Item(0)) > 0
+            End If
+        Catch ex As Exception
+            Throw New Exception("Error al verificar mesa: " & ex.Message)
+        End Try
+        Return False
+    End Function
+
 End Class

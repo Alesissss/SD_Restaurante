@@ -108,4 +108,20 @@ Public Class clsCliente
             Throw New Exception("Error al listar Clientes: " & ex.Message)
         End Try
     End Function
+
+    Public Function VerificarCliente(idCliente As Integer) As Boolean
+        strSQL = "SELECT COUNT(*) FROM CLIENTE WHERE idCliente = @idCliente"
+        Try
+            Dim parametros As New Dictionary(Of String, Object) From {
+                {"@idCliente", idCliente}
+            }
+            Dim dt As DataTable = objMan.listarComando(strSQL, parametros)
+            If dt.Rows.Count > 0 Then
+                Return Convert.ToInt32(dt.Rows(0).Item(0)) > 0
+            End If
+        Catch ex As Exception
+            Throw New Exception("Error al verificar cliente: " & ex.Message)
+        End Try
+        Return False
+    End Function
 End Class

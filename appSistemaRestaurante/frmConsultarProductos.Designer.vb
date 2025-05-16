@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmProducto
+Partial Class frmConsultarProductos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,16 +22,30 @@ Partial Class frmProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.dgvProducto = New System.Windows.Forms.DataGridView()
+        CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'frmProducto
+        'dgvProducto
+        '
+        Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProducto.Location = New System.Drawing.Point(12, 12)
+        Me.dgvProducto.Name = "dgvProducto"
+        Me.dgvProducto.Size = New System.Drawing.Size(528, 342)
+        Me.dgvProducto.TabIndex = 0
+        '
+        'frmConsultarProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Name = "frmProducto"
-        Me.Text = "frmProducto"
+        Me.ClientSize = New System.Drawing.Size(552, 378)
+        Me.Controls.Add(Me.dgvProducto)
+        Me.Name = "frmConsultarProductos"
+        Me.Text = "Form1"
+        CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents dgvProducto As DataGridView
 End Class

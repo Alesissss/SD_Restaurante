@@ -74,4 +74,23 @@ Public Class frmMDIPrincipal
         Dim objFrmProducto As New frmProducto
         objFrmProducto.ShowDialog()
     End Sub
+
+    Private Sub PedidoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PedidoToolStripMenuItem.Click
+        Dim objFrmPedido As New frmTransaPedido
+        objFrmPedido.ShowDialog()
+    End Sub
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+
+    End Sub
+
+    Private Sub CartaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CartaToolStripMenuItem.Click
+        Dim objFrmCarta As New frmCarta
+        frmCarta.ShowDialog()
+    End Sub
+
+    Private Sub ConsultarCartaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultarCartaToolStripMenuItem.Click
+        Dim objFrmConsultarCarta As New frmConsultarCarta
+        frmConsultarCarta.ShowDialog()
+    End Sub
 End Class

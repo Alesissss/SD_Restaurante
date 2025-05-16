@@ -12,7 +12,7 @@ Public Class clsConectaBD
         'BDLocal -Autenticaciòn windows
         'cn.ConnectionString = "Data Source=MCCFLURRYPC\SQLEXPRESS;Initial Catalog=BD_RESTAURANTE;Integrated Security=True" 'BD CONECTAR ROGER
         'BDLocal - Autenticaciòn SQL Server
-        'cn.ConnectionString = "data source=(local);Initial catalog=BD_RESTAURANTE;user id=sa;password=''"
+        'cn.ConnectionString = "data source=(local);Initial catalog=BD_RESTAURANTE;user id=sa;password='zien1219'"
 
         'BD en la nube somee.com
         'cn.ConnectionString = "workstation id=BDPersonal2024.mssql.somee.com;packet size=4096;user id=cdelcastillo_SQLLogin_1;pwd=wptf98uw6j;data source=BDPersonal2024.mssql.somee.com;persist security info=False;initial catalog=BDPersonal2024;language=spanish"
