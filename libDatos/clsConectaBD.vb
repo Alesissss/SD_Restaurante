@@ -7,9 +7,10 @@ Public Class clsConectaBD
 
     Sub New()
         cn = New SqlConnection
-
+        'CONEXION BD EN LA NUBE
+        cn.ConnectionString = "workstation id=BD_RESTAURANTE_ARAE.mssql.somee.com;packet size=4096;user id=Alesissss_SQLLogin_1;pwd=gxnvcpejup;data source=BD_RESTAURANTE_ARAE.mssql.somee.com;persist security info=False;initial catalog=BD_RESTAURANTE_ARAE;TrustServerCertificate=True; language=spanish"
         'BDLocal -Autenticaciòn windows
-        cn.ConnectionString = "Data Source=MCCFLURRYPC\SQLEXPRESS;Initial Catalog=BD_RESTAURANTE;Integrated Security=True" 'BD CONECTAR ROGER
+        'cn.ConnectionString = "Data Source=MCCFLURRYPC\SQLEXPRESS;Initial Catalog=BD_RESTAURANTE;Integrated Security=True" 'BD CONECTAR ROGER
         'BDLocal - Autenticaciòn SQL Server
         'cn.ConnectionString = "data source=(local);Initial catalog=BD_RESTAURANTE;user id=sa;password='zien1219'"
 
@@ -66,8 +67,8 @@ Public Class clsConectaBD
         Try
             'transaccion = False
             If cn.State <> Data.ConnectionState.Open Then ' SI EL ESTADO DE  LA CONEXION ES DIFERENTE DE ABIERTO ENTONCES ABRE LA CONEXION
-                cn.ConnectionString = "Data Source=MCCFLURRYPC\SQLEXPRESS;Initial Catalog=BD_RESTAURANTE;Integrated Security=True"
-                'BD CONECTAR ROGER
+                cn.ConnectionString = "workstation id=BD_RESTAURANTE_ARAE.mssql.somee.com;packet size=4096;user id=Alesissss_SQLLogin_1;pwd=gxnvcpejup;data source=BD_RESTAURANTE_ARAE.mssql.somee.com;persist security info=False;initial catalog=BD_RESTAURANTE_ARAE;TrustServerCertificate=True; language=spanish"
+                'cn.ConnectionString = "Data Source=MCCFLURRYPC\SQLEXPRESS;Initial Catalog=BD_RESTAURANTE;Integrated Security=True" 'BD CONECTAR ROGER
                 cn.Open()
             End If
         Catch Ex As Exception
