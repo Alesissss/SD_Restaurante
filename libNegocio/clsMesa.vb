@@ -79,7 +79,12 @@ Public Class clsMesa
     End Function
 
     Public Function listarMesas() As DataTable
-        strSQL = "SELECT * FROM MESA"
+        strSQL = "SELECT idMesa,capacidad, " &
+         "CASE estado " &
+         "WHEN 1 THEN 'Activo' " &
+         "WHEN 0 THEN 'Inactivo' " &
+         "ELSE 'Desconocido' END AS estado " &
+         "FROM MESA"
         Try
             Return objMan.listarComando(strSQL)
         Catch ex As Exception

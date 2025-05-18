@@ -272,6 +272,7 @@ Partial Class frmCliente
         Me.txtIDCliente.Name = "txtIDCliente"
         Me.txtIDCliente.Size = New System.Drawing.Size(117, 26)
         Me.txtIDCliente.TabIndex = 1
+        Me.txtIDCliente.Text = " "
         Me.txtIDCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1

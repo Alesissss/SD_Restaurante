@@ -100,7 +100,12 @@ Public Class clsCajero
     End Function
 
     Public Function listarCajeros() As DataTable
-        strSQL = "SELECT * FROM CAJERO"
+        strSQL = "SELECT idCajero,dniCajero, nombres, apellidos, telefono, correo, " &
+         "CASE estado " &
+         "WHEN 1 THEN 'Activo' " &
+         "WHEN 0 THEN 'Inactivo' " &
+         "ELSE 'Desconocido' END AS estado " &
+         "FROM CAJERO"
         Try
             Return objMan.listarComando(strSQL)
         Catch ex As Exception

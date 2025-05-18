@@ -64,7 +64,16 @@ Public Class clsMesero
     End Function
 
     Public Function listarMesero() As DataTable
-        strSQL = "select * from mesero"
+        strSQL = "SELECT idMesero,dniMesero, nombres, apellidos, telefono, correo, " &
+         "CASE sexo " &
+         "WHEN 1 THEN 'Masculino' " &
+         "WHEN 0 THEN 'Femenino' " &
+         "ELSE 'Desconocido' END AS sexo, " &
+         "CASE estado " &
+         "WHEN 1 THEN 'Activo' " &
+         "WHEN 0 THEN 'Inactivo' " &
+         "ELSE 'Desconocido' END AS estado " &
+         "FROM MESERO"
         Try
             Return objMan.listarComando(strSQL)
         Catch ex As Exception

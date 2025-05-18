@@ -6,18 +6,34 @@ Public Class frmCarta
     Dim dtCar As New DataTable
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        Dim camposAValidar() As Object = {txtDescripcion.Text, txtIDCarta.Text, txtNombres.Text}
         Try
             If btnNuevo.Text = "Nuevo" Then
-                btnNuevo.Text = "Guardar"
+
                 'Generar el ID del mesero
                 txtIDCarta.Text = objCar.generarIDCarta
+                btnNuevo.Text = "Guardar"
             Else
-                btnNuevo.Text = "Nuevo"
+                'Sección validaciones
+                If Not ValidationManager.camposLlenos(camposAValidar) Then
+                    MessageBox.Show("Todos los campos son necesarios", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+                If txtNombres.TextLength > 50 Then
+                    MessageBox.Show("El nombre ingresado es muy largo", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+                If txtDescripcion.TextLength > 50 Then
+                    MessageBox.Show("Las descripción ingresada es muy larga", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+                'Fin sección validaciones
                 'Registrar nuevo mesero
                 objCar.guardarCarta(CInt(txtIDCarta.Text), txtNombres.Text, txtDescripcion.Text, chkEstado.Checked)
+                    limpiarControles()
+                    btnNuevo.Text = "Nuevo"
 
-                limpiarControles()
-            End If
+                End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -96,14 +112,14 @@ Public Class frmCarta
         Dim ind As Integer = 0
         Try
             dgvCarta.DataSource = objCar.listarCartas
-
+            formatearTabla(dgvCarta)
             'Llenar el listView'
             dtcar = objCar.listarCartas
             For Each mesero In dtcar.Rows
                 lsvCarta.Items.Add(dtcar.Rows(ind).Item(0))
                 lsvCarta.Items(ind).SubItems.Add(dtcar.Rows(ind).Item(1))
                 lsvCarta.Items(ind).SubItems.Add(dtcar.Rows(ind).Item(2))
-                lsvCarta.Items(ind).SubItems.Add(IIf(dtcar.Rows(ind).Item(3), "Vigente", "No Vigente"))
+                lsvCarta.Items(ind).SubItems.Add(dtcar.Rows(ind).Item(3))
                 ind += 1
             Next
 
@@ -136,4 +152,31 @@ Public Class frmCarta
         txtIDCarta.Text = lsvCarta.SelectedItems(0).Text
         btnBuscar_Click(sender, e)
     End Sub
+
+    Private Sub formatearTabla(dgv As DataGridView)
+        dgv.Columns("idCarta").HeaderText = "ID"
+        dgv.Columns("nombre").HeaderText = "Nombre"
+        dgv.Columns("descripcion").HeaderText = "Descripcion"
+        dgv.Columns("estado").HeaderText = "Estado"
+    End Sub
+
+    Private Sub dgvClientes_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvCarta.CellFormatting
+        If dgvCarta.Columns(e.ColumnIndex).Name = "estado" Then
+            If e.Value IsNot Nothing Then
+                Dim valor = e.Value.ToString()
+
+                If valor = "Activo" Then
+                    e.CellStyle.BackColor = Color.LightGreen
+                    e.CellStyle.ForeColor = Color.Black
+                ElseIf valor = "Inactivo" Then
+                    e.CellStyle.BackColor = Color.LightCoral
+                    e.CellStyle.ForeColor = Color.White
+                End If
+
+                e.FormattingApplied = True
+            End If
+        End If
+    End Sub
+
+
 End Class

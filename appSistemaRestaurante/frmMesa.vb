@@ -21,13 +21,13 @@ Public Class frmMesa
         Dim ind As Integer = 0
         Try
             dgvMesas.DataSource = objMes.listarMesas
-
+            formatearTabla(dgvMesas)
             'Llenar el listView'
             dtMesero = objMes.listarMesas
             For Each mesero In dtMesero.Rows
                 lsvMesas.Items.Add(dtMesero.Rows(ind).Item(0))
                 lsvMesas.Items(ind).SubItems.Add(dtMesero.Rows(ind).Item(1))
-                lsvMesas.Items(ind).SubItems.Add(IIf(dtMesero.Rows(ind).Item(2), "Vigente", "No Vigente"))
+                lsvMesas.Items(ind).SubItems.Add(dtMesero.Rows(ind).Item(2))
                 ind += 1
             Next
 
@@ -42,17 +42,26 @@ Public Class frmMesa
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        Dim camposAValidar() As Object = {txtIDMes.Text, txtCapacidad.Text}
         Try
             If btnNuevo.Text = "Nuevo" Then
-                btnNuevo.Text = "Guardar"
                 'Generar el ID del mesero
                 txtIDMes.Text = objMes.generarIDMesa
+                btnNuevo.Text = "Guardar"
             Else
-                btnNuevo.Text = "Nuevo"
+                If Not ValidationManager.camposLlenos(camposAValidar) Then
+                    MessageBox.Show("Todos los campos son necesario", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+                'Faltan validaciones de campos numéricos
+
+
+
                 'Registrar nuevo mesero
                 objMes.guardarMesa(CInt(txtIDMes.Text), txtCapacidad.Text, chkEstado.Checked)
 
                 limpiarControles()
+                btnNuevo.Text = "Nuevo"
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -133,4 +142,30 @@ Public Class frmMesa
         txtIDMes.Text = lsvMesas.SelectedItems(0).Text
         btnBuscar_Click(sender, e)
     End Sub
+
+    'Pegar siempre
+    Private Sub formatearTabla(dgv As DataGridView)
+        dgv.Columns("idMesa").HeaderText = "ID"
+        dgv.Columns("capacidad").HeaderText = "Capacidad"
+        dgv.Columns("estado").HeaderText = "Estado"
+    End Sub
+
+    Private Sub dgvClientes_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvMesas.CellFormatting
+        If dgvMesas.Columns(e.ColumnIndex).Name = "estado" Then
+            If e.Value IsNot Nothing Then
+                Dim valor = e.Value.ToString()
+
+                If valor = "Activo" Then
+                    e.CellStyle.BackColor = Color.LightGreen
+                    e.CellStyle.ForeColor = Color.Black
+                ElseIf valor = "Inactivo" Then
+                    e.CellStyle.BackColor = Color.LightCoral
+                    e.CellStyle.ForeColor = Color.White
+                End If
+
+                e.FormattingApplied = True
+            End If
+        End If
+    End Sub
+
 End Class

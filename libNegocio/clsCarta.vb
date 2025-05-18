@@ -94,7 +94,12 @@ Public Class clsCarta
     End Function
 
     Public Function listarCartas() As DataTable
-        strSQL = "SELECT * FROM CARTA"
+        strSQL = "SELECT idCarta,nombre, descripcion, " &
+         "CASE vigencia " &
+         "WHEN 1 THEN 'Activo' " &
+         "WHEN 0 THEN 'Inactivo' " &
+         "ELSE 'Desconocido' END AS estado " &
+         "FROM CARTA"
         Try
             Return objMan.listarComando(strSQL)
         Catch ex As Exception

@@ -3,21 +3,36 @@
 Imports System.Data.SqlClient
 
 Public Class clsConectaBD
+    'SqlConnectionStringBuilder: Permite armar la cadena de conexion 
+
     Private cn As SqlConnection
+
+    Public Function gen_cad_cloud() As String
+        Dim cad_con As New SqlConnectionStringBuilder
+        cad_con.DataSource = "BD_RESTAURANTE_ARAE.mssql.somee.com"
+        cad_con.InitialCatalog = "BD_RESTAURANTE_ARAE"
+        cad_con.UserID = "Alesissss_SQLLogin_1"
+        cad_con.Password = "gxnvcpejup"
+        cad_con.IntegratedSecurity = False
+        cad_con.PersistSecurityInfo = False
+        cad_con.PacketSize = 4096
+        cad_con.TrustServerCertificate = True
+        cad_con("language") = "spanish"
+        Return cad_con.ConnectionString
+    End Function
+    Public Function gen_cad_local() As String
+        Dim cad_con As New SqlConnectionStringBuilder
+        cad_con.DataSource = "localhost"
+        cad_con.InitialCatalog = "BD_RESTAURANTE"
+        cad_con.UserID = "sa"
+        cad_con.Password = "zien1219"
+        cad_con.IntegratedSecurity = True
+        Return cad_con.ConnectionString
+    End Function
 
     Sub New()
         cn = New SqlConnection
-        'CONEXION BD EN LA NUBE
-        cn.ConnectionString = "workstation id=BD_RESTAURANTE_ARAE.mssql.somee.com;packet size=4096;user id=Alesissss_SQLLogin_1;pwd=gxnvcpejup;data source=BD_RESTAURANTE_ARAE.mssql.somee.com;persist security info=False;initial catalog=BD_RESTAURANTE_ARAE;TrustServerCertificate=True; language=spanish"
-        'BDLocal -Autenticaciòn windows
-        'cn.ConnectionString = "Data Source=MCCFLURRYPC\SQLEXPRESS;Initial Catalog=BD_RESTAURANTE;Integrated Security=True" 'BD CONECTAR ROGER
-        'BDLocal - Autenticaciòn SQL Server
-        'cn.ConnectionString = "data source=(local);Initial catalog=BD_RESTAURANTE;user id=sa;password='zien1219'"
-
-        'BD en la nube somee.com
-        'cn.ConnectionString = "workstation id=BDPersonal2024.mssql.somee.com;packet size=4096;user id=cdelcastillo_SQLLogin_1;pwd=wptf98uw6j;data source=BDPersonal2024.mssql.somee.com;persist security info=False;initial catalog=BDPersonal2024;language=spanish"
-
-
+        cn.ConnectionString = gen_cad_local()
     End Sub
 
     Public Sub conectar()
@@ -67,8 +82,8 @@ Public Class clsConectaBD
         Try
             'transaccion = False
             If cn.State <> Data.ConnectionState.Open Then ' SI EL ESTADO DE  LA CONEXION ES DIFERENTE DE ABIERTO ENTONCES ABRE LA CONEXION
-                cn.ConnectionString = "workstation id=BD_RESTAURANTE_ARAE.mssql.somee.com;packet size=4096;user id=Alesissss_SQLLogin_1;pwd=gxnvcpejup;data source=BD_RESTAURANTE_ARAE.mssql.somee.com;persist security info=False;initial catalog=BD_RESTAURANTE_ARAE;TrustServerCertificate=True; language=spanish"
-                'cn.ConnectionString = "Data Source=MCCFLURRYPC\SQLEXPRESS;Initial Catalog=BD_RESTAURANTE;Integrated Security=True" 'BD CONECTAR ROGER
+                'cn.ConnectionString = gen_cad_local()
+                cn.ConnectionString = gen_cad_cloud()
                 cn.Open()
             End If
         Catch Ex As Exception

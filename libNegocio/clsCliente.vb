@@ -101,7 +101,12 @@ Public Class clsCliente
     End Function
 
     Public Function listarClientes() As DataTable
-        strSQL = "SELECT * FROM CLIENTE"
+        strSQL = "SELECT idCliente,dniCliente, nombres, apellidos, telefono, correo, " &
+         "CASE estado " &
+         "WHEN 1 THEN 'Activo' " &
+         "WHEN 0 THEN 'Inactivo' " &
+         "ELSE 'Desconocido' END AS estado " &
+         "FROM CLIENTE"
         Try
             Return objMan.listarComando(strSQL)
         Catch ex As Exception

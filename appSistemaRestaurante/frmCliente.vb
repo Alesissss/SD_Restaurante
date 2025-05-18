@@ -5,21 +5,68 @@ Public Class frmCliente
     Dim objCli As New clsCliente
     Dim dtCli As New DataTable
 
+
+
     Private Sub frmMesero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarClientes()
     End Sub
 
+    Private Sub formatearTabla(dgv As DataGridView)
+        dgv.Columns("idCliente").HeaderText = "ID"
+        dgv.Columns("dniCliente").HeaderText = "DNI"
+        dgv.Columns("nombres").HeaderText = "Nombres"
+        dgv.Columns("apellidos").HeaderText = "Apellidos"
+        dgv.Columns("telefono").HeaderText = "Teléfono"
+        dgv.Columns("correo").HeaderText = "Correo"
+        dgv.Columns("estado").HeaderText = "Estado"
+    End Sub
+
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        Dim camposAValidar() As Object = {txtApellidos.Text, txtCorreo.Text, txtDni.Text, txtIDCliente.Text, txtNombres.Text, txtTelefono.Text}
         Try
             If btnNuevo.Text = "Nuevo" Then
-                btnNuevo.Text = "Guardar"
                 'Generar el ID del cliente
                 txtIDCliente.Text = objCli.generarIDCliente()
+                btnNuevo.Text = "Guardar"
             Else
-                btnNuevo.Text = "Nuevo"
+                'Sección validaciones
+                If Not ValidationManager.camposLlenos(camposAValidar) Then
+                    MessageBox.Show("Todos los campos son necesarios", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                If Not ValidationManager.dni.esValido(txtDni.Text) Then
+                    MessageBox.Show("El DNI está compuesto por ocho dígitos", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                If Not ValidationManager.correo.esValido(txtCorreo.Text) Then
+                    MessageBox.Show("El correo ingresado no es válido", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                If Not ValidationManager.telefono.esValido(txtTelefono.Text) Then
+                    MessageBox.Show("El telefono ingresado es inválido", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                If txtNombres.TextLength > 40 Then
+                    MessageBox.Show("El nombre ingresado es muy largo", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                If txtApellidos.TextLength > 40 Then
+                    MessageBox.Show("Los apellidos ingresados son muy largos", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+                'Fin sección validaciones
+
+
                 'Registrar nuevo cliente
                 objCli.guardarCliente(CInt(txtIDCliente.Text), txtDni.Text, txtNombres.Text, txtApellidos.Text, txtTelefono.Text, txtCorreo.Text, chkEstado.Checked)
                 limpiarControles()
+
+                btnNuevo.Text = "Nuevo"
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -39,6 +86,7 @@ Public Class frmCliente
         Dim ind As Integer = 0
         Try
             dgvClientes.DataSource = objCli.listarClientes
+            formatearTabla(dgvClientes)
 
             'Llenar el listView'
             dtCliente = objCli.listarClientes
@@ -48,7 +96,7 @@ Public Class frmCliente
                 lsvClientes.Items(ind).SubItems.Add(dtCliente.Rows(ind).Item(2) + " " + dtCliente.Rows(ind).Item(3))
                 lsvClientes.Items(ind).SubItems.Add(dtCliente.Rows(ind).Item(4))
                 lsvClientes.Items(ind).SubItems.Add(dtCliente.Rows(ind).Item(5))
-                lsvClientes.Items(ind).SubItems.Add(IIf(dtCliente.Rows(ind).Item(6), "Vigente", "No Vigente"))
+                lsvClientes.Items(ind).SubItems.Add(dtCliente.Rows(ind).Item(6))
                 ind += 1
             Next
 
@@ -140,4 +188,23 @@ Public Class frmCliente
         txtIDCliente.Text = lsvClientes.SelectedItems(0).Text
         btnBuscar_Click(sender, e)
     End Sub
+
+    Private Sub dgvClientes_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvClientes.CellFormatting
+        If dgvClientes.Columns(e.ColumnIndex).Name = "estado" Then
+            If e.Value IsNot Nothing Then
+                Dim valor = e.Value.ToString()
+
+                If valor = "Activo" Then
+                    e.CellStyle.BackColor = Color.LightGreen
+                    e.CellStyle.ForeColor = Color.Black
+                ElseIf valor = "Inactivo" Then
+                    e.CellStyle.BackColor = Color.LightCoral
+                    e.CellStyle.ForeColor = Color.White
+                End If
+
+                e.FormattingApplied = True
+            End If
+        End If
+    End Sub
+
 End Class
