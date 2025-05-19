@@ -294,6 +294,7 @@ Partial Class frmCajero
         '
         Me.dgvEmpleados.AllowUserToAddRows = False
         Me.dgvEmpleados.AllowUserToDeleteRows = False
+        Me.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmpleados.Location = New System.Drawing.Point(11, 350)
         Me.dgvEmpleados.Name = "dgvEmpleados"
@@ -378,6 +379,7 @@ Partial Class frmCajero
         Me.Controls.Add(Me.dgvEmpleados)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmCajero"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = ".: GESTIONAR CAJERO :."
         Me.pnlDatos.ResumeLayout(False)
         Me.pnlDatos.PerformLayout()

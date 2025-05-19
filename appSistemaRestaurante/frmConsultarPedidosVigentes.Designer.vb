@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmListadoMesas
+Partial Class frmConsultarPedidosVigentes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,48 +22,58 @@ Partial Class frmListadoMesas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListadoMesas))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsultarPedidosVigentes))
         Me.lsvMesas = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'lsvMesas
         '
-        Me.lsvMesas.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.lsvMesas.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
         Me.lsvMesas.FullRowSelect = True
         Me.lsvMesas.GridLines = True
         Me.lsvMesas.HideSelection = False
         Me.lsvMesas.Location = New System.Drawing.Point(12, 12)
         Me.lsvMesas.Name = "lsvMesas"
         Me.lsvMesas.Size = New System.Drawing.Size(776, 426)
-        Me.lsvMesas.TabIndex = 0
+        Me.lsvMesas.TabIndex = 1
         Me.lsvMesas.UseCompatibleStateImageBehavior = False
         Me.lsvMesas.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
-        Me.ColumnHeader1.Text = "N° Mesa"
+        Me.ColumnHeader1.Text = "N° Pedido"
         '
         'ColumnHeader2
         '
-        Me.ColumnHeader2.Text = "CAPACIDAD"
+        Me.ColumnHeader2.Text = "Fecha"
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "ESTADO"
+        Me.ColumnHeader3.Text = "Estado"
         '
-        'frmListadoMesas
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Total"
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "N° Mesa"
+        '
+        'frmConsultarPedidosVigentes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lsvMesas)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "frmListadoMesas"
+        Me.Name = "frmConsultarPedidosVigentes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "LISTADO DE MESAS"
+        Me.Text = "Consultar pedidos vigentes"
         Me.ResumeLayout(False)
 
     End Sub
@@ -72,4 +82,6 @@ Partial Class frmListadoMesas
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
 End Class

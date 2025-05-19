@@ -92,6 +92,16 @@ Public Class clsMesa
             Throw New Exception("Error al listar Mesas: " & ex.Message)
         End Try
     End Function
+    Public Function listarMesasVigentes() As DataTable
+        strSQL = "SELECT idMesa,capacidad, " &
+         "estado " &
+         "FROM MESA WHERE estado = 1"
+        Try
+            Return objMan.listarComando(strSQL)
+        Catch ex As Exception
+            Throw New Exception("Error al listar Mesas disponibles: " & ex.Message)
+        End Try
+    End Function
 
     Public Function VerificarMesa(idMesa As Integer) As Boolean
         strSQL = "SELECT COUNT(*) FROM MESA WHERE idMesa = @idMesa AND estado=1"

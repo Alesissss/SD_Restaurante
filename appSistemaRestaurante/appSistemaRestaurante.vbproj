@@ -89,10 +89,22 @@
     <Compile Include="frmCarta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmConsultarCajero.Designer.vb">
+      <DependentUpon>frmConsultarCajero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarCajero.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmConsultarCarta.Designer.vb">
       <DependentUpon>frmConsultarCarta.vb</DependentUpon>
     </Compile>
     <Compile Include="frmConsultarCarta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultarPedidosVigentes.Designer.vb">
+      <DependentUpon>frmConsultarPedidosVigentes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarPedidosVigentes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmConsultarProductos.Designer.vb">
@@ -105,6 +117,12 @@
       <DependentUpon>frmListadoMesas.vb</DependentUpon>
     </Compile>
     <Compile Include="frmListadoMesas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransaPago.Designer.vb">
+      <DependentUpon>frmTransaPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransaPago.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTransaPedido.Designer.vb">
@@ -197,11 +215,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAperturaCaja.resx">
+      <DependentUpon>frmAperturaCaja.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCarta.resx">
       <DependentUpon>frmCarta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarCajero.resx">
+      <DependentUpon>frmConsultarCajero.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarCarta.resx">
       <DependentUpon>frmConsultarCarta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarPedidosVigentes.resx">
+      <DependentUpon>frmConsultarPedidosVigentes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarProductos.resx">
       <DependentUpon>frmConsultarProductos.vb</DependentUpon>
@@ -232,12 +259,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProducto.resx">
       <DependentUpon>frmProducto.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTipoProducto.resx">
       <DependentUpon>frmTipoProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTipoUsuario.resx">
       <DependentUpon>frmTipoUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransaPago.resx">
+      <DependentUpon>frmTransaPago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTransaPedido.resx">
       <DependentUpon>frmTransaPedido.vb</DependentUpon>
