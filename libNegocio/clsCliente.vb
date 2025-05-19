@@ -127,7 +127,7 @@ Public Class clsCliente
         End Try
     End Function
     Public Function VerificarCliente(idCliente As Integer) As Boolean
-        strSQL = "SELECT COUNT(*) FROM CLIENTE WHERE idCliente = @idCliente"
+        strSQL = "SELECT COUNT(*) FROM CLIENTE WHERE idCliente = @idCliente and estado = 1"
         Try
             Dim parametros As New Dictionary(Of String, Object) From {
                 {"@idCliente", idCliente}

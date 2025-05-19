@@ -112,4 +112,32 @@ Public Class clsCajero
             Throw New Exception("Error al listar Cajeros: " & ex.Message)
         End Try
     End Function
+    Public Function listarCajerosVigentes() As DataTable
+        strSQL = "SELECT idCajero,dniCajero, nombres, apellidos, telefono, correo, " &
+         "CASE estado " &
+         "WHEN 1 THEN 'Activo' " &
+         "WHEN 0 THEN 'Inactivo' " &
+         "ELSE 'Desconocido' END AS estado " &
+         "FROM CAJERO WHERE estado = 1"
+        Try
+            Return objMan.listarComando(strSQL)
+        Catch ex As Exception
+            Throw New Exception("Error al listar Cajeros: " & ex.Message)
+        End Try
+    End Function
+    Public Function VerificarCajero(idCajero As Integer) As Boolean
+        strSQL = "SELECT COUNT(*) FROM CAJERO WHERE idCajero = @idCajero and estado = 1"
+        Try
+            Dim parametros As New Dictionary(Of String, Object) From {
+                {"@idCajero", idCajero}
+            }
+            Dim dt As DataTable = objMan.listarComando(strSQL, parametros)
+            If dt.Rows.Count > 0 Then
+                Return Convert.ToInt32(dt.Rows(0).Item(0)) > 0
+            End If
+        Catch ex As Exception
+            Throw New Exception("Error al verificar cajero: " & ex.Message)
+        End Try
+        Return False
+    End Function
 End Class

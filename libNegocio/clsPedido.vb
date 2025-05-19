@@ -7,6 +7,7 @@ Public Class clsPedido
     Private objCliente As New clsCliente()
     Private objMesero As New clsMesero()
     Private objMesa As New clsMesa()
+    Private objCajero As New clsCajero()
     Dim objMan As New clsMantenimiento()
     Dim dtPedido As New DataTable
     Public Function generarIDPedido() As Integer
@@ -52,8 +53,7 @@ Public Class clsPedido
         If Not objMesero.VerificarMesero(idMesero) Then Throw New Exception("El mesero no existe.")
         If Not objMesa.VerificarMesa(idMesa) Then Throw New Exception("La mesa no existe o no se encuentra disponible.")
 
-
-        Using conn As New SqlConnection("Data Source=(local);Initial Catalog=BD_RESTAURANTE;User ID=sa;Password=zien1219;")
+        Using conn As New SqlConnection("workstation id=BD_RESTAURANTE_ARAE.mssql.somee.com;packet size=4096;user id=Alesissss_SQLLogin_1;pwd=gxnvcpejup;data source=BD_RESTAURANTE_ARAE.mssql.somee.com;persist security info=False;initial catalog=BD_RESTAURANTE_ARAE;TrustServerCertificate=True; language=spanish")
             conn.Open()
             Dim transaction As SqlTransaction = conn.BeginTransaction()
             Dim montoTotal = 0
@@ -109,16 +109,16 @@ Public Class clsPedido
         End Try
     End Function
     Public Sub PagarPedidoTransaccional(idPedido As Integer, idCajero As Integer, idCliente As Integer)
-        If Not objCliente.VerificarCliente(idPedido) Then Throw New Exception("El pedido no existe.")
-        If Not objMesa.VerificarMesa(idCajero) Then Throw New Exception("El cajero no existe.")
-        If Not objMesa.VerificarMesa(idCliente) Then Throw New Exception("El cliente no existe.")
+        If Not VerificarPedido(idPedido) Then Throw New Exception("El pedido no existe.")
+        If Not objCajero.verificarCajero(idCajero) Then Throw New Exception("El cajero no existe.")
+        If Not objCliente.VerificarCliente(idCliente) Then Throw New Exception("El cliente no existe.")
 
-        Using conn As New SqlConnection("Data Source=(local);Initial Catalog=BD_RESTAURANTE;User ID=sa;Password=zien1219;")
+        Using conn As New SqlConnection("workstation id=BD_RESTAURANTE_ARAE.mssql.somee.com;packet size=4096;user id=Alesissss_SQLLogin_1;pwd=gxnvcpejup;data source=BD_RESTAURANTE_ARAE.mssql.somee.com;persist security info=False;initial catalog=BD_RESTAURANTE_ARAE;TrustServerCertificate=True; language=spanish")
             conn.Open()
             Dim transaction As SqlTransaction = conn.BeginTransaction()
             Try
                 ' Insertar Pedido
-                strSQL = "UPDATE PEDIDO estadoPedido = 0, estadoPago = 0, idCliente = @idCliente, idCajero = @idCajero WHERE idPedido = @idPedido"
+                strSQL = "UPDATE PEDIDO SET estadoPedido = 0, estadoPago = 0, idCliente = @idCliente, idCajero = @idCajero WHERE idPedido = @idPedido"
                 Using cmdPedido As New SqlCommand(strSQL, conn, transaction)
                     cmdPedido.Parameters.AddWithValue("@idPedido", idPedido)
                     cmdPedido.Parameters.AddWithValue("@idCliente", idCliente)
@@ -127,7 +127,7 @@ Public Class clsPedido
                 End Using
 
                 ' Liberar mesa
-                strSQL = "UPDATE MESA set estado = 1 WHERE idMesa = (select idMesa from pedido where idPedido = @idPedido)"
+                strSQL = "UPDATE MESA SET estado = 1 WHERE idMesa = (select idMesa from pedido where idPedido = @idPedido)"
                 Using cmdMesa As New SqlCommand(strSQL, conn, transaction)
                     cmdMesa.Parameters.AddWithValue("@idPedido", idPedido)
                     cmdMesa.ExecuteNonQuery()

@@ -12,7 +12,7 @@ Public Class frmConsultarCajero
         Try
 
             'Llenar el listView'
-            dtCajero = objCaj.listarCajeros
+            dtCajero = objCaj.listarCajerosVigentes()
             For Each mesero In dtCajero.Rows
                 lsvCajeros.Items.Add(dtCajero.Rows(ind).Item(0))
                 lsvCajeros.Items(ind).SubItems.Add(dtCajero.Rows(ind).Item(1))
