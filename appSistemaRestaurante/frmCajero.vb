@@ -83,7 +83,7 @@ Public Class frmCajero
                 lsvEmpleados.Items(ind).SubItems.Add(dtCajero.Rows(ind).Item(2) + " " + dtCajero.Rows(ind).Item(3))
                 lsvEmpleados.Items(ind).SubItems.Add(dtCajero.Rows(ind).Item(4))
                 lsvEmpleados.Items(ind).SubItems.Add(dtCajero.Rows(ind).Item(5))
-                lsvEmpleados.Items(ind).SubItems.Add(IIf(dtCajero.Rows(ind).Item(6), "Vigente", "No Vigente"))
+                lsvEmpleados.Items(ind).SubItems.Add(dtCajero.Rows(ind).Item(6))
                 ind += 1
             Next
 

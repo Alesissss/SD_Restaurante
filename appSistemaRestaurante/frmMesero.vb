@@ -114,10 +114,10 @@ Public Class frmMesero
         Dim ind As Integer = 0
         Try
             dgvEmpleados.DataSource = objMes.listarMesero
-
+            formatearTabla(dgvEmpleados)
             'Llenar el listView'
             dtMesero = objMes.listarMesero
-            formatearTabla(dgvEmpleados)
+
             For Each mesero In dtMesero.Rows
                 lsvEmpleados.Items.Add(dtMesero.Rows(ind).Item(0))
                 lsvEmpleados.Items(ind).SubItems.Add(dtMesero.Rows(ind).Item(1))

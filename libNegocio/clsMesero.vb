@@ -64,7 +64,7 @@ Public Class clsMesero
     End Function
 
     Public Function listarMesero() As DataTable
-        strSQL = "SELECT idMesero,dniMesero, nombres, apellidos, telefono, correo, " &
+        strSQL = "SELECT idMesero,dniMesero, nombres, apellidos, fechaNac, direccion, telefono, correo, " &
          "CASE sexo " &
          "WHEN 1 THEN 'Masculino' " &
          "WHEN 0 THEN 'Femenino' " &

@@ -1,10 +1,20 @@
 ﻿Imports System.Text.RegularExpressions
 Imports System.Windows.Forms
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class ValidationManager
     Public Shared Function camposLlenos(campos As Object()) As Boolean
         For Each campo In campos
             If String.IsNullOrWhiteSpace(campo) Then
+                Return False
+            End If
+        Next
+        Return True
+    End Function
+
+    Public Shared Function isNumber(cadena As String) As Boolean
+        For Each c As Char In cadena
+            If Not Char.IsDigit(c) Then
                 Return False
             End If
         Next

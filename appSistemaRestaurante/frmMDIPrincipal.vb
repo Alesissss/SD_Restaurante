@@ -93,4 +93,15 @@ Public Class frmMDIPrincipal
         Dim objFrmConsultarCarta As New frmConsultarCarta
         frmConsultarCarta.ShowDialog()
     End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        Dim resultado As DialogResult = MessageBox.Show("¿Estás seguro de que deseas salir del sistema?", "SIST-REST 2025", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If resultado Then
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+        inicioSesion()
+    End Sub
 End Class

@@ -85,7 +85,12 @@ Public Class clsTipoProducto
     End Function
 
     Public Function listarTiposProducto() As DataTable
-        strSQL = "SELECT * FROM TIPO_PRODUCTO"
+        strSQL = "SELECT idTipo, nombre, descripcion, " &
+         "CASE vigencia " &
+         "WHEN 1 THEN 'Activo' " &
+         "WHEN 0 THEN 'Inactivo' " &
+         "ELSE 'Desconocido' END AS estado " &
+         "FROM TIPO_PRODUCTO"
         Try
             Return objMan.listarComando(strSQL)
         Catch ex As Exception

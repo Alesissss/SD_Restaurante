@@ -1,4 +1,5 @@
-﻿Imports libNegocio
+﻿Imports System.Net.Security
+Imports libNegocio
 Public Class frmMesa
     Dim objMes As New clsMesa
     Dim dtMes As New DataTable
@@ -51,6 +52,10 @@ Public Class frmMesa
             Else
                 If Not ValidationManager.camposLlenos(camposAValidar) Then
                     MessageBox.Show("Todos los campos son necesario", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+                If Not ValidationManager.isNumber(txtCapacidad.Text) Then
+                    MessageBox.Show("La capacidad es un campo numérico", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
                 'Faltan validaciones de campos numéricos

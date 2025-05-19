@@ -7,18 +7,33 @@ Public Class frmTipoUsuario
     Dim dtTipoUsuario As New DataTable
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        Dim camposAValidar() As Object = {txtDescripcion.Text, txtIDProducto.Text, txtNombres.Text}
         Try
             If btnNuevo.Text = "Nuevo" Then
-                btnNuevo.Text = "Guardar"
                 'Generar el ID del mesero
                 txtIDProducto.Text = objTipoUsuario.generarIDTipoUsuario
+                btnNuevo.Text = "Guardar"
             Else
-                btnNuevo.Text = "Nuevo"
+                If Not ValidationManager.camposLlenos(camposAValidar) Then
+                    MessageBox.Show("Todos los campos son necesarios", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                If txtNombres.TextLength > 30 Then
+                    MessageBox.Show("El nombre es muy extenso", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                If txtDescripcion.TextLength > 100 Then
+                    MessageBox.Show("La descripción es muy extensa", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
                 'Registrar nuevo mesero
                 objTipoUsuario.guardarTipoUsuario(CInt(txtIDProducto.Text), txtNombres.Text, txtDescripcion.Text, chkEstado.Checked)
 
-                limpiarControles()
-            End If
+                    limpiarControles()
+                    btnNuevo.Text = "Nuevo"
+                End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -97,14 +112,15 @@ Public Class frmTipoUsuario
         Dim ind As Integer = 0
         Try
             dgvProductos.DataSource = objTipoUsuario.listarTiposUsuario
-
+            formatearTabla(dgvProductos)
             'Llenar el listView'
             dttp = objTipoUsuario.listarTiposUsuario
+
             For Each mesero In dttp.Rows
                 lsvProductos.Items.Add(dttp.Rows(ind).Item(0))
                 lsvProductos.Items(ind).SubItems.Add(dttp.Rows(ind).Item(1))
                 lsvProductos.Items(ind).SubItems.Add(dttp.Rows(ind).Item(2))
-                lsvProductos.Items(ind).SubItems.Add(IIf(dttp.Rows(ind).Item(3), "Vigente", "No Vigente"))
+                lsvProductos.Items(ind).SubItems.Add(dttp.Rows(ind).Item(3))
                 ind += 1
             Next
 
@@ -136,5 +152,30 @@ Public Class frmTipoUsuario
     Private Sub lsvProductos_Click(sender As Object, e As EventArgs) Handles lsvProductos.Click
         txtIDProducto.Text = lsvProductos.SelectedItems(0).Text
         btnBuscar_Click(sender, e)
+    End Sub
+
+    Private Sub formatearTabla(dgv As DataGridView)
+        dgv.Columns("idTipoUsuario").HeaderText = "ID"
+        dgv.Columns("nombre").HeaderText = "Nombre"
+        dgv.Columns("descripcion").HeaderText = "Descripción"
+        dgv.Columns("estado").HeaderText = "Estado"
+    End Sub
+
+    Private Sub dgvMeseros_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvProductos.CellFormatting
+        If dgvProductos.Columns(e.ColumnIndex).Name = "estado" Then
+            If e.Value IsNot Nothing Then
+                Dim valor = e.Value.ToString()
+
+                If valor = "Activo" Then
+                    e.CellStyle.BackColor = Color.LightGreen
+                    e.CellStyle.ForeColor = Color.Black
+                ElseIf valor = "Inactivo" Then
+                    e.CellStyle.BackColor = Color.LightCoral
+                    e.CellStyle.ForeColor = Color.White
+                End If
+
+                e.FormattingApplied = True
+            End If
+        End If
     End Sub
 End Class
