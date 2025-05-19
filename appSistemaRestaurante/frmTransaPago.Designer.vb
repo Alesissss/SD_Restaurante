@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmTransaPedido
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmTransaPago
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,9 @@ Partial Class frmTransaPedido
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTransaPedido))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTransaPago))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtNumPedido = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -46,52 +46,40 @@ Partial Class frmTransaPedido
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDNIMesero = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.btnConsultarProducto = New System.Windows.Forms.Button()
-        Me.txtNomProducto = New System.Windows.Forms.TextBox()
-        Me.txtCodProducto = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.dgvDetalles = New System.Windows.Forms.DataGridView()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.btnRegistrarPedido = New System.Windows.Forms.Button()
-        Me.txtMonto = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cbxCajero = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         CType(Me.dgvDetalles, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.cbxCajero)
+        Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.txtNumPedido)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.dtpFecha)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(694, 76)
-        Me.Panel1.TabIndex = 0
+        Me.Panel1.Size = New System.Drawing.Size(699, 76)
+        Me.Panel1.TabIndex = 1
         '
         'txtNumPedido
         '
-        Me.txtNumPedido.Location = New System.Drawing.Point(100, 26)
+        Me.txtNumPedido.Location = New System.Drawing.Point(77, 30)
         Me.txtNumPedido.Name = "txtNumPedido"
-        Me.txtNumPedido.Size = New System.Drawing.Size(181, 20)
+        Me.txtNumPedido.Size = New System.Drawing.Size(98, 20)
         Me.txtNumPedido.TabIndex = 3
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(47, 29)
+        Me.Label8.Location = New System.Drawing.Point(24, 33)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(47, 13)
         Me.Label8.TabIndex = 2
@@ -126,16 +114,16 @@ Partial Class frmTransaPedido
         Me.Panel2.Location = New System.Drawing.Point(12, 94)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(302, 210)
-        Me.Panel2.TabIndex = 1
+        Me.Panel2.TabIndex = 2
         '
         'lblEstado
         '
         Me.lblEstado.AutoSize = True
         Me.lblEstado.Location = New System.Drawing.Point(97, 131)
         Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(95, 13)
+        Me.lblEstado.Size = New System.Drawing.Size(92, 13)
         Me.lblEstado.TabIndex = 10
-        Me.lblEstado.Text = "Estado de la Mesa"
+        Me.lblEstado.Text = "Estado del pedido"
         '
         'btnBuscar
         '
@@ -157,7 +145,6 @@ Partial Class frmTransaPedido
         '
         Me.txtNumMesa.Location = New System.Drawing.Point(100, 64)
         Me.txtNumMesa.Name = "txtNumMesa"
-        Me.txtNumMesa.ReadOnly = True
         Me.txtNumMesa.Size = New System.Drawing.Size(100, 20)
         Me.txtNumMesa.TabIndex = 4
         '
@@ -173,29 +160,29 @@ Partial Class frmTransaPedido
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(33, 97)
+        Me.Label4.Location = New System.Drawing.Point(47, 100)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 13)
+        Me.Label4.Size = New System.Drawing.Size(34, 13)
         Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Capacidad:"
+        Me.Label4.Text = "Total:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(47, 67)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 13)
+        Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Numero:"
+        Me.Label3.Text = "Código:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(24, 25)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(33, 13)
+        Me.Label2.Size = New System.Drawing.Size(40, 13)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Mesa"
+        Me.Label2.Text = "Pedido"
         '
         'Panel3
         '
@@ -208,10 +195,10 @@ Partial Class frmTransaPedido
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.txtDNIMesero)
         Me.Panel3.Controls.Add(Me.Label6)
-        Me.Panel3.Location = New System.Drawing.Point(320, 94)
+        Me.Panel3.Location = New System.Drawing.Point(325, 94)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(386, 210)
-        Me.Panel3.TabIndex = 2
+        Me.Panel3.TabIndex = 3
         '
         'btnBuscarMesero
         '
@@ -275,202 +262,84 @@ Partial Class frmTransaPedido
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(22, 25)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(42, 13)
+        Me.Label6.Size = New System.Drawing.Size(39, 13)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Mesero"
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Panel4.Controls.Add(Me.btnConsultarProducto)
-        Me.Panel4.Controls.Add(Me.txtNomProducto)
-        Me.Panel4.Controls.Add(Me.txtCodProducto)
-        Me.Panel4.Controls.Add(Me.Label13)
-        Me.Panel4.Controls.Add(Me.Label12)
-        Me.Panel4.Controls.Add(Me.btnEliminar)
-        Me.Panel4.Controls.Add(Me.Label11)
-        Me.Panel4.Location = New System.Drawing.Point(12, 310)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(693, 98)
-        Me.Panel4.TabIndex = 3
-        '
-        'btnConsultarProducto
-        '
-        Me.btnConsultarProducto.Location = New System.Drawing.Point(524, 24)
-        Me.btnConsultarProducto.Name = "btnConsultarProducto"
-        Me.btnConsultarProducto.Size = New System.Drawing.Size(153, 23)
-        Me.btnConsultarProducto.TabIndex = 18
-        Me.btnConsultarProducto.Text = "Consultar"
-        Me.btnConsultarProducto.UseVisualStyleBackColor = True
-        '
-        'txtNomProducto
-        '
-        Me.txtNomProducto.Location = New System.Drawing.Point(296, 46)
-        Me.txtNomProducto.Name = "txtNomProducto"
-        Me.txtNomProducto.Size = New System.Drawing.Size(198, 20)
-        Me.txtNomProducto.TabIndex = 17
-        '
-        'txtCodProducto
-        '
-        Me.txtCodProducto.Location = New System.Drawing.Point(100, 46)
-        Me.txtCodProducto.Name = "txtCodProducto"
-        Me.txtCodProducto.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodProducto.TabIndex = 16
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(234, 50)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(47, 13)
-        Me.Label13.TabIndex = 13
-        Me.Label13.Text = "Nombre:"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(33, 50)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(43, 13)
-        Me.Label12.TabIndex = 13
-        Me.Label12.Text = "Código:"
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.Location = New System.Drawing.Point(524, 53)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(153, 27)
-        Me.btnEliminar.TabIndex = 9
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(24, 20)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(53, 13)
-        Me.Label11.TabIndex = 8
-        Me.Label11.Text = "Producto:"
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.dgvDetalles)
-        Me.Panel5.Location = New System.Drawing.Point(14, 414)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(692, 283)
-        Me.Panel5.TabIndex = 4
+        Me.Label6.Text = "Cliente"
         '
         'dgvDetalles
         '
         Me.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDetalles.Location = New System.Drawing.Point(3, 3)
+        Me.dgvDetalles.Location = New System.Drawing.Point(12, 310)
         Me.dgvDetalles.Name = "dgvDetalles"
         Me.dgvDetalles.RowHeadersWidth = 51
-        Me.dgvDetalles.Size = New System.Drawing.Size(688, 277)
-        Me.dgvDetalles.TabIndex = 0
+        Me.dgvDetalles.Size = New System.Drawing.Size(699, 277)
+        Me.dgvDetalles.TabIndex = 4
         '
-        'Panel6
+        'Label11
         '
-        Me.Panel6.Controls.Add(Me.btnRegistrarPedido)
-        Me.Panel6.Controls.Add(Me.txtMonto)
-        Me.Panel6.Controls.Add(Me.Label14)
-        Me.Panel6.Location = New System.Drawing.Point(14, 703)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(693, 51)
-        Me.Panel6.TabIndex = 5
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(203, 33)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(40, 13)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "Cajero:"
         '
-        'btnRegistrarPedido
+        'cbxCajero
         '
-        Me.btnRegistrarPedido.Location = New System.Drawing.Point(25, 16)
-        Me.btnRegistrarPedido.Name = "btnRegistrarPedido"
-        Me.btnRegistrarPedido.Size = New System.Drawing.Size(135, 23)
-        Me.btnRegistrarPedido.TabIndex = 2
-        Me.btnRegistrarPedido.Text = "REGISTRAR PEDIDO"
-        Me.btnRegistrarPedido.UseVisualStyleBackColor = True
+        Me.cbxCajero.FormattingEnabled = True
+        Me.cbxCajero.Location = New System.Drawing.Point(253, 29)
+        Me.cbxCajero.Name = "cbxCajero"
+        Me.cbxCajero.Size = New System.Drawing.Size(121, 21)
+        Me.cbxCajero.TabIndex = 5
         '
-        'txtMonto
-        '
-        Me.txtMonto.Location = New System.Drawing.Point(485, 13)
-        Me.txtMonto.Name = "txtMonto"
-        Me.txtMonto.Size = New System.Drawing.Size(182, 20)
-        Me.txtMonto.TabIndex = 1
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(425, 16)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(40, 13)
-        Me.Label14.TabIndex = 0
-        Me.Label14.Text = "Monto:"
-        '
-        'frmTransaPedido
+        'frmTransaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(719, 759)
-        Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Panel4)
+        Me.ClientSize = New System.Drawing.Size(723, 656)
+        Me.Controls.Add(Me.dgvDetalles)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "frmTransaPedido"
+        Me.Name = "frmTransaPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Transacción del pedido"
+        Me.Text = ".: REGISTRAR PAGO :."
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
         CType(Me.dgvDetalles, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents dtpFecha As DateTimePicker
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txtCapMesa As TextBox
-    Friend WithEvents txtNumMesa As TextBox
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtDNIMesero As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents txtNumPedido As TextBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents dtpFecha As DateTimePicker
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents lblEstado As Label
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents txtCapMesa As TextBox
+    Friend WithEvents txtNumMesa As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents btnBuscarMesero As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents txtNumMesero As TextBox
     Friend WithEvents txtNomMesero As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents txtNomProducto As TextBox
-    Friend WithEvents txtCodProducto As TextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents btnEliminar As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtDNIMesero As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents cbxCajero As ComboBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents btnBuscarMesero As Button
     Friend WithEvents dgvDetalles As DataGridView
-    Friend WithEvents btnRegistrarPedido As Button
-    Friend WithEvents txtMonto As TextBox
-    Friend WithEvents Label14 As Label
-    Friend WithEvents btnConsultarProducto As Button
-    Friend WithEvents btnBuscar As Button
-    Friend WithEvents lblEstado As Label
 End Class

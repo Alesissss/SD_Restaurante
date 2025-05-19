@@ -302,6 +302,7 @@ Partial Class frmCliente
         '
         Me.dgvClientes.AllowUserToAddRows = False
         Me.dgvClientes.AllowUserToDeleteRows = False
+        Me.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvClientes.Location = New System.Drawing.Point(12, 342)
         Me.dgvClientes.Name = "dgvClientes"
@@ -371,6 +372,7 @@ Partial Class frmCliente
         Me.Controls.Add(Me.pnlDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = ".: GESTIONAR CLIENTE :."
         Me.pnlBotones.ResumeLayout(False)
         Me.pnlDatos.ResumeLayout(False)

@@ -1,7 +1,7 @@
 ﻿Imports libNegocio
 Imports System.Windows.Forms
 
-Public Class frmListadoMesas
+Public Class frmConsultarPedidosVigentes
     Dim objMes As New clsMesa
     ' Dim dtMes As New DataTable ' Declarada en tu código original, la mantenemos.
 
@@ -24,7 +24,7 @@ Public Class frmListadoMesas
 
     Private Sub listarMesas()
         Try
-            Dim dtDatosMesas As DataTable = objMes.listarMesasVigentes()
+            Dim dtDatosMesas As DataTable = objMes.listarMesas()
             lsvMesas.Items.Clear()
 
             If dtDatosMesas IsNot Nothing AndAlso dtDatosMesas.Rows.Count > 0 Then
