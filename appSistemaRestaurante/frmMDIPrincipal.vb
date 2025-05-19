@@ -103,5 +103,14 @@ Public Class frmMDIPrincipal
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
         inicioSesion()
+        lblUsuario.Text = ""
+    End Sub
+
+    Private Sub CambiarUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambiarUsuarioToolStripMenuItem.Click
+        inicioSesion()
+    End Sub
+
+    Private Sub AperturaDeCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AperturaDeCajaToolStripMenuItem.Click
+
     End Sub
 End Class

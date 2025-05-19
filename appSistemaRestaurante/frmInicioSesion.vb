@@ -82,6 +82,6 @@ Public Class frmInicioSesion
     End Sub
 
     Private Sub frmInicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        grbContraseña.BackColor = ColorTranslator.FromHtml("#C5CEC3")
     End Sub
 End Class

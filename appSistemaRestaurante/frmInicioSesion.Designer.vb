@@ -65,16 +65,16 @@ Partial Class frmInicioSesion
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(49, 74)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(140, 186)
+        Me.PictureBox1.Size = New System.Drawing.Size(226, 337)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.LightBlue
+        Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.PictureBox3)
         Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Controls.Add(Me.grbContraseña)
@@ -94,7 +94,7 @@ Partial Class frmInicioSesion
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(287, 71)
+        Me.PictureBox3.Location = New System.Drawing.Point(265, 71)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(39, 33)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -104,7 +104,7 @@ Partial Class frmInicioSesion
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(287, 32)
+        Me.PictureBox2.Location = New System.Drawing.Point(265, 32)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(39, 33)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -119,7 +119,7 @@ Partial Class frmInicioSesion
         Me.grbContraseña.Controls.Add(Me.txtPregunta)
         Me.grbContraseña.Controls.Add(Me.Label4)
         Me.grbContraseña.Enabled = False
-        Me.grbContraseña.Location = New System.Drawing.Point(31, 182)
+        Me.grbContraseña.Location = New System.Drawing.Point(20, 182)
         Me.grbContraseña.Name = "grbContraseña"
         Me.grbContraseña.Size = New System.Drawing.Size(327, 148)
         Me.grbContraseña.TabIndex = 4
@@ -139,42 +139,46 @@ Partial Class frmInicioSesion
         '
         'txtRespuesta
         '
-        Me.txtRespuesta.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRespuesta.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRespuesta.ForeColor = System.Drawing.SystemColors.Window
         Me.txtRespuesta.Location = New System.Drawing.Point(145, 57)
         Me.txtRespuesta.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtRespuesta.Name = "txtRespuesta"
-        Me.txtRespuesta.Size = New System.Drawing.Size(164, 23)
+        Me.txtRespuesta.Size = New System.Drawing.Size(164, 21)
         Me.txtRespuesta.TabIndex = 6
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(62, 60)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 16)
+        Me.Label3.Size = New System.Drawing.Size(71, 15)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Respuesta:"
         '
         'txtPregunta
         '
-        Me.txtPregunta.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPregunta.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPregunta.ForeColor = System.Drawing.SystemColors.Window
         Me.txtPregunta.Location = New System.Drawing.Point(145, 25)
         Me.txtPregunta.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtPregunta.Name = "txtPregunta"
         Me.txtPregunta.ReadOnly = True
-        Me.txtPregunta.Size = New System.Drawing.Size(164, 23)
+        Me.txtPregunta.Size = New System.Drawing.Size(164, 21)
         Me.txtPregunta.TabIndex = 6
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(16, 28)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(127, 16)
+        Me.Label4.Size = New System.Drawing.Size(109, 15)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Pregunta secreta:"
         '
@@ -183,7 +187,7 @@ Partial Class frmInicioSesion
         Me.chkContraseña.AutoSize = True
         Me.chkContraseña.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chkContraseña.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkContraseña.Location = New System.Drawing.Point(133, 103)
+        Me.chkContraseña.Location = New System.Drawing.Point(95, 98)
         Me.chkContraseña.Name = "chkContraseña"
         Me.chkContraseña.Size = New System.Drawing.Size(147, 17)
         Me.chkContraseña.TabIndex = 3
@@ -217,38 +221,42 @@ Partial Class frmInicioSesion
         '
         'txtContraseña
         '
-        Me.txtContraseña.Location = New System.Drawing.Point(152, 71)
+        Me.txtContraseña.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContraseña.Location = New System.Drawing.Point(114, 71)
         Me.txtContraseña.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContraseña.Size = New System.Drawing.Size(128, 26)
+        Me.txtContraseña.Size = New System.Drawing.Size(128, 21)
         Me.txtContraseña.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(47, 74)
+        Me.Label2.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(17, 74)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(101, 18)
+        Me.Label2.Size = New System.Drawing.Size(78, 15)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Contraseña:"
         '
         'txtUsuario
         '
-        Me.txtUsuario.Location = New System.Drawing.Point(152, 39)
+        Me.txtUsuario.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(114, 42)
         Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(128, 26)
+        Me.txtUsuario.Size = New System.Drawing.Size(128, 21)
         Me.txtUsuario.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(77, 42)
+        Me.Label1.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(40, 42)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(71, 18)
+        Me.Label1.Size = New System.Drawing.Size(55, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Usuario:"
         '

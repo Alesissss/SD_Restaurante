@@ -258,7 +258,7 @@ Partial Class frmMDIPrincipal
         'AperturaDeCajaToolStripMenuItem
         '
         Me.AperturaDeCajaToolStripMenuItem.Name = "AperturaDeCajaToolStripMenuItem"
-        Me.AperturaDeCajaToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.AperturaDeCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AperturaDeCajaToolStripMenuItem.Text = "Apertura de Caja"
         '
         'CierreDeCajaToolStripMenuItem

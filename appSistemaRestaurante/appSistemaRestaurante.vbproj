@@ -48,7 +48,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>tostao_logo_png.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -76,6 +77,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAperturaCaja.Designer.vb">
+      <DependentUpon>frmAperturaCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAperturaCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCarta.Designer.vb">
       <DependentUpon>frmCarta.vb</DependentUpon>
     </Compile>
@@ -266,9 +273,6 @@
       <Project>{02c2ed4e-d698-4d50-b002-9f19cfc9488c}</Project>
       <Name>libNegocio</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="tostao_logo_png.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

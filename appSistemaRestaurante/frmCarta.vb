@@ -1,10 +1,53 @@
 ﻿Imports System.Runtime.Remoting
+Imports System.Drawing
 Imports libNegocio
 
 Public Class frmCarta
     Dim objCar As New clsCarta
     Dim dtCar As New DataTable
 
+    Public Sub pintarFrm(dgv As DataGridView, lsv As ListView)
+        'Pintar algunos paneles
+        pnlDatos.BackColor = ColorTranslator.FromHtml("#C5CEC3")
+        pnlBotones.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+        'Estilo de botones
+        For Each ctrl As Control In pnlBotones.Controls
+            If TypeOf ctrl Is Button Then
+                Dim btn As Button = DirectCast(ctrl, Button)
+                btn.FlatStyle = FlatStyle.Flat
+                btn.UseVisualStyleBackColor = False '
+                btn.FlatAppearance.BorderSize = 0
+                btn.BackColor = ColorTranslator.FromHtml("#413732")
+                btn.ForeColor = Color.White
+                btn.Font = New Font("MS Reference Sans Serif", 8, FontStyle.Regular)
+            End If
+        Next
+
+        'Estilizar tabla
+        dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgv.AllowUserToAddRows = False
+
+        dgv.DefaultCellStyle.Font = New Font("MS Reference Sans Serif", 8)
+        dgv.DefaultCellStyle.BackColor = Color.White
+        dgv.ColumnHeadersDefaultCellStyle.Font = New Font("MS Reference Sans Serif", 8, FontStyle.Bold)
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#2E201D")
+        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        dgv.EnableHeadersVisualStyles = False
+        dgv.CellBorderStyle = DataGridViewCellBorderStyle.None
+        dgv.GridColor = Color.LightGray
+        'Estilizar lsv
+
+        With lsv
+            .View = View.Details
+            .FullRowSelect = True
+            .GridLines = True
+            .Font = New Font("MS Reference Sans Serif", 8)
+            .BackColor = Color.White
+            .ForeColor = Color.Black
+        End With
+        lsv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
+
+    End Sub
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Dim camposAValidar() As Object = {txtDescripcion.Text, txtIDCarta.Text, txtNombres.Text}
         Try
@@ -105,6 +148,7 @@ Public Class frmCarta
 
     Private Sub frmCarta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarCarta()
+        pintarFrm(dgvCarta, lsvCarta)
     End Sub
 
     Private Sub listarCarta()

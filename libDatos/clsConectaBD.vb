@@ -25,7 +25,7 @@ Public Class clsConectaBD
         cad_con.DataSource = "localhost"
         cad_con.InitialCatalog = "BD_RESTAURANTE"
         cad_con.UserID = "sa"
-        cad_con.Password = "zien1219"
+        cad_con.Password = ""
         cad_con.IntegratedSecurity = True
         Return cad_con.ConnectionString
     End Function
