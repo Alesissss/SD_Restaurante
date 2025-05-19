@@ -24,8 +24,6 @@ Partial Class frmTransaPago
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTransaPago))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtNumPedido = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -40,20 +38,21 @@ Partial Class frmTransaPago
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnBuscarMesero = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtNumMesero = New System.Windows.Forms.TextBox()
-        Me.txtNomMesero = New System.Windows.Forms.TextBox()
+        Me.txtCodCli = New System.Windows.Forms.TextBox()
+        Me.txtNomCli = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtDNIMesero = New System.Windows.Forms.TextBox()
+        Me.txtDNICli = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.dgvDetalles = New System.Windows.Forms.DataGridView()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtIDCajero = New System.Windows.Forms.TextBox()
         Me.btnConsultarCajero = New System.Windows.Forms.Button()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.btnRegistrarPedido = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.dgvDetalles, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -62,8 +61,6 @@ Partial Class frmTransaPago
         Me.Panel1.Controls.Add(Me.btnConsultarCajero)
         Me.Panel1.Controls.Add(Me.txtIDCajero)
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.txtNumPedido)
-        Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.dtpFecha)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
@@ -71,26 +68,10 @@ Partial Class frmTransaPago
         Me.Panel1.Size = New System.Drawing.Size(699, 76)
         Me.Panel1.TabIndex = 1
         '
-        'txtNumPedido
-        '
-        Me.txtNumPedido.Location = New System.Drawing.Point(77, 27)
-        Me.txtNumPedido.Name = "txtNumPedido"
-        Me.txtNumPedido.ReadOnly = True
-        Me.txtNumPedido.Size = New System.Drawing.Size(98, 20)
-        Me.txtNumPedido.TabIndex = 3
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(24, 29)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(47, 13)
-        Me.Label8.TabIndex = 2
-        Me.Label8.Text = "Número:"
-        '
         'dtpFecha
         '
-        Me.dtpFecha.Location = New System.Drawing.Point(469, 26)
+        Me.dtpFecha.Enabled = False
+        Me.dtpFecha.Location = New System.Drawing.Point(445, 25)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(200, 20)
         Me.dtpFecha.TabIndex = 1
@@ -98,7 +79,7 @@ Partial Class frmTransaPago
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(409, 29)
+        Me.Label1.Location = New System.Drawing.Point(385, 28)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 0
@@ -141,6 +122,7 @@ Partial Class frmTransaPago
         '
         Me.txtTotalPed.Location = New System.Drawing.Point(100, 97)
         Me.txtTotalPed.Name = "txtTotalPed"
+        Me.txtTotalPed.ReadOnly = True
         Me.txtTotalPed.Size = New System.Drawing.Size(181, 20)
         Me.txtTotalPed.TabIndex = 5
         '
@@ -148,6 +130,7 @@ Partial Class frmTransaPago
         '
         Me.txtIDPedido.Location = New System.Drawing.Point(100, 64)
         Me.txtIDPedido.Name = "txtIDPedido"
+        Me.txtIDPedido.ReadOnly = True
         Me.txtIDPedido.Size = New System.Drawing.Size(100, 20)
         Me.txtIDPedido.TabIndex = 4
         '
@@ -192,11 +175,11 @@ Partial Class frmTransaPago
         Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel3.Controls.Add(Me.btnBuscarMesero)
         Me.Panel3.Controls.Add(Me.Label10)
-        Me.Panel3.Controls.Add(Me.txtNumMesero)
-        Me.Panel3.Controls.Add(Me.txtNomMesero)
+        Me.Panel3.Controls.Add(Me.txtCodCli)
+        Me.Panel3.Controls.Add(Me.txtNomCli)
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Controls.Add(Me.txtDNIMesero)
+        Me.Panel3.Controls.Add(Me.txtDNICli)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Location = New System.Drawing.Point(325, 94)
         Me.Panel3.Name = "Panel3"
@@ -221,19 +204,21 @@ Partial Class frmTransaPago
         Me.Label10.TabIndex = 12
         Me.Label10.Text = "Código:"
         '
-        'txtNumMesero
+        'txtCodCli
         '
-        Me.txtNumMesero.Location = New System.Drawing.Point(95, 64)
-        Me.txtNumMesero.Name = "txtNumMesero"
-        Me.txtNumMesero.Size = New System.Drawing.Size(183, 20)
-        Me.txtNumMesero.TabIndex = 11
+        Me.txtCodCli.Location = New System.Drawing.Point(95, 64)
+        Me.txtCodCli.Name = "txtCodCli"
+        Me.txtCodCli.ReadOnly = True
+        Me.txtCodCli.Size = New System.Drawing.Size(183, 20)
+        Me.txtCodCli.TabIndex = 11
         '
-        'txtNomMesero
+        'txtNomCli
         '
-        Me.txtNomMesero.Location = New System.Drawing.Point(95, 131)
-        Me.txtNomMesero.Name = "txtNomMesero"
-        Me.txtNomMesero.Size = New System.Drawing.Size(266, 20)
-        Me.txtNomMesero.TabIndex = 10
+        Me.txtNomCli.Location = New System.Drawing.Point(95, 131)
+        Me.txtNomCli.Name = "txtNomCli"
+        Me.txtNomCli.ReadOnly = True
+        Me.txtNomCli.Size = New System.Drawing.Size(266, 20)
+        Me.txtNomCli.TabIndex = 10
         '
         'Label9
         '
@@ -253,12 +238,13 @@ Partial Class frmTransaPago
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "DNI:"
         '
-        'txtDNIMesero
+        'txtDNICli
         '
-        Me.txtDNIMesero.Location = New System.Drawing.Point(95, 97)
-        Me.txtDNIMesero.Name = "txtDNIMesero"
-        Me.txtDNIMesero.Size = New System.Drawing.Size(266, 20)
-        Me.txtDNIMesero.TabIndex = 1
+        Me.txtDNICli.Location = New System.Drawing.Point(95, 97)
+        Me.txtDNICli.Name = "txtDNICli"
+        Me.txtDNICli.ReadOnly = True
+        Me.txtDNICli.Size = New System.Drawing.Size(266, 20)
+        Me.txtDNICli.TabIndex = 1
         '
         'Label6
         '
@@ -269,19 +255,10 @@ Partial Class frmTransaPago
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Cliente"
         '
-        'dgvDetalles
-        '
-        Me.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDetalles.Location = New System.Drawing.Point(12, 310)
-        Me.dgvDetalles.Name = "dgvDetalles"
-        Me.dgvDetalles.RowHeadersWidth = 51
-        Me.dgvDetalles.Size = New System.Drawing.Size(699, 277)
-        Me.dgvDetalles.TabIndex = 4
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(203, 29)
+        Me.Label11.Location = New System.Drawing.Point(36, 28)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(40, 13)
         Me.Label11.TabIndex = 4
@@ -289,7 +266,7 @@ Partial Class frmTransaPago
         '
         'txtIDCajero
         '
-        Me.txtIDCajero.Location = New System.Drawing.Point(256, 26)
+        Me.txtIDCajero.Location = New System.Drawing.Point(89, 25)
         Me.txtIDCajero.Name = "txtIDCajero"
         Me.txtIDCajero.ReadOnly = True
         Me.txtIDCajero.Size = New System.Drawing.Size(66, 20)
@@ -297,19 +274,36 @@ Partial Class frmTransaPago
         '
         'btnConsultarCajero
         '
-        Me.btnConsultarCajero.Location = New System.Drawing.Point(328, 24)
+        Me.btnConsultarCajero.Location = New System.Drawing.Point(161, 23)
         Me.btnConsultarCajero.Name = "btnConsultarCajero"
         Me.btnConsultarCajero.Size = New System.Drawing.Size(75, 23)
         Me.btnConsultarCajero.TabIndex = 13
         Me.btnConsultarCajero.Text = "Buscar"
         Me.btnConsultarCajero.UseVisualStyleBackColor = True
         '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.btnRegistrarPedido)
+        Me.Panel6.Location = New System.Drawing.Point(12, 326)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(699, 51)
+        Me.Panel6.TabIndex = 6
+        '
+        'btnRegistrarPedido
+        '
+        Me.btnRegistrarPedido.Location = New System.Drawing.Point(256, 16)
+        Me.btnRegistrarPedido.Name = "btnRegistrarPedido"
+        Me.btnRegistrarPedido.Size = New System.Drawing.Size(135, 23)
+        Me.btnRegistrarPedido.TabIndex = 2
+        Me.btnRegistrarPedido.Text = "PAGAR PEDIDO"
+        Me.btnRegistrarPedido.UseVisualStyleBackColor = True
+        '
         'frmTransaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(723, 656)
-        Me.Controls.Add(Me.dgvDetalles)
+        Me.ClientSize = New System.Drawing.Size(723, 424)
+        Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -323,14 +317,12 @@ Partial Class frmTransaPago
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.dgvDetalles, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel6.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents txtNumPedido As TextBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents dtpFecha As DateTimePicker
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
@@ -345,14 +337,15 @@ Partial Class frmTransaPago
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnBuscarMesero As Button
     Friend WithEvents Label10 As Label
-    Friend WithEvents txtNumMesero As TextBox
-    Friend WithEvents txtNomMesero As TextBox
+    Friend WithEvents txtCodCli As TextBox
+    Friend WithEvents txtNomCli As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtDNIMesero As TextBox
+    Friend WithEvents txtDNICli As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents dgvDetalles As DataGridView
     Friend WithEvents btnConsultarCajero As Button
     Friend WithEvents txtIDCajero As TextBox
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents btnRegistrarPedido As Button
 End Class

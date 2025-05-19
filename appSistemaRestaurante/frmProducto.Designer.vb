@@ -29,6 +29,9 @@ Partial Class frmProducto
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.pnlBotones = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -37,6 +40,8 @@ Partial Class frmProducto
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.pnlDatos = New System.Windows.Forms.Panel()
+        Me.cbxCarta = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
@@ -50,11 +55,6 @@ Partial Class frmProducto
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtIDProducto = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.cbxCarta = New System.Windows.Forms.ComboBox()
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBotones.SuspendLayout()
         Me.pnlDatos.SuspendLayout()
@@ -97,6 +97,18 @@ Partial Class frmProducto
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "PRECIO"
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "TIPO PRODUCTO"
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "CARTA"
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "VIGENCIA"
         '
         'dgvProductos
         '
@@ -202,6 +214,25 @@ Partial Class frmProducto
         Me.pnlDatos.Name = "pnlDatos"
         Me.pnlDatos.Size = New System.Drawing.Size(465, 264)
         Me.pnlDatos.TabIndex = 7
+        '
+        'cbxCarta
+        '
+        Me.cbxCarta.FormattingEnabled = True
+        Me.cbxCarta.Items.AddRange(New Object() {"Femenino", "Masculino"})
+        Me.cbxCarta.Location = New System.Drawing.Point(320, 228)
+        Me.cbxCarta.Name = "cbxCarta"
+        Me.cbxCarta.Size = New System.Drawing.Size(119, 26)
+        Me.cbxCarta.TabIndex = 15
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(260, 228)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(44, 15)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Carta:"
         '
         'cbxTipo
         '
@@ -328,37 +359,6 @@ Partial Class frmProducto
         Me.Label1.Size = New System.Drawing.Size(80, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ID Producto:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(260, 228)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(44, 15)
-        Me.Label5.TabIndex = 14
-        Me.Label5.Text = "Carta:"
-        '
-        'cbxCarta
-        '
-        Me.cbxCarta.FormattingEnabled = True
-        Me.cbxCarta.Items.AddRange(New Object() {"Femenino", "Masculino"})
-        Me.cbxCarta.Location = New System.Drawing.Point(320, 228)
-        Me.cbxCarta.Name = "cbxCarta"
-        Me.cbxCarta.Size = New System.Drawing.Size(119, 26)
-        Me.cbxCarta.TabIndex = 15
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "VIGENCIA"
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "TIPO PRODUCTO"
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "CARTA"
         '
         'frmProducto
         '

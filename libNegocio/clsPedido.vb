@@ -101,12 +101,44 @@ Public Class clsPedido
         End Using
     End Sub
     Public Function listarPedidosVigentes() As DataTable
-        strSQL = "SELECT idPedido, fecha, monto, estadoPedido, estadoPago, idMesero, (select numero from mesa where idMesa = ped.idMesa) as numeroMesa from pedido ped WHERE estadoPedido = 0"
+        strSQL = "SELECT idPedido, fecha, monto, estadoPedido, estadoPago, idMesero, (select numero from mesa where idMesa = ped.idMesa) as numeroMesa from pedido ped WHERE estadoPedido = 1"
         Try
             Return objMan.listarComando(strSQL)
         Catch ex As Exception
             Throw New Exception("Error al listar los pedidos vigentes: " & ex.Message)
         End Try
     End Function
+    Public Sub PagarPedidoTransaccional(idPedido As Integer, idCajero As Integer, idCliente As Integer)
+        If Not objCliente.VerificarCliente(idPedido) Then Throw New Exception("El pedido no existe.")
+        If Not objMesa.VerificarMesa(idCajero) Then Throw New Exception("El cajero no existe.")
+        If Not objMesa.VerificarMesa(idCliente) Then Throw New Exception("El cliente no existe.")
+
+        Using conn As New SqlConnection("Data Source=(local);Initial Catalog=BD_RESTAURANTE;User ID=sa;Password=zien1219;")
+            conn.Open()
+            Dim transaction As SqlTransaction = conn.BeginTransaction()
+            Try
+                ' Insertar Pedido
+                strSQL = "UPDATE PEDIDO estadoPedido = 0, estadoPago = 0, idCliente = @idCliente, idCajero = @idCajero WHERE idPedido = @idPedido"
+                Using cmdPedido As New SqlCommand(strSQL, conn, transaction)
+                    cmdPedido.Parameters.AddWithValue("@idPedido", idPedido)
+                    cmdPedido.Parameters.AddWithValue("@idCliente", idCliente)
+                    cmdPedido.Parameters.AddWithValue("@idCajero", idCajero)
+                    cmdPedido.ExecuteNonQuery()
+                End Using
+
+                ' Liberar mesa
+                strSQL = "UPDATE MESA set estado = 1 WHERE idMesa = (select idMesa from pedido where idPedido = @idPedido)"
+                Using cmdMesa As New SqlCommand(strSQL, conn, transaction)
+                    cmdMesa.Parameters.AddWithValue("@idPedido", idPedido)
+                    cmdMesa.ExecuteNonQuery()
+                End Using
+
+                transaction.Commit()
+            Catch ex As Exception
+                transaction.Rollback()
+                Throw New Exception("Error al pagar pedido (se revirtió la transacción): " & ex.Message)
+            End Try
+        End Using
+    End Sub
 
 End Class

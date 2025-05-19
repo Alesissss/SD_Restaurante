@@ -8,8 +8,7 @@ Public Class frmProducto
     Private Sub frmProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarTipos()
         listarProductos()
-        pintarFrm(dgvCarta, lsvCarta)
-        listarProductos()
+        pintarFrm(dgvProductos, lsvProductos)
     End Sub
     Private Sub listarProductos()
         Dim dtProducto As New DataTable
@@ -192,34 +191,11 @@ Public Class frmProducto
         dgv.Columns("descripcion").HeaderText = "Descripción"
         dgv.Columns("precio").HeaderText = "Precio"
         dgv.Columns("tipo_producto").HeaderText = "Tipo"
+        dgv.Columns("carta").HeaderText = "Carta"
         dgv.Columns("estado").HeaderText = "Estado"
     End Sub
-
-    Private Sub listarProductos()
-        Dim dtCliente As New DataTable
-        Dim ind As Integer = 0
-        Try
-            dgvCarta.DataSource = objProducto.listarProductos
-
-            formatearTabla(dgvCarta)
-
-            'Llenar el listView'
-            dtCliente = objProducto.listarProductos
-            For Each mesero In dtCliente.Rows
-                lsvCarta.Items.Add(dtCliente.Rows(ind).Item(0))
-                lsvCarta.Items(ind).SubItems.Add(dtCliente.Rows(ind).Item(1))
-                lsvCarta.Items(ind).SubItems.Add(dtCliente.Rows(ind).Item(2))
-                lsvCarta.Items(ind).SubItems.Add(dtCliente.Rows(ind).Item(3))
-                lsvCarta.Items(ind).SubItems.Add(dtCliente.Rows(ind).Item(4))
-                ind += 1
-            Next
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-    Private Sub dgvCarta_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvCarta.CellFormatting
-        If dgvCarta.Columns(e.ColumnIndex).Name = "estado" Then
+    Private Sub dgvCarta_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvProductos.CellFormatting
+        If dgvProductos.Columns(e.ColumnIndex).Name = "estado" Then
             If e.Value IsNot Nothing Then
                 Dim valor = e.Value.ToString()
 

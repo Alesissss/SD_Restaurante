@@ -113,7 +113,19 @@ Public Class clsCliente
             Throw New Exception("Error al listar Clientes: " & ex.Message)
         End Try
     End Function
-
+    Public Function listarClientesVigentes() As DataTable
+        strSQL = "SELECT idCliente,dniCliente, nombres, apellidos, telefono, correo, " &
+         "CASE estado " &
+         "WHEN 1 THEN 'Activo' " &
+         "WHEN 0 THEN 'Inactivo' " &
+         "ELSE 'Desconocido' END AS estado " &
+         "FROM CLIENTE WHERE estado = 1"
+        Try
+            Return objMan.listarComando(strSQL)
+        Catch ex As Exception
+            Throw New Exception("Error al listar Clientes: " & ex.Message)
+        End Try
+    End Function
     Public Function VerificarCliente(idCliente As Integer) As Boolean
         strSQL = "SELECT COUNT(*) FROM CLIENTE WHERE idCliente = @idCliente"
         Try

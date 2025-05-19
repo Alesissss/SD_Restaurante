@@ -87,13 +87,13 @@ Public Class clsProducto
     End Function
     Public Function listarProductos() As DataTable
         strSQL = "SELECT p.idProducto as idProducto, p.nombre as nombre, p.descripcion as descripcion, p.precio as precio, " &
-            "tp.nombre AS tipo_producto, " &
+            "tp.nombre AS tipo_producto, c.nombre AS carta, " &
             "CASE p.vigencia " &
             " WHEN 1 THEN 'Activo' " &
             " WHEN 0 THEN 'Inactivo' " &
             " ELSE 'Desconocido' END AS estado " &
             "FROM PRODUCTO p " &
-            "LEFT JOIN TIPO_PRODUCTO tp ON p.idTipo = tp.idTipo"
+            "LEFT JOIN TIPO_PRODUCTO tp ON p.idTipo = tp.idTipo LEFT JOIN CARTA c ON c.idCarta = p.idCarta"
 
         Try
             Return objMan.listarComando(strSQL)
@@ -103,7 +103,7 @@ Public Class clsProducto
     End Function
 
     Public Function ListarProductosPorIdCarta(ByVal idCartaBuscada As Integer) As DataTable
-        strSQL = "SELECT nombre, descripcion, precio FROM PRODUCTO WHERE idCarta = @IdDeLaCarta"
+        strSQL = "SELECT tp.nombre as tipo_producto, p.nombre, p.descripcion, p.precio FROM PRODUCTO p LEFT JOIN TIPO_PRODUCTO tp ON p.idTipo = tp.idTipo WHERE idCarta = @IdDeLaCarta ORDER BY 1"
         Try
             Dim parametros As New Dictionary(Of String, Object) From {
             {"@IdDeLaCarta", idCartaBuscada}

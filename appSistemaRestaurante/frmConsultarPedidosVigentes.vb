@@ -86,10 +86,14 @@ Public Class frmConsultarPedidosVigentes
 
             ' Obtener el idPedido (lo guardamos tanto en .Text como en .Tag)
             Dim idPedido As String = If(selectedItem.Tag IsNot Nothing, selectedItem.Tag.ToString(), selectedItem.Text)
+            Dim montoTotal As String = selectedItem.SubItems(2).Text
+            Dim estadoPedido As String = selectedItem.SubItems(3).Text
 
             If FormularioPadre IsNot Nothing Then
                 ' Asignar el idPedido al TextBox del formulario padre
                 FormularioPadre.txtIDPedido.Text = idPedido
+                FormularioPadre.txtTotalPed.Text = montoTotal
+                FormularioPadre.lblEstado.Text = estadoPedido
 
                 Me.Close() ' Cerrar el formulario actual
             Else

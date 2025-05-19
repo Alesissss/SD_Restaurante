@@ -101,6 +101,12 @@
     <Compile Include="frmConsultarCarta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmConsultarClientes.Designer.vb">
+      <DependentUpon>frmConsultarClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmConsultarPedidosVigentes.Designer.vb">
       <DependentUpon>frmConsultarPedidosVigentes.vb</DependentUpon>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarCarta.resx">
       <DependentUpon>frmConsultarCarta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarClientes.resx">
+      <DependentUpon>frmConsultarClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarPedidosVigentes.resx">
       <DependentUpon>frmConsultarPedidosVigentes.vb</DependentUpon>
