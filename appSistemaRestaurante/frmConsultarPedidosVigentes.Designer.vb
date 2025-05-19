@@ -23,7 +23,7 @@ Partial Class frmConsultarPedidosVigentes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsultarPedidosVigentes))
-        Me.lsvMesas = New System.Windows.Forms.ListView()
+        Me.lsvPedidos = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -31,18 +31,18 @@ Partial Class frmConsultarPedidosVigentes
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
-        'lsvMesas
+        'lsvPedidos
         '
-        Me.lsvMesas.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
-        Me.lsvMesas.FullRowSelect = True
-        Me.lsvMesas.GridLines = True
-        Me.lsvMesas.HideSelection = False
-        Me.lsvMesas.Location = New System.Drawing.Point(12, 12)
-        Me.lsvMesas.Name = "lsvMesas"
-        Me.lsvMesas.Size = New System.Drawing.Size(776, 426)
-        Me.lsvMesas.TabIndex = 1
-        Me.lsvMesas.UseCompatibleStateImageBehavior = False
-        Me.lsvMesas.View = System.Windows.Forms.View.Details
+        Me.lsvPedidos.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
+        Me.lsvPedidos.FullRowSelect = True
+        Me.lsvPedidos.GridLines = True
+        Me.lsvPedidos.HideSelection = False
+        Me.lsvPedidos.Location = New System.Drawing.Point(12, 12)
+        Me.lsvPedidos.Name = "lsvPedidos"
+        Me.lsvPedidos.Size = New System.Drawing.Size(776, 426)
+        Me.lsvPedidos.TabIndex = 1
+        Me.lsvPedidos.UseCompatibleStateImageBehavior = False
+        Me.lsvPedidos.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
@@ -69,7 +69,7 @@ Partial Class frmConsultarPedidosVigentes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.lsvMesas)
+        Me.Controls.Add(Me.lsvPedidos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmConsultarPedidosVigentes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
@@ -78,7 +78,7 @@ Partial Class frmConsultarPedidosVigentes
 
     End Sub
 
-    Friend WithEvents lsvMesas As ListView
+    Friend WithEvents lsvPedidos As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader

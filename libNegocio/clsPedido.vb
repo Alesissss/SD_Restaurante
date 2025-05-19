@@ -100,5 +100,13 @@ Public Class clsPedido
             End Try
         End Using
     End Sub
+    Public Function listarPedidosVigentes() As DataTable
+        strSQL = "SELECT idPedido, fecha, monto, estadoPedido, estadoPago, idMesero, (select numero from mesa where idMesa = ped.idMesa) as numeroMesa from pedido ped WHERE estadoPedido = 0"
+        Try
+            Return objMan.listarComando(strSQL)
+        Catch ex As Exception
+            Throw New Exception("Error al listar los pedidos vigentes: " & ex.Message)
+        End Try
+    End Function
 
 End Class

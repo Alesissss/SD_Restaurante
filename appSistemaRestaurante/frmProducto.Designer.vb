@@ -24,12 +24,12 @@ Partial Class frmProducto
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProducto))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lsvCarta = New System.Windows.Forms.ListView()
+        Me.lsvProductos = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.dgvCarta = New System.Windows.Forms.DataGridView()
+        Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.pnlBotones = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnDarBaja = New System.Windows.Forms.Button()
@@ -50,7 +50,12 @@ Partial Class frmProducto
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtIDProducto = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        CType(Me.dgvCarta, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cbxCarta = New System.Windows.Forms.ComboBox()
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBotones.SuspendLayout()
         Me.pnlDatos.SuspendLayout()
         Me.SuspendLayout()
@@ -64,18 +69,18 @@ Partial Class frmProducto
         Me.Panel1.Size = New System.Drawing.Size(139, 264)
         Me.Panel1.TabIndex = 11
         '
-        'lsvCarta
+        'lsvProductos
         '
-        Me.lsvCarta.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
-        Me.lsvCarta.FullRowSelect = True
-        Me.lsvCarta.GridLines = True
-        Me.lsvCarta.HideSelection = False
-        Me.lsvCarta.Location = New System.Drawing.Point(12, 511)
-        Me.lsvCarta.Name = "lsvCarta"
-        Me.lsvCarta.Size = New System.Drawing.Size(610, 160)
-        Me.lsvCarta.TabIndex = 10
-        Me.lsvCarta.UseCompatibleStateImageBehavior = False
-        Me.lsvCarta.View = System.Windows.Forms.View.Details
+        Me.lsvProductos.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7})
+        Me.lsvProductos.FullRowSelect = True
+        Me.lsvProductos.GridLines = True
+        Me.lsvProductos.HideSelection = False
+        Me.lsvProductos.Location = New System.Drawing.Point(12, 511)
+        Me.lsvProductos.Name = "lsvProductos"
+        Me.lsvProductos.Size = New System.Drawing.Size(610, 160)
+        Me.lsvProductos.TabIndex = 10
+        Me.lsvProductos.UseCompatibleStateImageBehavior = False
+        Me.lsvProductos.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
@@ -91,16 +96,16 @@ Partial Class frmProducto
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "VIGENCIA"
+        Me.ColumnHeader4.Text = "PRECIO"
         '
-        'dgvCarta
+        'dgvProductos
         '
-        Me.dgvCarta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvCarta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCarta.Location = New System.Drawing.Point(12, 349)
-        Me.dgvCarta.Name = "dgvCarta"
-        Me.dgvCarta.Size = New System.Drawing.Size(610, 156)
-        Me.dgvCarta.TabIndex = 9
+        Me.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProductos.Location = New System.Drawing.Point(12, 349)
+        Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.Size = New System.Drawing.Size(610, 156)
+        Me.dgvProductos.TabIndex = 9
         '
         'pnlBotones
         '
@@ -177,6 +182,8 @@ Partial Class frmProducto
         'pnlDatos
         '
         Me.pnlDatos.BackColor = System.Drawing.Color.LightBlue
+        Me.pnlDatos.Controls.Add(Me.cbxCarta)
+        Me.pnlDatos.Controls.Add(Me.Label5)
         Me.pnlDatos.Controls.Add(Me.cbxTipo)
         Me.pnlDatos.Controls.Add(Me.Label4)
         Me.pnlDatos.Controls.Add(Me.txtPrecio)
@@ -202,7 +209,7 @@ Partial Class frmProducto
         Me.cbxTipo.Items.AddRange(New Object() {"Femenino", "Masculino"})
         Me.cbxTipo.Location = New System.Drawing.Point(111, 228)
         Me.cbxTipo.Name = "cbxTipo"
-        Me.cbxTipo.Size = New System.Drawing.Size(168, 26)
+        Me.cbxTipo.Size = New System.Drawing.Size(119, 26)
         Me.cbxTipo.TabIndex = 15
         '
         'Label4
@@ -322,21 +329,52 @@ Partial Class frmProducto
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ID Producto:"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(260, 228)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(44, 15)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Carta:"
+        '
+        'cbxCarta
+        '
+        Me.cbxCarta.FormattingEnabled = True
+        Me.cbxCarta.Items.AddRange(New Object() {"Femenino", "Masculino"})
+        Me.cbxCarta.Location = New System.Drawing.Point(320, 228)
+        Me.cbxCarta.Name = "cbxCarta"
+        Me.cbxCarta.Size = New System.Drawing.Size(119, 26)
+        Me.cbxCarta.TabIndex = 15
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "VIGENCIA"
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "TIPO PRODUCTO"
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "CARTA"
+        '
         'frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(642, 685)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.lsvCarta)
-        Me.Controls.Add(Me.dgvCarta)
+        Me.Controls.Add(Me.lsvProductos)
+        Me.Controls.Add(Me.dgvProductos)
         Me.Controls.Add(Me.pnlBotones)
         Me.Controls.Add(Me.pnlDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = ".: GESTIONAR PRODUCTO :."
-        CType(Me.dgvCarta, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlBotones.ResumeLayout(False)
         Me.pnlDatos.ResumeLayout(False)
         Me.pnlDatos.PerformLayout()
@@ -345,12 +383,12 @@ Partial Class frmProducto
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents lsvCarta As ListView
+    Friend WithEvents lsvProductos As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents dgvCarta As DataGridView
+    Friend WithEvents dgvProductos As DataGridView
     Friend WithEvents pnlBotones As Panel
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnDarBaja As Button
@@ -371,4 +409,9 @@ Partial Class frmProducto
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents cbxTipo As ComboBox
+    Friend WithEvents cbxCarta As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents ColumnHeader7 As ColumnHeader
 End Class

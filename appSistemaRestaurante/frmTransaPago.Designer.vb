@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmTransaPago
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmTransaPago
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTransaPago))
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -31,8 +31,8 @@ Partial Class frmTransaPago
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.txtCapMesa = New System.Windows.Forms.TextBox()
-        Me.txtNumMesa = New System.Windows.Forms.TextBox()
+        Me.txtTotalPed = New System.Windows.Forms.TextBox()
+        Me.txtIDPedido = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -48,7 +48,8 @@ Partial Class frmTransaPago
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dgvDetalles = New System.Windows.Forms.DataGridView()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.cbxCajero = New System.Windows.Forms.ComboBox()
+        Me.txtIDCajero = New System.Windows.Forms.TextBox()
+        Me.btnConsultarCajero = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -58,7 +59,8 @@ Partial Class frmTransaPago
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.cbxCajero)
+        Me.Panel1.Controls.Add(Me.btnConsultarCajero)
+        Me.Panel1.Controls.Add(Me.txtIDCajero)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.txtNumPedido)
         Me.Panel1.Controls.Add(Me.Label8)
@@ -71,15 +73,16 @@ Partial Class frmTransaPago
         '
         'txtNumPedido
         '
-        Me.txtNumPedido.Location = New System.Drawing.Point(77, 30)
+        Me.txtNumPedido.Location = New System.Drawing.Point(77, 27)
         Me.txtNumPedido.Name = "txtNumPedido"
+        Me.txtNumPedido.ReadOnly = True
         Me.txtNumPedido.Size = New System.Drawing.Size(98, 20)
         Me.txtNumPedido.TabIndex = 3
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(24, 33)
+        Me.Label8.Location = New System.Drawing.Point(24, 29)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(47, 13)
         Me.Label8.TabIndex = 2
@@ -105,8 +108,8 @@ Partial Class frmTransaPago
         '
         Me.Panel2.Controls.Add(Me.lblEstado)
         Me.Panel2.Controls.Add(Me.btnBuscar)
-        Me.Panel2.Controls.Add(Me.txtCapMesa)
-        Me.Panel2.Controls.Add(Me.txtNumMesa)
+        Me.Panel2.Controls.Add(Me.txtTotalPed)
+        Me.Panel2.Controls.Add(Me.txtIDPedido)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label3)
@@ -134,19 +137,19 @@ Partial Class frmTransaPago
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'txtCapMesa
+        'txtTotalPed
         '
-        Me.txtCapMesa.Location = New System.Drawing.Point(100, 97)
-        Me.txtCapMesa.Name = "txtCapMesa"
-        Me.txtCapMesa.Size = New System.Drawing.Size(181, 20)
-        Me.txtCapMesa.TabIndex = 5
+        Me.txtTotalPed.Location = New System.Drawing.Point(100, 97)
+        Me.txtTotalPed.Name = "txtTotalPed"
+        Me.txtTotalPed.Size = New System.Drawing.Size(181, 20)
+        Me.txtTotalPed.TabIndex = 5
         '
-        'txtNumMesa
+        'txtIDPedido
         '
-        Me.txtNumMesa.Location = New System.Drawing.Point(100, 64)
-        Me.txtNumMesa.Name = "txtNumMesa"
-        Me.txtNumMesa.Size = New System.Drawing.Size(100, 20)
-        Me.txtNumMesa.TabIndex = 4
+        Me.txtIDPedido.Location = New System.Drawing.Point(100, 64)
+        Me.txtIDPedido.Name = "txtIDPedido"
+        Me.txtIDPedido.Size = New System.Drawing.Size(100, 20)
+        Me.txtIDPedido.TabIndex = 4
         '
         'Label5
         '
@@ -278,19 +281,28 @@ Partial Class frmTransaPago
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(203, 33)
+        Me.Label11.Location = New System.Drawing.Point(203, 29)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(40, 13)
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Cajero:"
         '
-        'cbxCajero
+        'txtIDCajero
         '
-        Me.cbxCajero.FormattingEnabled = True
-        Me.cbxCajero.Location = New System.Drawing.Point(253, 29)
-        Me.cbxCajero.Name = "cbxCajero"
-        Me.cbxCajero.Size = New System.Drawing.Size(121, 21)
-        Me.cbxCajero.TabIndex = 5
+        Me.txtIDCajero.Location = New System.Drawing.Point(256, 26)
+        Me.txtIDCajero.Name = "txtIDCajero"
+        Me.txtIDCajero.ReadOnly = True
+        Me.txtIDCajero.Size = New System.Drawing.Size(66, 20)
+        Me.txtIDCajero.TabIndex = 5
+        '
+        'btnConsultarCajero
+        '
+        Me.btnConsultarCajero.Location = New System.Drawing.Point(328, 24)
+        Me.btnConsultarCajero.Name = "btnConsultarCajero"
+        Me.btnConsultarCajero.Size = New System.Drawing.Size(75, 23)
+        Me.btnConsultarCajero.TabIndex = 13
+        Me.btnConsultarCajero.Text = "Buscar"
+        Me.btnConsultarCajero.UseVisualStyleBackColor = True
         '
         'frmTransaPago
         '
@@ -324,8 +336,8 @@ Partial Class frmTransaPago
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lblEstado As Label
     Friend WithEvents btnBuscar As Button
-    Friend WithEvents txtCapMesa As TextBox
-    Friend WithEvents txtNumMesa As TextBox
+    Friend WithEvents txtTotalPed As TextBox
+    Friend WithEvents txtIDPedido As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
@@ -339,7 +351,8 @@ Partial Class frmTransaPago
     Friend WithEvents Label7 As Label
     Friend WithEvents txtDNIMesero As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents cbxCajero As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents dgvDetalles As DataGridView
+    Friend WithEvents btnConsultarCajero As Button
+    Friend WithEvents txtIDCajero As TextBox
 End Class

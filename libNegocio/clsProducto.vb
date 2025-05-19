@@ -15,23 +15,25 @@ Public Class clsProducto
         End Try
         Return 0
     End Function
-    Public Sub guardarProducto(ByVal id As Integer, ByVal nom As String, ByVal desc As String, ByVal precio As Decimal, ByVal vig As Boolean, ByVal idTipo As Integer)
+    Public Sub guardarProducto(ByVal id As Integer, ByVal nom As String, ByVal desc As String, ByVal precio As Decimal, ByVal vig As Boolean, ByVal idTipo As Integer, ByVal idCarta As Integer)
         Dim descripcionSQL As String = If(String.IsNullOrEmpty(desc), "NULL", "'" & desc.Replace("'", "''") & "'")
 
-        strSQL = "INSERT INTO PRODUCTO (idProducto, nombre, descripcion, precio, vigencia, idTipo) VALUES (" &
+        strSQL = "INSERT INTO PRODUCTO (idProducto, nombre, descripcion, precio, vigencia, idTipo, idCarta) VALUES (" &
              id & ", '" &
              nom.Replace("'", "''") & "', " &
              descripcionSQL & ", " &
              precio & ", " &
              IIf(vig, 1, 0) & ", " &
-             idTipo & ")"
+             idTipo & ", " &
+             idCarta &
+             ")"
         Try
             objMan.ejecutarComando(strSQL)
         Catch ex As Exception
             Throw New Exception("Error al registrar el producto: " & ex.Message)
         End Try
     End Sub
-    Public Sub modificarProducto(ByVal id As Integer, ByVal nom As String, ByVal desc As String, ByVal precio As Decimal, ByVal vig As Boolean, ByVal idTipo As Integer)
+    Public Sub modificarProducto(ByVal id As Integer, ByVal nom As String, ByVal desc As String, ByVal precio As Decimal, ByVal vig As Boolean, ByVal idTipo As Integer, ByVal idCarta As Integer)
         Dim descripcionSQL As String = If(String.IsNullOrEmpty(desc), "NULL", "'" & desc.Replace("'", "''") & "'")
 
         strSQL = "UPDATE PRODUCTO SET " &
@@ -40,6 +42,7 @@ Public Class clsProducto
              "precio = " & precio & ", " &
              "vigencia = " & IIf(vig, 1, 0) & ", " &
              "idTipo = " & idTipo & " " &
+             "idCarta = " & idCarta & " " &
              "WHERE idProducto = " & id
         Try
             objMan.ejecutarComando(strSQL)

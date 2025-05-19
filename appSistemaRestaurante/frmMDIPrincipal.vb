@@ -113,4 +113,9 @@ Public Class frmMDIPrincipal
     Private Sub AperturaDeCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AperturaDeCajaToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub RegistrarPagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarPagoToolStripMenuItem.Click
+        Dim objFrmPago As New frmTransaPago
+        objFrmPago.Show()
+    End Sub
 End Class

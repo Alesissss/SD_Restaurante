@@ -4,10 +4,32 @@ Imports libNegocio
 Public Class frmProducto
     Dim objProducto As New clsProducto
     Dim objTipoProducto As New clsTipoProducto
+    Dim objCarta As New clsCarta
     Private Sub frmProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarTipos()
+        listarProductos()
     End Sub
-
+    Private Sub listarProductos()
+        Dim dtProducto As New DataTable
+        Dim ind As Integer = 0
+        Try
+            dgvProductos.DataSource = objProducto.listarProductos()
+            'Llenar el listView'
+            dtProducto = objProducto.listarProductos()
+            For Each mesero In dtProducto.Rows
+                lsvProductos.Items.Add(dtProducto.Rows(ind).Item(0))
+                lsvProductos.Items(ind).SubItems.Add(dtProducto.Rows(ind).Item(1))
+                lsvProductos.Items(ind).SubItems.Add(dtProducto.Rows(ind).Item(2))
+                lsvProductos.Items(ind).SubItems.Add(dtProducto.Rows(ind).Item(3))
+                lsvProductos.Items(ind).SubItems.Add(dtProducto.Rows(ind).Item(4))
+                lsvProductos.Items(ind).SubItems.Add(dtProducto.Rows(ind).Item(5))
+                lsvProductos.Items(ind).SubItems.Add(dtProducto.Rows(ind).Item(6))
+                ind += 1
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
     Private Sub listarTipos()
         Try
             Dim dtTipo As DataTable
@@ -21,7 +43,19 @@ Public Class frmProducto
             MessageBox.Show("Error al cargar los tipos de producto: " & ex.Message)
         End Try
     End Sub
+    Private Sub listarCartas()
+        Try
+            Dim dtCarta As DataTable
+            dtCarta = objCarta.listarCartas()
 
+            cbxCarta.DataSource = dtCarta
+            cbxTipo.DisplayMember = "nombre"
+            cbxTipo.ValueMember = "idCarta"
+            cbxTipo.SelectedIndex = -1
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar las cartas: " & ex.Message)
+        End Try
+    End Sub
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Dim camposAValidar() As Object = {txtNombres.Text, txtDescripcion.Text, txtPrecio.Text}
         Try
@@ -45,7 +79,7 @@ Public Class frmProducto
 
 
                 'Registrar nuevo mesero
-                objProducto.guardarProducto(CInt(txtIDProducto.Text), txtNombres.Text, txtDescripcion.Text, txtPrecio.Text, chkEstado.Checked, cbxTipo.SelectedValue)
+                objProducto.guardarProducto(CInt(txtIDProducto.Text), txtNombres.Text, txtDescripcion.Text, txtPrecio.Text, chkEstado.Checked, cbxTipo.SelectedValue, cbxCarta.SelectedValue)
 
                 limpiarControles()
                 btnNuevo.Text = "Nuevo"
@@ -56,7 +90,7 @@ Public Class frmProducto
     End Sub
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
-            objProducto.modificarProducto(CInt(txtIDProducto.Text), txtNombres.Text, txtDescripcion.Text, txtPrecio.Text, chkEstado.Checked, cbxTipo.SelectedValue)
+            objProducto.modificarProducto(CInt(txtIDProducto.Text), txtNombres.Text, txtDescripcion.Text, txtPrecio.Text, chkEstado.Checked, cbxTipo.SelectedValue, cbxCarta.SelectedValue)
             limpiarControles()
             habilitarBotones(False)
         Catch ex As Exception
@@ -76,5 +110,9 @@ Public Class frmProducto
         btnEliminar.Enabled = est
         btnModificar.Enabled = est
         btnDarBaja.Enabled = est
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
     End Sub
 End Class
