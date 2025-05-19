@@ -118,7 +118,7 @@ Public Class frmTransaPedido
     End Sub
 
     ' Nueva firma del método AgregarDetalle
-    Public Sub AgregarDetalle(idProducto As Integer, nombre As String, precioUnitario As Single, cantidad As Integer, idCarta As Integer)
+    Public Sub AgregarDetalle(idProducto As Integer, nombre As String, precioUnitario As Single, cantidad As Integer, idCarta As String)
         Dim productoYaExiste As Boolean = False
         Dim valorAdicional As Decimal = Convert.ToDecimal(cantidad * precioUnitario) ' Valor de los productos que se están agregando AHORA
 

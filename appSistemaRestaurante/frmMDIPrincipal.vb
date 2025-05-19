@@ -121,4 +121,9 @@ Public Class frmMDIPrincipal
         Dim objFrmCierreCaja As New frmCierreCaja
         objFrmCierreCaja.ShowDialog()
     End Sub
+
+    Private Sub RegistrarPagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarPagoToolStripMenuItem.Click
+        Dim objFrmPago As New frmTransaPago
+        objFrmPago.Show()
+    End Sub
 End Class

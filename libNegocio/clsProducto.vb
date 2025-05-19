@@ -15,23 +15,25 @@ Public Class clsProducto
         End Try
         Return 0
     End Function
-    Public Sub guardarProducto(ByVal id As Integer, ByVal nom As String, ByVal desc As String, ByVal precio As Decimal, ByVal vig As Boolean, ByVal idTipo As Integer)
+    Public Sub guardarProducto(ByVal id As Integer, ByVal nom As String, ByVal desc As String, ByVal precio As Decimal, ByVal vig As Boolean, ByVal idTipo As Integer, ByVal idCarta As Integer)
         Dim descripcionSQL As String = If(String.IsNullOrEmpty(desc), "NULL", "'" & desc.Replace("'", "''") & "'")
 
-        strSQL = "INSERT INTO PRODUCTO (idProducto, nombre, descripcion, precio, vigencia, idTipo) VALUES (" &
+        strSQL = "INSERT INTO PRODUCTO (idProducto, nombre, descripcion, precio, vigencia, idTipo, idCarta) VALUES (" &
              id & ", '" &
              nom.Replace("'", "''") & "', " &
              descripcionSQL & ", " &
              precio & ", " &
              IIf(vig, 1, 0) & ", " &
-             idTipo & ")"
+             idTipo & ", " &
+             idCarta &
+             ")"
         Try
             objMan.ejecutarComando(strSQL)
         Catch ex As Exception
             Throw New Exception("Error al registrar el producto: " & ex.Message)
         End Try
     End Sub
-    Public Sub modificarProducto(ByVal id As Integer, ByVal nom As String, ByVal desc As String, ByVal precio As Decimal, ByVal vig As Boolean, ByVal idTipo As Integer)
+    Public Sub modificarProducto(ByVal id As Integer, ByVal nom As String, ByVal desc As String, ByVal precio As Decimal, ByVal vig As Boolean, ByVal idTipo As Integer, ByVal idCarta As Integer)
         Dim descripcionSQL As String = If(String.IsNullOrEmpty(desc), "NULL", "'" & desc.Replace("'", "''") & "'")
 
         strSQL = "UPDATE PRODUCTO SET " &
@@ -40,6 +42,7 @@ Public Class clsProducto
              "precio = " & precio & ", " &
              "vigencia = " & IIf(vig, 1, 0) & ", " &
              "idTipo = " & idTipo & " " &
+             "idCarta = " & idCarta & " " &
              "WHERE idProducto = " & id
         Try
             objMan.ejecutarComando(strSQL)
@@ -84,13 +87,13 @@ Public Class clsProducto
     End Function
     Public Function listarProductos() As DataTable
         strSQL = "SELECT p.idProducto as idProducto, p.nombre as nombre, p.descripcion as descripcion, p.precio as precio, " &
-            "tp.nombre AS tipo_producto, " &
+            "tp.nombre AS tipo_producto, c.nombre AS carta, " &
             "CASE p.vigencia " &
             " WHEN 1 THEN 'Activo' " &
             " WHEN 0 THEN 'Inactivo' " &
             " ELSE 'Desconocido' END AS estado " &
             "FROM PRODUCTO p " &
-            "LEFT JOIN TIPO_PRODUCTO tp ON p.idTipo = tp.idTipo"
+            "LEFT JOIN TIPO_PRODUCTO tp ON p.idTipo = tp.idTipo LEFT JOIN CARTA c ON c.idCarta = p.idCarta"
 
         Try
             Return objMan.listarComando(strSQL)
@@ -100,7 +103,7 @@ Public Class clsProducto
     End Function
 
     Public Function ListarProductosPorIdCarta(ByVal idCartaBuscada As Integer) As DataTable
-        strSQL = "SELECT nombre, descripcion, precio FROM PRODUCTO WHERE idCarta = @IdDeLaCarta"
+        strSQL = "SELECT tp.nombre as tipo_producto, p.nombre, p.descripcion, p.precio FROM PRODUCTO p LEFT JOIN TIPO_PRODUCTO tp ON p.idTipo = tp.idTipo WHERE idCarta = @IdDeLaCarta ORDER BY 1"
         Try
             Dim parametros As New Dictionary(Of String, Object) From {
             {"@IdDeLaCarta", idCartaBuscada}

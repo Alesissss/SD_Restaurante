@@ -15,9 +15,9 @@ Public Class frmConsultarProductos
                 .Columns(1).HeaderText = "Nombre"
                 .Columns(2).HeaderText = "Descripción"
                 .Columns(3).HeaderText = "Precio"
-                .Columns(4).HeaderText = "Vigente"
-                .Columns(5).HeaderText = "Tipo"
-                .Columns(6).HeaderText = "ID Carta"
+                .Columns(4).HeaderText = "Tipo"
+                .Columns(5).HeaderText = "Carta"
+                .Columns(6).HeaderText = "Vigente"
             End With
         Catch ex As Exception
             MessageBox.Show("Error al listar productos: " & ex.Message, "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -35,12 +35,12 @@ Public Class frmConsultarProductos
             Dim nombreProducto As String
             Dim idProducto As Integer
             Dim precio As Single
-            Dim idCartaProducto As Integer
+            Dim idCartaProducto As String
             Try
                 nombreProducto = Convert.ToString(fila.Cells("nombre").Value)
                 idProducto = Convert.ToInt32(fila.Cells("idProducto").Value)
                 precio = Convert.ToSingle(fila.Cells("precio").Value)
-                idCartaProducto = Convert.ToInt32(fila.Cells("idCarta").Value)
+                idCartaProducto = Convert.ToString(fila.Cells("carta").Value)
             Catch exConvert As FormatException
                 MessageBox.Show("Error al convertir los datos del producto. Verifique que los valores sean correctos." & vbCrLf & exConvert.Message, "Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
@@ -48,7 +48,7 @@ Public Class frmConsultarProductos
                 MessageBox.Show("Uno de los valores esperados del producto es nulo." & vbCrLf & exNull.Message, "Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             Catch ex As Exception
-                MessageBox.Show("Error al obtener datos del producto: " & ex.Message & vbCrLf & "Asegúrese de que los nombres de columna 'idProducto', 'nombre', 'precio', 'idCarta' coincidan con su origen de datos.", "Error de Acceso a Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error al obtener datos del producto: " & ex.Message & vbCrLf & "Asegúrese de que los nombres de columna 'idProducto', 'nombre', 'precio', 'carta' coincidan con su origen de datos.", "Error de Acceso a Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End Try
 

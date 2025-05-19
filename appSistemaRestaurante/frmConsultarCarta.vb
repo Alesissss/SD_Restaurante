@@ -17,6 +17,7 @@ Public Class frmConsultarCarta
         lsvCarta.MultiSelect = False
 
         lsvCarta.Columns.Clear()
+        lsvCarta.Columns.Add("Tipo producto", 200, HorizontalAlignment.Left)
         lsvCarta.Columns.Add("Nombre", 200, HorizontalAlignment.Left)
         lsvCarta.Columns.Add("Descripción", 300, HorizontalAlignment.Left)
         lsvCarta.Columns.Add("Precio", 100, HorizontalAlignment.Right)
@@ -47,15 +48,17 @@ Public Class frmConsultarCarta
             lsvCarta.BeginUpdate()
 
             If Me.dtProductosActuales IsNot Nothing AndAlso Me.dtProductosActuales.Rows.Count > 0 Then
-                If Not (Me.dtProductosActuales.Columns.Contains("nombre") AndAlso
+                If Not (Me.dtProductosActuales.Columns.Contains("tipo_producto") AndAlso
+                        Me.dtProductosActuales.Columns.Contains("nombre") AndAlso
                         Me.dtProductosActuales.Columns.Contains("descripcion") AndAlso
                         Me.dtProductosActuales.Columns.Contains("precio")) Then
-                    MessageBox.Show("Faltan columnas esenciales (nombre, descripcion, precio) en los datos de la carta. Contacte al administrador.",
+                    MessageBox.Show("Faltan columnas esenciales (tipo_producto, nombre, descripcion, precio) en los datos de la carta. Contacte al administrador.",
                                     "Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
 
                 For Each fila As DataRow In Me.dtProductosActuales.Rows
+                    Dim tipoProducto As String = If(fila.IsNull("tipo_producto"), String.Empty, fila.Item("tipo_producto").ToString())
                     Dim nombreProducto As String = If(fila.IsNull("nombre"), String.Empty, fila.Item("nombre").ToString())
                     Dim descProducto As String = If(fila.IsNull("descripcion"), String.Empty, fila.Item("descripcion").ToString())
                     Dim precioProductoStr As String
@@ -74,13 +77,15 @@ Public Class frmConsultarCarta
                         End If
                     End If
 
-                    Dim item As New ListViewItem(nombreProducto)
+                    Dim item As New ListViewItem(tipoProducto)
+                    item.SubItems.Add(nombreProducto)
                     item.SubItems.Add(descProducto)
                     item.SubItems.Add(precioProductoStr)
                     lsvCarta.Items.Add(item)
                 Next
             Else
                 Dim itemVacio As New ListViewItem(MSG_NO_PRODUCTOS)
+                itemVacio.SubItems.Add("-")
                 itemVacio.SubItems.Add("-")
                 itemVacio.SubItems.Add("-")
                 lsvCarta.Items.Add(itemVacio)
