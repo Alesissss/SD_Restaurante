@@ -106,7 +106,7 @@ Partial Class frmMDIPrincipal
         Me.IniciarSesiónToolStripMenuItem.Image = CType(resources.GetObject("IniciarSesiónToolStripMenuItem.Image"), System.Drawing.Image)
         Me.IniciarSesiónToolStripMenuItem.Name = "IniciarSesiónToolStripMenuItem"
         Me.IniciarSesiónToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.I), System.Windows.Forms.Keys)
-        Me.IniciarSesiónToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
+        Me.IniciarSesiónToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.IniciarSesiónToolStripMenuItem.Text = "&Iniciar Sesión"
         '
         'CerrarSesiónToolStripMenuItem
@@ -114,20 +114,20 @@ Partial Class frmMDIPrincipal
         Me.CerrarSesiónToolStripMenuItem.Image = CType(resources.GetObject("CerrarSesiónToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
         Me.CerrarSesiónToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "&Cerrar Sesión"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(197, 6)
         '
         'CambiarUsuarioToolStripMenuItem
         '
         Me.CambiarUsuarioToolStripMenuItem.Image = CType(resources.GetObject("CambiarUsuarioToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CambiarUsuarioToolStripMenuItem.Name = "CambiarUsuarioToolStripMenuItem"
         Me.CambiarUsuarioToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.U), System.Windows.Forms.Keys)
-        Me.CambiarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
+        Me.CambiarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.CambiarUsuarioToolStripMenuItem.Text = "Cambiar &Usuario"
         '
         'MantenimientoToolStripMenuItem
@@ -213,47 +213,47 @@ Partial Class frmMDIPrincipal
         'ConsultarCartaToolStripMenuItem
         '
         Me.ConsultarCartaToolStripMenuItem.Name = "ConsultarCartaToolStripMenuItem"
-        Me.ConsultarCartaToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ConsultarCartaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ConsultarCartaToolStripMenuItem.Text = "Consultar Carta"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(161, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(177, 6)
         '
         'GestionarClienteToolStripMenuItem
         '
         Me.GestionarClienteToolStripMenuItem.Name = "GestionarClienteToolStripMenuItem"
-        Me.GestionarClienteToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.GestionarClienteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GestionarClienteToolStripMenuItem.Text = "Gestionar Cliente"
         '
         'PedidoToolStripMenuItem
         '
         Me.PedidoToolStripMenuItem.Name = "PedidoToolStripMenuItem"
-        Me.PedidoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.PedidoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PedidoToolStripMenuItem.Text = "Pedido"
         '
         'ReservasToolStripMenuItem
         '
         Me.ReservasToolStripMenuItem.Name = "ReservasToolStripMenuItem"
-        Me.ReservasToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ReservasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ReservasToolStripMenuItem.Text = "Reservas"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(161, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(177, 6)
         '
         'RegistrarPagoToolStripMenuItem
         '
         Me.RegistrarPagoToolStripMenuItem.Name = "RegistrarPagoToolStripMenuItem"
-        Me.RegistrarPagoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.RegistrarPagoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RegistrarPagoToolStripMenuItem.Text = "Registrar Pago"
         '
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(161, 6)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(177, 6)
         '
         'AperturaDeCajaToolStripMenuItem
         '
@@ -264,7 +264,7 @@ Partial Class frmMDIPrincipal
         'CierreDeCajaToolStripMenuItem
         '
         Me.CierreDeCajaToolStripMenuItem.Name = "CierreDeCajaToolStripMenuItem"
-        Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CierreDeCajaToolStripMenuItem.Text = "Cierre de Caja"
         '
         'ReportesToolStripMenuItem
@@ -277,31 +277,31 @@ Partial Class frmMDIPrincipal
         'CuadreDeCajaToolStripMenuItem
         '
         Me.CuadreDeCajaToolStripMenuItem.Name = "CuadreDeCajaToolStripMenuItem"
-        Me.CuadreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.CuadreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CuadreDeCajaToolStripMenuItem.Text = "Cuadre de Caja"
         '
         'CartaToolStripMenuItem1
         '
         Me.CartaToolStripMenuItem1.Name = "CartaToolStripMenuItem1"
-        Me.CartaToolStripMenuItem1.Size = New System.Drawing.Size(154, 22)
+        Me.CartaToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.CartaToolStripMenuItem1.Text = "Carta"
         '
         'PedidosToolStripMenuItem
         '
         Me.PedidosToolStripMenuItem.Name = "PedidosToolStripMenuItem"
-        Me.PedidosToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.PedidosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PedidosToolStripMenuItem.Text = "Pedidos"
         '
         'PagosToolStripMenuItem
         '
         Me.PagosToolStripMenuItem.Name = "PagosToolStripMenuItem"
-        Me.PagosToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.PagosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PagosToolStripMenuItem.Text = "Pagos"
         '
         'ReservasToolStripMenuItem1
         '
         Me.ReservasToolStripMenuItem1.Name = "ReservasToolStripMenuItem1"
-        Me.ReservasToolStripMenuItem1.Size = New System.Drawing.Size(154, 22)
+        Me.ReservasToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ReservasToolStripMenuItem1.Text = "Reservas"
         '
         'AcercaToolStripMenuItem
@@ -368,7 +368,7 @@ Partial Class frmMDIPrincipal
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 42)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(89, 6)
         '
         'ToolStripButton4
         '

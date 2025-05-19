@@ -113,6 +113,12 @@ Public Class frmMDIPrincipal
     End Sub
 
     Private Sub AperturaDeCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AperturaDeCajaToolStripMenuItem.Click
+        Dim objFrmAperturaCaja As New frmAperturaCaja
+        objFrmAperturaCaja.ShowDialog()
+    End Sub
 
+    Private Sub CierreDeCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CierreDeCajaToolStripMenuItem.Click
+        Dim objFrmCierreCaja As New frmCierreCaja
+        objFrmCierreCaja.ShowDialog()
     End Sub
 End Class
