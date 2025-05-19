@@ -18,9 +18,10 @@ Public Class clsMesa
         Return 0
     End Function
 
-    Public Sub guardarMesa(ByVal id As Integer, ByVal capacidad As Byte, ByVal est As Boolean)
-        strSQL = "INSERT INTO MESA (idMesa, capacidad, estado) VALUES (" &
+    Public Sub guardarMesa(ByVal id As Integer, ByVal numero As Integer, ByVal capacidad As Byte, ByVal est As Boolean)
+        strSQL = "INSERT INTO MESA (idMesa, numero, capacidad, estado) VALUES (" &
                  id & ", " &
+                 numero & ", " &
                  capacidad & ", " &
                  IIf(est, 1, 0) & ")"
         Try
