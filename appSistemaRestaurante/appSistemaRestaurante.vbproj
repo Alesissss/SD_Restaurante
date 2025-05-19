@@ -89,6 +89,12 @@
     <Compile Include="frmCarta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCierreCaja.Designer.vb">
+      <DependentUpon>frmCierreCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCierreCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmConsultarCajero.Designer.vb">
       <DependentUpon>frmConsultarCajero.vb</DependentUpon>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarta.resx">
       <DependentUpon>frmCarta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCierreCaja.resx">
+      <DependentUpon>frmCierreCaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarCajero.resx">
       <DependentUpon>frmConsultarCajero.vb</DependentUpon>

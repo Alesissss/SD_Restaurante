@@ -1,4 +1,7 @@
-﻿Public Class frmCierreCaja
+﻿Imports libNegocio
+
+Public Class frmCierreCaja
+    Dim objCajero As New clsCajero
     Private Sub frmCierreCaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblNumArqueo.Text = "0"
         lblNumArqueo.ReadOnly = True
@@ -16,8 +19,23 @@
         txtMoneda.ReadOnly = True
 
         ' Cargar filas en el DataGridView
+        listarTipos()
         InicializarDenominaciones()
         pintarFrm(dgvDetalles)
+    End Sub
+
+    Private Sub listarTipos()
+        Try
+            Dim dtTipo As DataTable
+            dtTipo = objCajero.listarCajeros()
+
+            cmbCaja.DataSource = dtTipo
+            cmbCaja.DisplayMember = "nombre"
+            cmbCaja.ValueMember = "idCajero"
+            cmbCaja.SelectedIndex = -1
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los cajeros: " & ex.Message)
+        End Try
     End Sub
     Public Sub pintarFrm(dgv As DataGridView)
         'Pintar algunos paneles
@@ -51,9 +69,10 @@
     End Sub
 
     Private Sub cmbCaja_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCaja.SelectedIndexChanged
-        If cmbCaja.SelectedIndex <> -1 Then
+        If cmbCaja.SelectedIndex <> -1 AndAlso TypeOf cmbCaja.SelectedValue Is Integer Then
             pnlCargar.Visible = True
-            'CargarDatosCaja(cmbCaja.SelectedValue) ' Supone que usas DataSource
+            Dim idCajero As Integer = Convert.ToInt32(cmbCaja.SelectedValue)
+            CargarDatosCaja(idCajero)
         Else
             pnlCargar.Visible = False
         End If
@@ -67,6 +86,23 @@
 
         lblMontoTotal.Text = total.ToString("N2")
         lblMontoTotalTexto.Text = NumeroATexto(total)
+    End Sub
+
+    Private Sub CargarDatosCaja(idCajero As Integer)
+        Try
+            Dim dt As DataTable = objCajero.obtenerAperturaCajaPorIdCajero(idCajero)
+
+            If dt.Rows.Count > 0 Then
+                Dim fila As DataRow = dt.Rows(0)
+                dtpFechaApertura.Value = Convert.ToDateTime(fila("fechaApertura"))
+                txtBaseCaja.Text = fila("montoBase").ToString()
+            Else
+                MessageBox.Show("No se encontró una apertura de caja para el cajero en la fecha actual.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar datos de la caja: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
     Private Sub InicializarDenominaciones()
         With dgvDetalles
@@ -192,7 +228,35 @@
         Return texto.Trim()
     End Function
 
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Try
+            Dim idCajero As Integer = Convert.ToInt32(cmbCaja.SelectedValue)
+            Dim base As Decimal = Convert.ToDecimal(lblMontoTotal.Text)
+            Dim moneda As String = txtMoneda.Text
+            Dim estado As String = "ABIERTO"
 
+            ' Crear la lista de detalles a insertar
+            Dim detalles As New List(Of Tuple(Of String, Decimal))
 
+            For Each fila As DataGridViewRow In dgvDetalles.Rows
+                If Not fila.IsNewRow Then
+                    Dim descripcion As String = fila.Cells("Denominacion").Value.ToString()
+                    Dim subtotal As Decimal = Convert.ToDecimal(fila.Cells("Subtotal").Value)
 
+                    If subtotal > 0 Then
+                        detalles.Add(New Tuple(Of String, Decimal)(descripcion, subtotal))
+                    End If
+                End If
+            Next
+
+            ' Insertar todo dentro de una transacción
+            'Dim idArqueo As Integer = InsertarArqueoYDetalles(idCajero, idUsuario, fechaApertura, base, moneda, estado, detalles)
+
+            MessageBox.Show("¡Caja aperturada correctamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Close()
+
+        Catch ex As Exception
+            MessageBox.Show("Error al guardar la apertura de caja: " & ex.Message)
+        End Try
+    End Sub
 End Class

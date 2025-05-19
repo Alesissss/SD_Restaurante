@@ -140,4 +140,24 @@ Public Class clsCajero
         End Try
         Return False
     End Function
+
+    Public Function obtenerAperturaCajaPorIdCajero(ByVal idCajero As Integer) As DataTable
+        strSQL = "
+        SELECT 
+            A.fechaApertura,
+            A.base AS montoBase
+        FROM ARQUEOCAJA A
+        INNER JOIN CAJERO C ON A.idCajero = C.idCajero
+        WHERE 
+            CAST(A.fechaApertura AS DATE) = CAST(GETDATE() AS DATE)
+            AND A.estado = 'ABIERTO'
+            AND C.idCajero = " & idCajero
+
+        Try
+            Return objMan.listarComando(strSQL)
+        Catch ex As Exception
+            Throw New Exception("Error al obtener datos de apertura de caja: " & ex.Message)
+        End Try
+    End Function
+
 End Class

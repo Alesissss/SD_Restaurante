@@ -248,7 +248,7 @@ Public Class frmAperturaCaja
     End Sub
     Private Function InsertarArqueoYDetalles(idCajero As Integer, idUsuario As Integer, fechaApertura As DateTime, base As Decimal, moneda As String, estado As String, detalles As List(Of Tuple(Of String, Decimal))) As Integer
         Dim idGenerado As Integer = 0
-        Dim cadenaConexion As String = objConexion.gen_cad_cloud()
+        Dim cadenaConexion As String = "workstation id=BD_RESTAURANTE_ARAE.mssql.somee.com;packet size=4096;user id=Alesissss_SQLLogin_1;pwd=gxnvcpejup;data source=BD_RESTAURANTE_ARAE.mssql.somee.com;persist security info=False;initial catalog=BD_RESTAURANTE_ARAE;TrustServerCertificate=True; language=spanish"
 
         Using conn As New SqlClient.SqlConnection(cadenaConexion)
             conn.Open()

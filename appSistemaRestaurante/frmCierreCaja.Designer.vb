@@ -56,9 +56,11 @@ Partial Class frmCierreCaja
         'dgvDetalles
         '
         Me.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDetalles.Location = New System.Drawing.Point(401, 66)
+        Me.dgvDetalles.Location = New System.Drawing.Point(535, 81)
+        Me.dgvDetalles.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvDetalles.Name = "dgvDetalles"
-        Me.dgvDetalles.Size = New System.Drawing.Size(356, 217)
+        Me.dgvDetalles.RowHeadersWidth = 51
+        Me.dgvDetalles.Size = New System.Drawing.Size(475, 267)
         Me.dgvDetalles.TabIndex = 18
         '
         'pnlDatos
@@ -71,25 +73,28 @@ Partial Class frmCierreCaja
         Me.pnlDatos.Controls.Add(Me.Label4)
         Me.pnlDatos.Controls.Add(Me.lblNumArqueo)
         Me.pnlDatos.Controls.Add(Me.lblUsuario)
-        Me.pnlDatos.Location = New System.Drawing.Point(23, 66)
+        Me.pnlDatos.Location = New System.Drawing.Point(31, 81)
+        Me.pnlDatos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlDatos.Name = "pnlDatos"
-        Me.pnlDatos.Size = New System.Drawing.Size(356, 166)
+        Me.pnlDatos.Size = New System.Drawing.Size(475, 204)
         Me.pnlDatos.TabIndex = 14
         '
         'cmbCaja
         '
         Me.cmbCaja.FormattingEnabled = True
-        Me.cmbCaja.Location = New System.Drawing.Point(144, 16)
+        Me.cmbCaja.Location = New System.Drawing.Point(192, 20)
+        Me.cmbCaja.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbCaja.Name = "cmbCaja"
-        Me.cmbCaja.Size = New System.Drawing.Size(200, 21)
+        Me.cmbCaja.Size = New System.Drawing.Size(265, 24)
         Me.cmbCaja.TabIndex = 13
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(90, 19)
+        Me.Label7.Location = New System.Drawing.Point(120, 23)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.Size = New System.Drawing.Size(38, 16)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Caja:"
         '
@@ -97,27 +102,30 @@ Partial Class frmCierreCaja
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(23, 50)
+        Me.Label2.Location = New System.Drawing.Point(31, 62)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(98, 13)
+        Me.Label2.Size = New System.Drawing.Size(131, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Número de arqueo:"
         '
         'txtMoneda
         '
         Me.txtMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMoneda.Location = New System.Drawing.Point(144, 116)
+        Me.txtMoneda.Location = New System.Drawing.Point(192, 143)
+        Me.txtMoneda.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtMoneda.Name = "txtMoneda"
-        Me.txtMoneda.Size = New System.Drawing.Size(200, 20)
+        Me.txtMoneda.Size = New System.Drawing.Size(265, 23)
         Me.txtMoneda.TabIndex = 11
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(40, 82)
+        Me.Label1.Location = New System.Drawing.Point(53, 101)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 13)
+        Me.Label1.Size = New System.Drawing.Size(106, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Usuario/Cajero:"
         '
@@ -125,43 +133,48 @@ Partial Class frmCierreCaja
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(72, 116)
+        Me.Label4.Location = New System.Drawing.Point(96, 143)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.Size = New System.Drawing.Size(63, 17)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Moneda:"
         '
         'lblNumArqueo
         '
         Me.lblNumArqueo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumArqueo.Location = New System.Drawing.Point(144, 50)
+        Me.lblNumArqueo.Location = New System.Drawing.Point(192, 62)
+        Me.lblNumArqueo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lblNumArqueo.Name = "lblNumArqueo"
-        Me.lblNumArqueo.Size = New System.Drawing.Size(109, 20)
+        Me.lblNumArqueo.Size = New System.Drawing.Size(144, 23)
         Me.lblNumArqueo.TabIndex = 4
         '
         'lblUsuario
         '
         Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsuario.Location = New System.Drawing.Point(144, 79)
+        Me.lblUsuario.Location = New System.Drawing.Point(192, 97)
+        Me.lblUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(200, 20)
+        Me.lblUsuario.Size = New System.Drawing.Size(265, 23)
         Me.lblUsuario.TabIndex = 5
         '
         'dtpFechaApertura
         '
         Me.dtpFechaApertura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaApertura.Location = New System.Drawing.Point(144, 13)
+        Me.dtpFechaApertura.Location = New System.Drawing.Point(192, 16)
+        Me.dtpFechaApertura.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtpFechaApertura.Name = "dtpFechaApertura"
-        Me.dtpFechaApertura.Size = New System.Drawing.Size(200, 20)
+        Me.dtpFechaApertura.Size = New System.Drawing.Size(265, 23)
         Me.dtpFechaApertura.TabIndex = 10
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(16, 19)
+        Me.Label3.Location = New System.Drawing.Point(21, 23)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(97, 13)
+        Me.Label3.Size = New System.Drawing.Size(129, 17)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Fecha de apertura:"
         '
@@ -169,9 +182,10 @@ Partial Class frmCierreCaja
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(18, 26)
+        Me.Label5.Location = New System.Drawing.Point(24, 32)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(185, 25)
+        Me.Label5.Size = New System.Drawing.Size(240, 31)
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "CIERRE DE CAJA"
         '
@@ -183,42 +197,47 @@ Partial Class frmCierreCaja
         Me.pnlCargar.Controls.Add(Me.Label6)
         Me.pnlCargar.Controls.Add(Me.Label3)
         Me.pnlCargar.Controls.Add(Me.dtpFechaApertura)
-        Me.pnlCargar.Location = New System.Drawing.Point(23, 251)
+        Me.pnlCargar.Location = New System.Drawing.Point(31, 309)
+        Me.pnlCargar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlCargar.Name = "pnlCargar"
-        Me.pnlCargar.Size = New System.Drawing.Size(356, 166)
+        Me.pnlCargar.Size = New System.Drawing.Size(475, 204)
         Me.pnlCargar.TabIndex = 17
         '
         'txtBaseCaja
         '
-        Me.txtBaseCaja.Location = New System.Drawing.Point(144, 83)
+        Me.txtBaseCaja.Location = New System.Drawing.Point(192, 102)
+        Me.txtBaseCaja.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtBaseCaja.Name = "txtBaseCaja"
-        Me.txtBaseCaja.Size = New System.Drawing.Size(134, 20)
+        Me.txtBaseCaja.Size = New System.Drawing.Size(177, 22)
         Me.txtBaseCaja.TabIndex = 14
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(41, 86)
+        Me.Label8.Location = New System.Drawing.Point(55, 106)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(72, 13)
+        Me.Label8.Size = New System.Drawing.Size(89, 16)
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "Base en caja:"
         '
         'dtpFechaCierre
         '
         Me.dtpFechaCierre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaCierre.Location = New System.Drawing.Point(144, 50)
+        Me.dtpFechaCierre.Location = New System.Drawing.Point(192, 62)
+        Me.dtpFechaCierre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtpFechaCierre.Name = "dtpFechaCierre"
-        Me.dtpFechaCierre.Size = New System.Drawing.Size(200, 20)
+        Me.dtpFechaCierre.Size = New System.Drawing.Size(265, 23)
         Me.dtpFechaCierre.TabIndex = 12
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(29, 53)
+        Me.Label6.Location = New System.Drawing.Point(39, 65)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(84, 13)
+        Me.Label6.Size = New System.Drawing.Size(111, 17)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Fecha de cierre:"
         '
@@ -226,19 +245,20 @@ Partial Class frmCierreCaja
         '
         Me.pnlBotones.Controls.Add(Me.btnCancelar)
         Me.pnlBotones.Controls.Add(Me.btnGuardar)
-        Me.pnlBotones.Location = New System.Drawing.Point(401, 367)
+        Me.pnlBotones.Location = New System.Drawing.Point(535, 452)
+        Me.pnlBotones.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlBotones.Name = "pnlBotones"
-        Me.pnlBotones.Size = New System.Drawing.Size(355, 50)
+        Me.pnlBotones.Size = New System.Drawing.Size(473, 62)
         Me.pnlBotones.TabIndex = 19
         '
         'btnCancelar
         '
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), System.Drawing.Image)
-        Me.btnCancelar.Location = New System.Drawing.Point(82, 3)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.btnCancelar.Location = New System.Drawing.Point(109, 4)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(126, 40)
+        Me.btnCancelar.Size = New System.Drawing.Size(168, 49)
         Me.btnCancelar.TabIndex = 18
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -247,10 +267,10 @@ Partial Class frmCierreCaja
         'btnGuardar
         '
         Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
-        Me.btnGuardar.Location = New System.Drawing.Point(216, 3)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.btnGuardar.Location = New System.Drawing.Point(288, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(126, 40)
+        Me.btnGuardar.Size = New System.Drawing.Size(168, 49)
         Me.btnGuardar.TabIndex = 17
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -260,35 +280,38 @@ Partial Class frmCierreCaja
         '
         Me.lblMontoTotalTexto.AutoSize = True
         Me.lblMontoTotalTexto.Enabled = False
-        Me.lblMontoTotalTexto.Location = New System.Drawing.Point(459, 334)
+        Me.lblMontoTotalTexto.Location = New System.Drawing.Point(612, 411)
+        Me.lblMontoTotalTexto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMontoTotalTexto.Name = "lblMontoTotalTexto"
-        Me.lblMontoTotalTexto.Size = New System.Drawing.Size(297, 13)
+        Me.lblMontoTotalTexto.Size = New System.Drawing.Size(366, 16)
         Me.lblMontoTotalTexto.TabIndex = 22
         Me.lblMontoTotalTexto.Text = "DOSCIENTOS CINCUENTA MIL SOLES CON 0 CENTAVOS"
         '
         'lblMontoTotal
         '
         Me.lblMontoTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMontoTotal.Location = New System.Drawing.Point(616, 294)
+        Me.lblMontoTotal.Location = New System.Drawing.Point(821, 362)
+        Me.lblMontoTotal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lblMontoTotal.Name = "lblMontoTotal"
-        Me.lblMontoTotal.Size = New System.Drawing.Size(140, 26)
+        Me.lblMontoTotal.Size = New System.Drawing.Size(185, 30)
         Me.lblMontoTotal.TabIndex = 21
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(500, 297)
+        Me.Label9.Location = New System.Drawing.Point(667, 366)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(93, 20)
+        Me.Label9.Size = New System.Drawing.Size(114, 25)
         Me.Label9.TabIndex = 20
         Me.Label9.Text = "Monto total:"
         '
         'frmCierreCaja
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(776, 450)
+        Me.ClientSize = New System.Drawing.Size(1035, 554)
         Me.Controls.Add(Me.lblMontoTotalTexto)
         Me.Controls.Add(Me.lblMontoTotal)
         Me.Controls.Add(Me.Label9)
@@ -297,8 +320,9 @@ Partial Class frmCierreCaja
         Me.Controls.Add(Me.pnlCargar)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.pnlDatos)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmCierreCaja"
-        Me.Text = "Form1"
+        Me.Text = "CIERRE DE CAJA"
         CType(Me.dgvDetalles, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlDatos.ResumeLayout(False)
         Me.pnlDatos.PerformLayout()
