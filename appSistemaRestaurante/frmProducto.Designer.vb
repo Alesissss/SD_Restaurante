@@ -326,7 +326,7 @@ Partial Class frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(642, 685)
+        Me.ClientSize = New System.Drawing.Size(632, 685)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lsvCarta)
         Me.Controls.Add(Me.dgvCarta)

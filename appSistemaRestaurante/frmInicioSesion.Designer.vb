@@ -94,7 +94,7 @@ Partial Class frmInicioSesion
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(265, 71)
+        Me.PictureBox3.Location = New System.Drawing.Point(298, 69)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(39, 33)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -104,7 +104,7 @@ Partial Class frmInicioSesion
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(265, 32)
+        Me.PictureBox2.Location = New System.Drawing.Point(298, 30)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(39, 33)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -187,7 +187,7 @@ Partial Class frmInicioSesion
         Me.chkContraseña.AutoSize = True
         Me.chkContraseña.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chkContraseña.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkContraseña.Location = New System.Drawing.Point(95, 98)
+        Me.chkContraseña.Location = New System.Drawing.Point(128, 96)
         Me.chkContraseña.Name = "chkContraseña"
         Me.chkContraseña.Size = New System.Drawing.Size(147, 17)
         Me.chkContraseña.TabIndex = 3
@@ -222,7 +222,7 @@ Partial Class frmInicioSesion
         'txtContraseña
         '
         Me.txtContraseña.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContraseña.Location = New System.Drawing.Point(114, 71)
+        Me.txtContraseña.Location = New System.Drawing.Point(147, 69)
         Me.txtContraseña.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -233,7 +233,7 @@ Partial Class frmInicioSesion
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(17, 74)
+        Me.Label2.Location = New System.Drawing.Point(50, 72)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 15)
@@ -243,7 +243,7 @@ Partial Class frmInicioSesion
         'txtUsuario
         '
         Me.txtUsuario.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(114, 42)
+        Me.txtUsuario.Location = New System.Drawing.Point(147, 40)
         Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(128, 21)
@@ -253,7 +253,7 @@ Partial Class frmInicioSesion
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(40, 42)
+        Me.Label1.Location = New System.Drawing.Point(73, 40)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(55, 15)

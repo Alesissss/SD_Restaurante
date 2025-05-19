@@ -24,6 +24,8 @@ Partial Class frmMesa
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMesa))
         Me.pnlDatos = New System.Windows.Forms.Panel()
+        Me.txtNumero = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.chkEstado = New System.Windows.Forms.CheckBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -42,8 +44,6 @@ Partial Class frmMesa
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlDatos.SuspendLayout()
         Me.pnlBotones.SuspendLayout()
@@ -53,7 +53,7 @@ Partial Class frmMesa
         'pnlDatos
         '
         Me.pnlDatos.BackColor = System.Drawing.Color.LightBlue
-        Me.pnlDatos.Controls.Add(Me.TextBox1)
+        Me.pnlDatos.Controls.Add(Me.txtNumero)
         Me.pnlDatos.Controls.Add(Me.Label2)
         Me.pnlDatos.Controls.Add(Me.btnBuscar)
         Me.pnlDatos.Controls.Add(Me.chkEstado)
@@ -67,6 +67,24 @@ Partial Class frmMesa
         Me.pnlDatos.Name = "pnlDatos"
         Me.pnlDatos.Size = New System.Drawing.Size(337, 192)
         Me.pnlDatos.TabIndex = 1
+        '
+        'txtNumero
+        '
+        Me.txtNumero.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumero.Location = New System.Drawing.Point(106, 64)
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.Size = New System.Drawing.Size(179, 21)
+        Me.txtNumero.TabIndex = 13
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(31, 64)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(57, 15)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Número:"
         '
         'btnBuscar
         '
@@ -249,24 +267,6 @@ Partial Class frmMesa
         Me.ColumnHeader3.Text = "Estado"
         Me.ColumnHeader3.Width = 188
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(31, 64)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 15)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Número:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(106, 64)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(179, 21)
-        Me.TextBox1.TabIndex = 13
-        '
         'Panel1
         '
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
@@ -316,7 +316,7 @@ Partial Class frmMesa
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtNumero As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
 End Class

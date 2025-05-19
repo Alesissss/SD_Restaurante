@@ -45,7 +45,7 @@ Partial Class frmMesero
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtIDMes = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlBotones = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnDarBaja = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -62,8 +62,9 @@ Partial Class frmMesero
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlDatos.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.pnlBotones.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -91,9 +92,9 @@ Partial Class frmMesero
         Me.pnlDatos.Controls.Add(Me.Label2)
         Me.pnlDatos.Controls.Add(Me.txtIDMes)
         Me.pnlDatos.Controls.Add(Me.Label1)
-        Me.pnlDatos.Location = New System.Drawing.Point(12, 12)
+        Me.pnlDatos.Location = New System.Drawing.Point(207, 3)
         Me.pnlDatos.Name = "pnlDatos"
-        Me.pnlDatos.Size = New System.Drawing.Size(403, 363)
+        Me.pnlDatos.Size = New System.Drawing.Size(407, 363)
         Me.pnlDatos.TabIndex = 0
         '
         'btnBuscar
@@ -101,7 +102,7 @@ Partial Class frmMesero
         Me.btnBuscar.FlatAppearance.BorderSize = 0
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
-        Me.btnBuscar.Location = New System.Drawing.Point(257, 20)
+        Me.btnBuscar.Location = New System.Drawing.Point(271, 25)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(48, 43)
         Me.btnBuscar.TabIndex = 11
@@ -111,190 +112,209 @@ Partial Class frmMesero
         'chkEstado
         '
         Me.chkEstado.AutoSize = True
+        Me.chkEstado.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkEstado.Location = New System.Drawing.Point(134, 327)
         Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(96, 22)
+        Me.chkEstado.Size = New System.Drawing.Size(79, 19)
         Me.chkEstado.TabIndex = 10
         Me.chkEstado.Text = "(Vigente)"
         Me.chkEstado.UseVisualStyleBackColor = True
         '
         'dtpFecha
         '
+        Me.dtpFecha.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFecha.Location = New System.Drawing.Point(134, 194)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(117, 26)
+        Me.dtpFecha.Size = New System.Drawing.Size(117, 21)
         Me.dtpFecha.TabIndex = 6
         '
         'cmbSexo
         '
+        Me.cmbSexo.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbSexo.FormattingEnabled = True
         Me.cmbSexo.Items.AddRange(New Object() {"Femenino", "Masculino"})
         Me.cmbSexo.Location = New System.Drawing.Point(134, 165)
         Me.cmbSexo.Name = "cmbSexo"
-        Me.cmbSexo.Size = New System.Drawing.Size(117, 26)
+        Me.cmbSexo.Size = New System.Drawing.Size(117, 23)
         Me.cmbSexo.TabIndex = 5
         '
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(62, 328)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(66, 18)
+        Me.Label10.Size = New System.Drawing.Size(50, 15)
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "Estado:"
         '
         'txtCorreo
         '
+        Me.txtCorreo.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCorreo.Location = New System.Drawing.Point(134, 293)
         Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Size = New System.Drawing.Size(226, 26)
+        Me.txtCorreo.Size = New System.Drawing.Size(226, 21)
         Me.txtCorreo.TabIndex = 9
         '
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(61, 296)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(67, 18)
+        Me.Label9.Size = New System.Drawing.Size(52, 15)
         Me.Label9.TabIndex = 0
         Me.Label9.Text = "Correo:"
         '
         'txtTelefono
         '
+        Me.txtTelefono.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelefono.Location = New System.Drawing.Point(134, 261)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(117, 26)
+        Me.txtTelefono.Size = New System.Drawing.Size(117, 21)
         Me.txtTelefono.TabIndex = 8
         '
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(51, 264)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(77, 18)
+        Me.Label8.Size = New System.Drawing.Size(61, 15)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Teléfono:"
         '
         'txtDireccion
         '
+        Me.txtDireccion.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDireccion.Location = New System.Drawing.Point(134, 229)
         Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(226, 26)
+        Me.txtDireccion.Size = New System.Drawing.Size(226, 21)
         Me.txtDireccion.TabIndex = 7
         '
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(46, 232)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(82, 18)
+        Me.Label7.Size = New System.Drawing.Size(65, 15)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Dirección:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(31, 200)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(97, 18)
+        Me.Label6.Size = New System.Drawing.Size(74, 15)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Fecha Nac.:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(75, 168)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(53, 18)
+        Me.Label5.Size = New System.Drawing.Size(41, 15)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Sexo:"
         '
         'txtApellidos
         '
+        Me.txtApellidos.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtApellidos.Location = New System.Drawing.Point(134, 133)
         Me.txtApellidos.Name = "txtApellidos"
-        Me.txtApellidos.Size = New System.Drawing.Size(226, 26)
+        Me.txtApellidos.Size = New System.Drawing.Size(226, 21)
         Me.txtApellidos.TabIndex = 4
         '
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(49, 136)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 18)
+        Me.Label4.Size = New System.Drawing.Size(63, 15)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Apellidos:"
         '
         'txtNombres
         '
+        Me.txtNombres.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombres.Location = New System.Drawing.Point(134, 101)
         Me.txtNombres.Name = "txtNombres"
-        Me.txtNombres.Size = New System.Drawing.Size(226, 26)
+        Me.txtNombres.Size = New System.Drawing.Size(226, 21)
         Me.txtNombres.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(45, 104)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(83, 18)
+        Me.Label3.Size = New System.Drawing.Size(63, 15)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Nombres:"
         '
         'txtDni
         '
+        Me.txtDni.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDni.Location = New System.Drawing.Point(134, 69)
         Me.txtDni.Name = "txtDni"
-        Me.txtDni.Size = New System.Drawing.Size(117, 26)
+        Me.txtDni.Size = New System.Drawing.Size(117, 21)
         Me.txtDni.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(86, 72)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(42, 18)
+        Me.Label2.Size = New System.Drawing.Size(34, 15)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "DNI:"
         '
         'txtIDMes
         '
-        Me.txtIDMes.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIDMes.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIDMes.Location = New System.Drawing.Point(134, 37)
         Me.txtIDMes.Name = "txtIDMes"
-        Me.txtIDMes.Size = New System.Drawing.Size(117, 26)
+        Me.txtIDMes.Size = New System.Drawing.Size(117, 21)
         Me.txtIDMes.TabIndex = 1
         Me.txtIDMes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(37, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 18)
+        Me.Label1.Size = New System.Drawing.Size(71, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ID Mesero:"
         '
-        'Panel2
+        'pnlBotones
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.Controls.Add(Me.btnSalir)
-        Me.Panel2.Controls.Add(Me.btnDarBaja)
-        Me.Panel2.Controls.Add(Me.btnEliminar)
-        Me.Panel2.Controls.Add(Me.btnModificar)
-        Me.Panel2.Controls.Add(Me.btnNuevo)
-        Me.Panel2.Location = New System.Drawing.Point(421, 12)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(191, 363)
-        Me.Panel2.TabIndex = 1
+        Me.pnlBotones.BackColor = System.Drawing.Color.White
+        Me.pnlBotones.Controls.Add(Me.btnSalir)
+        Me.pnlBotones.Controls.Add(Me.btnDarBaja)
+        Me.pnlBotones.Controls.Add(Me.btnEliminar)
+        Me.pnlBotones.Controls.Add(Me.btnModificar)
+        Me.pnlBotones.Controls.Add(Me.btnNuevo)
+        Me.pnlBotones.Location = New System.Drawing.Point(12, 372)
+        Me.pnlBotones.Name = "pnlBotones"
+        Me.pnlBotones.Size = New System.Drawing.Size(602, 63)
+        Me.pnlBotones.TabIndex = 1
         '
         'btnSalir
         '
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(24, 305)
+        Me.btnSalir.Location = New System.Drawing.Point(499, 11)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(143, 43)
+        Me.btnSalir.Size = New System.Drawing.Size(94, 43)
         Me.btnSalir.TabIndex = 16
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -304,9 +324,9 @@ Partial Class frmMesero
         '
         Me.btnDarBaja.Enabled = False
         Me.btnDarBaja.Image = CType(resources.GetObject("btnDarBaja.Image"), System.Drawing.Image)
-        Me.btnDarBaja.Location = New System.Drawing.Point(24, 158)
+        Me.btnDarBaja.Location = New System.Drawing.Point(367, 11)
         Me.btnDarBaja.Name = "btnDarBaja"
-        Me.btnDarBaja.Size = New System.Drawing.Size(143, 43)
+        Me.btnDarBaja.Size = New System.Drawing.Size(126, 43)
         Me.btnDarBaja.TabIndex = 15
         Me.btnDarBaja.Text = "Dar Baja"
         Me.btnDarBaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -316,9 +336,9 @@ Partial Class frmMesero
         '
         Me.btnEliminar.Enabled = False
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
-        Me.btnEliminar.Location = New System.Drawing.Point(24, 109)
+        Me.btnEliminar.Location = New System.Drawing.Point(246, 11)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(143, 43)
+        Me.btnEliminar.Size = New System.Drawing.Size(115, 43)
         Me.btnEliminar.TabIndex = 14
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -328,9 +348,9 @@ Partial Class frmMesero
         '
         Me.btnModificar.Enabled = False
         Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.Location = New System.Drawing.Point(24, 60)
+        Me.btnModificar.Location = New System.Drawing.Point(121, 11)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(143, 43)
+        Me.btnModificar.Size = New System.Drawing.Size(119, 43)
         Me.btnModificar.TabIndex = 13
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -339,9 +359,9 @@ Partial Class frmMesero
         'btnNuevo
         '
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
-        Me.btnNuevo.Location = New System.Drawing.Point(24, 11)
+        Me.btnNuevo.Location = New System.Drawing.Point(12, 11)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(143, 43)
+        Me.btnNuevo.Size = New System.Drawing.Size(103, 43)
         Me.btnNuevo.TabIndex = 12
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -352,10 +372,10 @@ Partial Class frmMesero
         Me.dgvEmpleados.AllowUserToAddRows = False
         Me.dgvEmpleados.AllowUserToDeleteRows = False
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleados.Location = New System.Drawing.Point(12, 381)
+        Me.dgvEmpleados.Location = New System.Drawing.Point(12, 441)
         Me.dgvEmpleados.Name = "dgvEmpleados"
         Me.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvEmpleados.Size = New System.Drawing.Size(601, 140)
+        Me.dgvEmpleados.Size = New System.Drawing.Size(602, 140)
         Me.dgvEmpleados.TabIndex = 17
         '
         'lsvEmpleados
@@ -365,10 +385,10 @@ Partial Class frmMesero
         Me.lsvEmpleados.FullRowSelect = True
         Me.lsvEmpleados.GridLines = True
         Me.lsvEmpleados.HideSelection = False
-        Me.lsvEmpleados.Location = New System.Drawing.Point(12, 528)
+        Me.lsvEmpleados.Location = New System.Drawing.Point(12, 596)
         Me.lsvEmpleados.MultiSelect = False
         Me.lsvEmpleados.Name = "lsvEmpleados"
-        Me.lsvEmpleados.Size = New System.Drawing.Size(600, 122)
+        Me.lsvEmpleados.Size = New System.Drawing.Size(602, 122)
         Me.lsvEmpleados.TabIndex = 18
         Me.lsvEmpleados.UseCompatibleStateImageBehavior = False
         Me.lsvEmpleados.View = System.Windows.Forms.View.Details
@@ -417,14 +437,24 @@ Partial Class frmMesero
         '
         Me.ColumnHeader9.Text = "Estado"
         '
+        'Panel1
+        '
+        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Location = New System.Drawing.Point(12, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(189, 363)
+        Me.Panel1.TabIndex = 19
+        '
         'frmMesero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(625, 658)
+        Me.ClientSize = New System.Drawing.Size(628, 762)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lsvEmpleados)
         Me.Controls.Add(Me.dgvEmpleados)
-        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.pnlBotones)
         Me.Controls.Add(Me.pnlDatos)
         Me.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -434,7 +464,7 @@ Partial Class frmMesero
         Me.Text = ".: GESTIONAR MESERO :."
         Me.pnlDatos.ResumeLayout(False)
         Me.pnlDatos.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
+        Me.pnlBotones.ResumeLayout(False)
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -461,7 +491,7 @@ Partial Class frmMesero
     Friend WithEvents chkEstado As CheckBox
     Friend WithEvents dtpFecha As DateTimePicker
     Friend WithEvents cmbSexo As ComboBox
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents pnlBotones As Panel
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnDarBaja As Button
     Friend WithEvents btnEliminar As Button
@@ -479,4 +509,5 @@ Partial Class frmMesero
     Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents ColumnHeader9 As ColumnHeader
+    Friend WithEvents Panel1 As Panel
 End Class

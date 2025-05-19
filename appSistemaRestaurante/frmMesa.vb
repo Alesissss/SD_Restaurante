@@ -88,7 +88,7 @@ Public Class frmMesa
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        Dim camposAValidar() As Object = {txtIDMes.Text, txtCapacidad.Text}
+        Dim camposAValidar() As Object = {txtIDMes.Text, txtNumero.Text, txtCapacidad.Text}
         Try
             If btnNuevo.Text = "Nuevo" Then
                 'Generar el ID del mesero
@@ -103,12 +103,16 @@ Public Class frmMesa
                     MessageBox.Show("La capacidad es un campo numérico", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
+                If Not ValidationManager.isNumber(txtNumero.Text) Then
+                    MessageBox.Show("El número de la mesa debe contener solo dígitos", "SIST-REST 2025", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
                 'Faltan validaciones de campos numéricos
 
 
 
                 'Registrar nuevo mesero
-                objMes.guardarMesa(CInt(txtIDMes.Text), txtCapacidad.Text, chkEstado.Checked)
+                objMes.guardarMesa(CInt(txtIDMes.Text), CInt(txtNumero.Text), txtCapacidad.Text, chkEstado.Checked)
 
                 limpiarControles()
                 btnNuevo.Text = "Nuevo"
@@ -120,7 +124,7 @@ Public Class frmMesa
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
-            objMes.modificarMesa(CInt(txtIDMes.Text), txtCapacidad.Text, chkEstado.Checked)
+            objMes.modificarMesa(CInt(txtIDMes.Text), CInt(txtNumero.Text), txtCapacidad.Text, chkEstado.Checked)
             limpiarControles()
             habilitarBotones(False)
         Catch ex As Exception
@@ -196,7 +200,10 @@ Public Class frmMesa
     'Pegar siempre
     Private Sub formatearTabla(dgv As DataGridView)
         dgv.Columns("idMesa").HeaderText = "ID"
+
+        dgv.Columns("numero").HeaderText = "Número"
         dgv.Columns("capacidad").HeaderText = "Capacidad"
+
         dgv.Columns("estado").HeaderText = "Estado"
     End Sub
 
