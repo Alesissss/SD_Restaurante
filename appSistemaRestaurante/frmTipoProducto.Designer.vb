@@ -33,7 +33,7 @@ Partial Class frmTipoProducto
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtIDProducto = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlBotones = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnDarBaja = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -45,8 +45,9 @@ Partial Class frmTipoProducto
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlDatos.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.pnlBotones.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -62,17 +63,18 @@ Partial Class frmTipoProducto
         Me.pnlDatos.Controls.Add(Me.Label3)
         Me.pnlDatos.Controls.Add(Me.txtIDProducto)
         Me.pnlDatos.Controls.Add(Me.Label1)
-        Me.pnlDatos.Location = New System.Drawing.Point(12, 12)
+        Me.pnlDatos.Location = New System.Drawing.Point(156, 12)
         Me.pnlDatos.Name = "pnlDatos"
-        Me.pnlDatos.Size = New System.Drawing.Size(403, 264)
+        Me.pnlDatos.Size = New System.Drawing.Size(381, 249)
         Me.pnlDatos.TabIndex = 1
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(134, 132)
+        Me.txtDescripcion.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcion.Location = New System.Drawing.Point(117, 95)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(257, 90)
+        Me.txtDescripcion.Size = New System.Drawing.Size(235, 90)
         Me.txtDescripcion.TabIndex = 12
         '
         'btnBuscar
@@ -80,9 +82,9 @@ Partial Class frmTipoProducto
         Me.btnBuscar.FlatAppearance.BorderSize = 0
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
-        Me.btnBuscar.Location = New System.Drawing.Point(257, 29)
+        Me.btnBuscar.Location = New System.Drawing.Point(237, 12)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(48, 43)
+        Me.btnBuscar.Size = New System.Drawing.Size(31, 43)
         Me.btnBuscar.TabIndex = 11
         Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBuscar.UseVisualStyleBackColor = True
@@ -90,10 +92,10 @@ Partial Class frmTipoProducto
         'chkEstado
         '
         Me.chkEstado.AutoSize = True
-        Me.chkEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
-        Me.chkEstado.Location = New System.Drawing.Point(134, 232)
+        Me.chkEstado.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkEstado.Location = New System.Drawing.Point(117, 209)
         Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(85, 22)
+        Me.chkEstado.Size = New System.Drawing.Size(79, 19)
         Me.chkEstado.TabIndex = 10
         Me.chkEstado.Text = "(Vigente)"
         Me.chkEstado.UseVisualStyleBackColor = True
@@ -101,78 +103,79 @@ Partial Class frmTipoProducto
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
-        Me.Label10.Location = New System.Drawing.Point(69, 232)
+        Me.Label10.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(48, 209)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(59, 18)
+        Me.Label10.Size = New System.Drawing.Size(50, 15)
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "Estado:"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
-        Me.Label9.Location = New System.Drawing.Point(37, 126)
+        Me.Label9.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(20, 98)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(91, 18)
+        Me.Label9.Size = New System.Drawing.Size(78, 15)
         Me.Label9.TabIndex = 0
         Me.Label9.Text = "Descripcion:"
         '
         'txtNombres
         '
-        Me.txtNombres.Location = New System.Drawing.Point(134, 87)
+        Me.txtNombres.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombres.Location = New System.Drawing.Point(117, 61)
         Me.txtNombres.Name = "txtNombres"
-        Me.txtNombres.Size = New System.Drawing.Size(257, 20)
+        Me.txtNombres.Size = New System.Drawing.Size(235, 21)
         Me.txtNombres.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(62, 86)
+        Me.Label3.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(45, 61)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(66, 18)
+        Me.Label3.Size = New System.Drawing.Size(57, 15)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Nombre:"
         '
         'txtIDProducto
         '
-        Me.txtIDProducto.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIDProducto.Location = New System.Drawing.Point(134, 37)
+        Me.txtIDProducto.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIDProducto.Location = New System.Drawing.Point(117, 26)
         Me.txtIDProducto.Name = "txtIDProducto"
-        Me.txtIDProducto.Size = New System.Drawing.Size(117, 26)
+        Me.txtIDProducto.Size = New System.Drawing.Size(114, 21)
         Me.txtIDProducto.TabIndex = 1
         Me.txtIDProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(4, 40)
+        Me.Label1.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(72, 29)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(124, 18)
+        Me.Label1.Size = New System.Drawing.Size(26, 15)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "ID Tipo Producto:"
+        Me.Label1.Text = "ID:"
         '
-        'Panel2
+        'pnlBotones
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.Controls.Add(Me.btnSalir)
-        Me.Panel2.Controls.Add(Me.btnDarBaja)
-        Me.Panel2.Controls.Add(Me.btnEliminar)
-        Me.Panel2.Controls.Add(Me.btnModificar)
-        Me.Panel2.Controls.Add(Me.btnNuevo)
-        Me.Panel2.Location = New System.Drawing.Point(421, 12)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(191, 264)
-        Me.Panel2.TabIndex = 2
+        Me.pnlBotones.BackColor = System.Drawing.Color.White
+        Me.pnlBotones.Controls.Add(Me.btnSalir)
+        Me.pnlBotones.Controls.Add(Me.btnDarBaja)
+        Me.pnlBotones.Controls.Add(Me.btnEliminar)
+        Me.pnlBotones.Controls.Add(Me.btnModificar)
+        Me.pnlBotones.Controls.Add(Me.btnNuevo)
+        Me.pnlBotones.Location = New System.Drawing.Point(12, 267)
+        Me.pnlBotones.Name = "pnlBotones"
+        Me.pnlBotones.Size = New System.Drawing.Size(525, 63)
+        Me.pnlBotones.TabIndex = 2
         '
         'btnSalir
         '
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(24, 207)
+        Me.btnSalir.Location = New System.Drawing.Point(418, 11)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(143, 43)
+        Me.btnSalir.Size = New System.Drawing.Size(95, 43)
         Me.btnSalir.TabIndex = 16
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -182,9 +185,9 @@ Partial Class frmTipoProducto
         '
         Me.btnDarBaja.Enabled = False
         Me.btnDarBaja.Image = CType(resources.GetObject("btnDarBaja.Image"), System.Drawing.Image)
-        Me.btnDarBaja.Location = New System.Drawing.Point(24, 158)
+        Me.btnDarBaja.Location = New System.Drawing.Point(314, 11)
         Me.btnDarBaja.Name = "btnDarBaja"
-        Me.btnDarBaja.Size = New System.Drawing.Size(143, 43)
+        Me.btnDarBaja.Size = New System.Drawing.Size(98, 43)
         Me.btnDarBaja.TabIndex = 15
         Me.btnDarBaja.Text = "Dar Baja"
         Me.btnDarBaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -194,9 +197,9 @@ Partial Class frmTipoProducto
         '
         Me.btnEliminar.Enabled = False
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
-        Me.btnEliminar.Location = New System.Drawing.Point(24, 109)
+        Me.btnEliminar.Location = New System.Drawing.Point(215, 11)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(143, 43)
+        Me.btnEliminar.Size = New System.Drawing.Size(93, 43)
         Me.btnEliminar.TabIndex = 14
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -206,9 +209,9 @@ Partial Class frmTipoProducto
         '
         Me.btnModificar.Enabled = False
         Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.Location = New System.Drawing.Point(24, 60)
+        Me.btnModificar.Location = New System.Drawing.Point(108, 11)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(143, 43)
+        Me.btnModificar.Size = New System.Drawing.Size(101, 43)
         Me.btnModificar.TabIndex = 13
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -217,9 +220,9 @@ Partial Class frmTipoProducto
         'btnNuevo
         '
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
-        Me.btnNuevo.Location = New System.Drawing.Point(24, 11)
+        Me.btnNuevo.Location = New System.Drawing.Point(12, 11)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(143, 43)
+        Me.btnNuevo.Size = New System.Drawing.Size(87, 43)
         Me.btnNuevo.TabIndex = 12
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -231,9 +234,9 @@ Partial Class frmTipoProducto
         Me.dgvProductos.AllowUserToDeleteRows = False
         Me.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProductos.Location = New System.Drawing.Point(12, 282)
+        Me.dgvProductos.Location = New System.Drawing.Point(12, 336)
         Me.dgvProductos.Name = "dgvProductos"
-        Me.dgvProductos.Size = New System.Drawing.Size(600, 133)
+        Me.dgvProductos.Size = New System.Drawing.Size(525, 133)
         Me.dgvProductos.TabIndex = 3
         '
         'lsvProductos
@@ -242,9 +245,9 @@ Partial Class frmTipoProducto
         Me.lsvProductos.FullRowSelect = True
         Me.lsvProductos.GridLines = True
         Me.lsvProductos.HideSelection = False
-        Me.lsvProductos.Location = New System.Drawing.Point(12, 421)
+        Me.lsvProductos.Location = New System.Drawing.Point(12, 475)
         Me.lsvProductos.Name = "lsvProductos"
-        Me.lsvProductos.Size = New System.Drawing.Size(600, 111)
+        Me.lsvProductos.Size = New System.Drawing.Size(525, 111)
         Me.lsvProductos.TabIndex = 4
         Me.lsvProductos.UseCompatibleStateImageBehavior = False
         Me.lsvProductos.View = System.Windows.Forms.View.Details
@@ -268,14 +271,24 @@ Partial Class frmTipoProducto
         Me.ColumnHeader4.Text = "VIGENCIA"
         Me.ColumnHeader4.Width = 113
         '
+        'Panel1
+        '
+        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(138, 249)
+        Me.Panel1.TabIndex = 5
+        '
         'frmTipoProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(622, 544)
+        Me.ClientSize = New System.Drawing.Size(546, 681)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lsvProductos)
         Me.Controls.Add(Me.dgvProductos)
-        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.pnlBotones)
         Me.Controls.Add(Me.pnlDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmTipoProducto"
@@ -283,7 +296,7 @@ Partial Class frmTipoProducto
         Me.Text = ".: GESTIONAR TIPO DE PRODUCTO :."
         Me.pnlDatos.ResumeLayout(False)
         Me.pnlDatos.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
+        Me.pnlBotones.ResumeLayout(False)
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -299,7 +312,7 @@ Partial Class frmTipoProducto
     Friend WithEvents txtIDProducto As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtDescripcion As TextBox
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents pnlBotones As Panel
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnDarBaja As Button
     Friend WithEvents btnEliminar As Button
@@ -311,4 +324,5 @@ Partial Class frmTipoProducto
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents Panel1 As Panel
 End Class

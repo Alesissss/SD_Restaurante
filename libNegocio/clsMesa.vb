@@ -18,9 +18,10 @@ Public Class clsMesa
         Return 0
     End Function
 
-    Public Sub guardarMesa(ByVal id As Integer, ByVal capacidad As Byte, ByVal est As Boolean)
-        strSQL = "INSERT INTO MESA (idMesa, capacidad, estado) VALUES (" &
+    Public Sub guardarMesa(ByVal id As Integer, ByVal numero As Integer, ByVal capacidad As Byte, ByVal est As Boolean)
+        strSQL = "INSERT INTO MESA (idMesa, numero, capacidad, estado) VALUES (" &
                  id & ", " &
+                 numero & ", " &
                  capacidad & ", " &
                  IIf(est, 1, 0) & ")"
         Try
@@ -30,8 +31,9 @@ Public Class clsMesa
         End Try
     End Sub
 
-    Public Sub modificarMesa(ByVal id As Integer, ByVal capacidad As Byte, ByVal est As Boolean)
+    Public Sub modificarMesa(ByVal id As Integer, ByVal numero As Integer, ByVal capacidad As Byte, ByVal est As Boolean)
         strSQL = "UPDATE MESA SET " &
+                 "numero = " & numero & ", " &
                  "capacidad = " & capacidad & ", " &
                  "estado = " & IIf(est, 1, 0) & " " &
                  "WHERE idMesa = " & id
@@ -79,7 +81,7 @@ Public Class clsMesa
     End Function
 
     Public Function listarMesas() As DataTable
-        strSQL = "SELECT idMesa,capacidad, " &
+        strSQL = "SELECT idMesa,numero,capacidad, " &
          "CASE estado " &
          "WHEN 1 THEN 'Activo' " &
          "WHEN 0 THEN 'Inactivo' " &
