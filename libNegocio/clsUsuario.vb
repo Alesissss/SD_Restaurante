@@ -142,6 +142,15 @@ Public Class clsUsuario
         End Try
     End Function
 
+    Public Function buscarUsuarioPorNombre(ByVal nombres As String) As DataTable
+        strSQL = "Select * From USUARIO Where nombre = '" & nombres & "'"
+        Try
+            Return objMan.listarComando(strSQL)
+        Catch ex As Exception
+            Throw New Exception("Error al buscar el usuario: " & ex.Message)
+        End Try
+    End Function
+    '
     Public Function listarUsuarios() As DataTable
         strSQL = "SELECT * FROM USUARIO"
         Try

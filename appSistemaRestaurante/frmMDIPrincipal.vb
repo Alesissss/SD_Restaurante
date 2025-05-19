@@ -19,7 +19,7 @@ Public Class frmMDIPrincipal
         Try
             If objFrmInicio.estadoInicio Then
                 'Con acceso
-                lblUsuario.Text = objFrmInicio.usuario
+                lblUsuario.Text = frmInicioSesion.usuario
                 lblUsuario.Text &= " / " & objUsuario.obtenerNombreUsuario(objFrmInicio.usuario)
             Else
                 'Acceso denegado
@@ -118,8 +118,8 @@ Public Class frmMDIPrincipal
     End Sub
 
     Private Sub CierreDeCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CierreDeCajaToolStripMenuItem.Click
-        Dim objFrmCierreCaja As New frmCierreCaja
-        objFrmCierreCaja.ShowDialog()
+        'Dim objFrmCierreCaja As New frmCierreCaja
+        'objFrmCierreCaja.ShowDialog()
     End Sub
 
     Private Sub RegistrarPagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarPagoToolStripMenuItem.Click

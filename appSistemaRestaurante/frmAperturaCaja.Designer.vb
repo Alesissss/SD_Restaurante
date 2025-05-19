@@ -34,7 +34,7 @@ Partial Class frmAperturaCaja
         Me.dtpFechaApertura = New System.Windows.Forms.DateTimePicker()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
         Me.pnlDatos = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cmbCaja = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -140,7 +140,7 @@ Partial Class frmAperturaCaja
         '
         'pnlDatos
         '
-        Me.pnlDatos.Controls.Add(Me.ComboBox1)
+        Me.pnlDatos.Controls.Add(Me.cmbCaja)
         Me.pnlDatos.Controls.Add(Me.Label7)
         Me.pnlDatos.Controls.Add(Me.Label2)
         Me.pnlDatos.Controls.Add(Me.txtMoneda)
@@ -155,13 +155,13 @@ Partial Class frmAperturaCaja
         Me.pnlDatos.Size = New System.Drawing.Size(356, 175)
         Me.pnlDatos.TabIndex = 12
         '
-        'ComboBox1
+        'cmbCaja
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(144, 16)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(200, 21)
-        Me.ComboBox1.TabIndex = 13
+        Me.cmbCaja.FormattingEnabled = True
+        Me.cmbCaja.Location = New System.Drawing.Point(144, 16)
+        Me.cmbCaja.Name = "cmbCaja"
+        Me.cmbCaja.Size = New System.Drawing.Size(200, 21)
+        Me.cmbCaja.TabIndex = 13
         '
         'Label7
         '
@@ -286,6 +286,6 @@ Partial Class frmAperturaCaja
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents lblMontoTotalTexto As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cmbCaja As ComboBox
     Friend WithEvents Label7 As Label
 End Class

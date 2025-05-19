@@ -1,9 +1,10 @@
 ﻿Imports libNegocio
+Imports libDatos
 Public Class frmAperturaCaja
     Dim objUsuario As New clsUsuario
     Dim objFrmInicio As New frmInicioSesion
-
-
+    Dim objCajero As New clsCajero
+    Dim objConexion As clsConectaBD
     Private Sub frmAperturaCaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblNumArqueo.Text = "0"
         lblNumArqueo.ReadOnly = True
@@ -21,11 +22,25 @@ Public Class frmAperturaCaja
         txtMoneda.ReadOnly = True
 
         ' Cargar filas en el DataGridView
+        listarTipos()
         InicializarDenominaciones()
         pintarFrm(dgvDetalles)
 
     End Sub
 
+    Private Sub listarTipos()
+        Try
+            Dim dtTipo As DataTable
+            dtTipo = objCajero.listarCajeros()
+
+            cmbCaja.DataSource = dtTipo
+            cmbCaja.DisplayMember = "nombre"
+            cmbCaja.ValueMember = "idCajero"
+            cmbCaja.SelectedIndex = -1
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los cajeros: " & ex.Message)
+        End Try
+    End Sub
     Public Sub pintarFrm(dgv As DataGridView)
         'Pintar algunos paneles
         pnlDatos.BackColor = ColorTranslator.FromHtml("#C5CEC3")
@@ -58,6 +73,8 @@ Public Class frmAperturaCaja
 
 
     End Sub
+
+
 
     Private Sub InicializarDenominaciones()
         With dgvDetalles
@@ -195,4 +212,98 @@ Public Class frmAperturaCaja
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
     End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Try
+            Dim idCajero As Integer = Convert.ToInt32(cmbCaja.SelectedValue)
+            Dim idUsuario As Integer = ObtenerIdUsuarioActual()
+            Dim fechaApertura As DateTime = dtpFechaApertura.Value
+            Dim base As Decimal = Convert.ToDecimal(lblMontoTotal.Text)
+            Dim moneda As String = txtMoneda.Text
+            Dim estado As String = "ABIERTO"
+
+            ' Crear la lista de detalles a insertar
+            Dim detalles As New List(Of Tuple(Of String, Decimal))
+
+            For Each fila As DataGridViewRow In dgvDetalles.Rows
+                If Not fila.IsNewRow Then
+                    Dim descripcion As String = fila.Cells("Denominacion").Value.ToString()
+                    Dim subtotal As Decimal = Convert.ToDecimal(fila.Cells("Subtotal").Value)
+
+                    If subtotal > 0 Then
+                        detalles.Add(New Tuple(Of String, Decimal)(descripcion, subtotal))
+                    End If
+                End If
+            Next
+
+            ' Insertar todo dentro de una transacción
+            Dim idArqueo As Integer = InsertarArqueoYDetalles(idCajero, idUsuario, fechaApertura, base, moneda, estado, detalles)
+
+            MessageBox.Show("¡Caja aperturada correctamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Close()
+
+        Catch ex As Exception
+            MessageBox.Show("Error al guardar la apertura de caja: " & ex.Message)
+        End Try
+    End Sub
+    Private Function InsertarArqueoYDetalles(idCajero As Integer, idUsuario As Integer, fechaApertura As DateTime, base As Decimal, moneda As String, estado As String, detalles As List(Of Tuple(Of String, Decimal))) As Integer
+        Dim idGenerado As Integer = 0
+        Dim cadenaConexion As String = objConexion.gen_cad_cloud()
+
+        Using conn As New SqlClient.SqlConnection(cadenaConexion)
+            conn.Open()
+            Dim trans As SqlClient.SqlTransaction = conn.BeginTransaction()
+
+            Try
+                ' Insertar ArqueoCaja
+                Dim sqlArqueo As String = "INSERT INTO ArqueoCaja (idCajero, idUsuario, fechaApertura, base, moneda, estado)
+                                       VALUES (@idCajero, @idUsuario, @fechaApertura, @base, @moneda, @estado);
+                                       SELECT SCOPE_IDENTITY();"
+
+                Using cmdArqueo As New SqlClient.SqlCommand(sqlArqueo, conn, trans)
+                    cmdArqueo.Parameters.AddWithValue("@idCajero", idCajero)
+                    cmdArqueo.Parameters.AddWithValue("@idUsuario", idUsuario)
+                    cmdArqueo.Parameters.AddWithValue("@fechaApertura", fechaApertura)
+                    cmdArqueo.Parameters.AddWithValue("@base", base)
+                    cmdArqueo.Parameters.AddWithValue("@moneda", moneda)
+                    cmdArqueo.Parameters.AddWithValue("@estado", estado)
+
+                    idGenerado = Convert.ToInt32(cmdArqueo.ExecuteScalar())
+                End Using
+
+                ' Insertar detalles
+                Dim sqlDetalle As String = "INSERT INTO DetalleArqueo (idArqueo, descripcion, monto)
+                                        VALUES (@idArqueo, @descripcion, @monto);"
+
+                For Each detalle In detalles
+                    Using cmdDetalle As New SqlClient.SqlCommand(sqlDetalle, conn, trans)
+                        cmdDetalle.Parameters.AddWithValue("@idArqueo", idGenerado)
+                        cmdDetalle.Parameters.AddWithValue("@descripcion", detalle.Item1)
+                        cmdDetalle.Parameters.AddWithValue("@monto", detalle.Item2)
+
+                        cmdDetalle.ExecuteNonQuery()
+                    End Using
+                Next
+
+                trans.Commit()
+            Catch ex As Exception
+                trans.Rollback()
+                Throw New Exception("Error al insertar arqueo y detalles: " & ex.Message)
+            End Try
+        End Using
+
+        Return idGenerado
+    End Function
+
+    Public Function ObtenerIdUsuarioActual() As Integer
+        Dim nombreUsuarioActual As String = frmInicioSesion.usuario ' <- Esto puede venir de una propiedad global
+
+        Dim dt As DataTable = objUsuario.buscarUsuarioPorNombre(nombreUsuarioActual)
+
+        If dt.Rows.Count > 0 Then
+            Return Convert.ToInt32(dt.Rows(0)("idUduario"))
+        Else
+            Throw New Exception("Usuario no encontrado.")
+        End If
+    End Function
 End Class

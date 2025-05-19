@@ -5,7 +5,7 @@ Public Class frmInicioSesion
     Dim objConexion As New clsConectaBD
     Dim objUsuario As New clsUsuario
     Public estadoInicio As Boolean = False
-    Public usuario As String = ""
+    Public Shared usuario As String = ""
 
     Private Sub chkContraseña_CheckedChanged(sender As Object, e As EventArgs) Handles chkContraseña.CheckedChanged
         Try
